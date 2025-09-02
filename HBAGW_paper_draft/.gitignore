@@ -2,6 +2,9 @@
 # General LaTeX .gitignore
 # =========================
 
+HBAGW_jcap.tex
+
+data/
 *.aux
 *.blg
 *.log
