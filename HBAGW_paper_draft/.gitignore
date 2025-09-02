@@ -2,26 +2,24 @@
 # General LaTeX .gitignore
 # =========================
 
-HBAGW_jcap.tex
-
 data/
+*.fdb_latexmk
+*.fls
+*Notes.bib
+*.synctex.gz
 *.aux
+*.bbl
 *.blg
 *.log
 *.out
 *.toc
-*.lof
-*.lot
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-*.nav
-*.snm
-*.vrb
+*.swp
+*.dvi
+diff.*
+.DS_Store
 
 *.par
 _minted*
-
 
 *.pdf
 
