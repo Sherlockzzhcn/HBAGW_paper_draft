@@ -29,6 +29,7 @@
 \newcommand{\bmT}{{\bm{\Theta}}}
 \newcommand{\bmH}{{\bm{H}}}
 \newcommand{\rmd}{{\rm{d}}}
+\newcommand{\ZW}[1]{\textcolor{magenta}{$\mathcal{ZW}$:~#1}}
 
 % \newcommand{\DL}[1]{\textcolor{red}{#1}} 
 % \newcommand{\LS}[1]{\textcolor{cyan}{\bf #1}} 
@@ -348,16 +349,27 @@ Ref.~\cite{Lackey:2014fwa} found that the overwhelming majority of the informati
 \section{Results and Discussions}
 \label{sec4}
 %=============================
-
+\ZW{I'm not recommend to use ``sec4'' to label the section, because it is not
+informative. Also for equation labels, since the index may change when you revise
+the paper, it is better to use some informative labels, e.g., ``sec:results and discussions''}
+In this section, we present the inference results for different parameterization
+models of the Love-Q relation. 
+In section~\ref{sec4_1}, we show the results of the linear model,
+Eq.~\eqref{2-d_Love_Q_eq}, consisting of two parameters.\ZW{Another question: All eq. should be replaced by Eq. There is
+no additional ``.'' after figure and table, e.g., figure~\ref{corner2-d}, table~\ref{prior_table}.}
+In section~\ref{sec4_2}, we present the results of the quartic polynomial model
+in Eq.~\eqref{5-d_Love_Q_eq}, consisting of five parameters.
+The polynomial models in between, i.e., the cubic and quartic polynomial models,
+are discussed in section~\ref{sec4_3}.
 %=============================
-\subsection{Linear Fitting Model}
+\subsection{Linear Model}
 \label{sec4_1}
 %=============================
-
+\ZW{I delete ``fitting'', since it is not informative.}
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{comparison_corner_plot.pdf}
-    \caption{Posterior distributions of the hyper-parameters in the linear fitting case. The contours refer to 50\% and 90\% credible regions for both inferences based on the loudest 10 and 20 events. The numbers above the histograms stand for the median and the central 50\% credible interval of each marginalized distribution in the 20 event inference. The orange lines represent the best fit values of the parameters in Table.~\ref{prior_table}. The priors are also drawn in black for the histograms on the diagonal.}
+    \caption{Posterior distributions of the hyperparameters in the linear fitting case. The contours refer to 50\% and 90\% credible regions for both inferences based on the loudest 10 and 20 events. The numbers above the histograms stand for the median and the central 50\% credible interval of each marginalized distribution in the 20 event inference. The orange lines represent the best fit values of the parameters in Table.~\ref{prior_table}. The priors are also drawn in black for the histograms on the diagonal.}
     \label{corner2-d}
 \end{figure}
 
@@ -367,18 +379,43 @@ Ref.~\cite{Lackey:2014fwa} found that the overwhelming majority of the informati
     \caption{Results of the hierarchical Bayesian inference for linear Love-Q relation. In the left panel, the Love-Q relation is inferred based on 20 simulated GW events. The gray error bars demonstrate the $1\sigma$ credible interval of $\Lambda$ and $Q$. The orange solid line represents the Yagi-Yunes Love-Q relation and the green solid line refs to the result given by Samajdar \& Dietrich, 2020~\cite{Samajdar:2020xrd}. The blue regions from dark to light represent the $50\%$ and $90\%$ credible intervals of $Q$. The blue solid line and the red dashed line are the median and peak of the distribution of $Q$ with certain $\Lambda$. In the right panel, contours correspond to $90\%$ credible intervals for the inference result based on the loudest 5, 10, 15, 20 events, respectively.
     \label{2-d_Love_Q}}
 \end{figure}
+We first perform the inference for the linear model, which is also he  model adopted
+in Ref~\cite{Samajdar:2020xrd}. The posterior distribution of the
+hyperparameters $\{a_2,b_2\}$ is shown in figure~\ref{corner2-d}. Compared
+to the prior in table~\ref{prior_table}, the posteriors are significantly
+narrowed. As a
+comparison, we also mark the fitting values of the hyperparameters
+in a direct fit of the Yagi-Yunes
+Love-Q relation, and regard them as ``true'' values of the linear model for reference. These values fall within the 90\% credible region of
+the posterior, and close to the marginal of the 50\% credible region. 
+ The hierarchical Bayesian inference successfully
+ recovers the Love-Q
+relation under the linear parameterization. We also investigate how the results
+depend on the number of events in the analysis. In the 20 event selected in
+section~\ref{sec3_2}, we further select the loudest 10 events, perform the
+inference again, and show the results in figure~\ref{corner2-d}. For both the
+joint and marginalized distributions, the widths of the credible regions in the
+10-event inference are only slightly larger than those in the 20-event
+inference. This reveals that the loudest 10 events dominate the information in
+constraining the Love-Q relation, and including quieter events will not significantly improve the results.
 
-Based on the methods discussed above, we perform the hierarchical Bayesian inference for linear Love-Q relations. Following Ref.~\cite{Lackey:2014fwa}, we show how the results depend on the number of events to verify if the major information for Love-Q relation is provided by sources with the highest SNR (loudest). The posterior distributions for the hyper-parameters of 10 event inference and 20 event inference are both shown in figure.~\ref{corner2-d} as a comparison. For the joint distribution in the lower left corner, we find that the credible regions of the two inferences are quite similar, and the best fit values listed in Table.~\ref{prior_table} are close to the edge of the 50\% credible regions in the joint distribution. Moreover, in both cases, correlation exists between the two hyper-parameters. 
-
-%####################
-In the diagonal corners, the peak values of the marginalized distributions for the two cases are also close to each other, indicating the dominance of events with higher SNR. An increase in the number of events just slightly narrows the peak width of the marginalized posteriors, and accordingly the 50\% credible region shrinks in the loudest 20 events case. 
-%####################
-
-In the left panel of figure.~\ref{2-d_Love_Q}, we plot the linear Love-Q relation according to the posterior samples. For a certain $\Lambda$, every sample point of hyper-parameters corresponds to a $Q$ value. With $\Lambda$ fixed, we find the $50\%$ and $90\%$ credible intervals of $Q$, and for continuously variable $\Lambda$, the intervals combine to form a region. As we can see, the Yagi-Yunes Love-Q relation is almost covered by the $90\%$ region. The credible intervals are wide at both ends and narrow in the middle, as most of the events concentrate in the $\Lambda \sim 400$ region. In the right panel, we compare the credible regions for inferences using the loudest 5, 10, 15 and 20 events. 
-The $90\%$ regions for the latter three cases almost overlap each other. This means that the loudest 10 events dominate the results, and thus including much quieter events will not significantly improve the results.
+In figure~\ref{2-d_Love_Q}, we show the recovered Love-Q relation according to
+the posterior samples. For each $\Lambda$, every sample in the posterior of the
+hyperparameters corresponds to a $Q$ value. With $\Lambda$ fixed, we find the credible intervals of $Q$, and then vary $\Lambda$ continuously to
+form credible regions. In the left panel, we show the results of the 20-event
+inference. Similar to figure~\ref{corner2-d}, the Yagi-Yunes Love-Q relation is
+covered by the 90\% credible region. In the right panel, we select the loudest
+5, 10, 15 and 20 events from the 20 events to test how the recovered Love-Q relation
+depends on the number of events. We find the widths of the 90\% credible regions
+are almost the same for the 10, 15 and 20 event inferences. This is consistent
+with the posteriors in figure~\ref{corner2-d}, and again indicates that the
+loudest 10 events are almost sufficient to constrain the Love-Q relation.
+Similar phenomena were also found in previous
+studies~\cite{Lackey:2014fwa,Wang:2024xon}, where the recovered $\Lambda$-$m$
+relation were also dominated by the several loudest events.
 
 %=============================
-\subsection{Quartic Polynomial Fitting Model}
+\subsection{Quartic Polynomial Model}
 \label{sec4_2}
 %=============================
 
@@ -394,14 +431,32 @@ The $90\%$ regions for the latter three cases almost overlap each other. This me
     \caption{\label{5-d_Love_Q} Left panel: posterior distribution of the hyper-parameters in the quartic polynomial fitting case. The inference is based on all of the 20 events. The orange lines represent the values in the Yagi-Yunes Love-Q relation. Right panel: similar to figure.~\ref{2-d_Love_Q}, but for the quartic polynomial fitting case. Still, the Yagi-Yunes Love-Q relation is included in the $90\%$ credible region.} 
 \end{figure}
 
-For the quartic polynomial fitting model, we parameterize the Love-Q relation by eq.~(\ref{5-d_Love_Q_eq}) and perform a hierarchical Bayesian inference for five hyper-parameter $\{a_5, b_5, c_5, d_5, e_5\}$. The left panel of figure~\ref{5-d_Love_Q} illustrates the posterior distributions of the hyper-parameters for this five-parameter model. Similarly to figure~\ref{corner2-d}, the priors and marginalized posteriors are plotted together in the diagonal histograms. 
-The values taken in Yagi-Yunes Love-Q relation are closed to the marginalized distribution peaks, which become consistent with the maximum likelihood estimation given flat priors. Compared to the linear fitting case, these peaks are wider in the prior space and thus the credible regions in the two-parameter joint distributions become broader. 
-This is reasonable since the increase in the degree of freedom makes it harder to constrain each parameter.
-
-We summarize the quartic polynomial Love-Q relation constraining results in the right panel of figure~\ref{5-d_Love_Q} according to the posterior distributions. We mark the $50\%$ and $90\%$ credible intervals of $Q$ using the same method as the linear fitting model. Like in figure~\ref{2-d_Love_Q} for linear Love-Q relations, the Yagi-Yunes relation almost falls within the $90\%$ region. In addition, the widths of the $90\%$ regions with $\Lambda \sim 400$ in figure~\ref{5-d_Love_Q} and figure~\ref{2-d_Love_Q} are close, except for the wider end in five-parameter case when $\Lambda$ is large. This is understandable because $c_5, d_5$ and $e_5$ are much smaller than $a_5$ and $b_5$, making the $\ln^k\Lambda$ terms with $k\leq1$ dominate when $\Lambda$ is not large enough.
+For the quartic polynomial model, the Love-Q relation is fitted with five
+parameters shown in eq.~(\ref{5-d_Love_Q_eq}), i.e., $\{a_5, b_5, c_5, d_5, e_5\}$. This is also the original
+model proposed by Yagi and Yunes~\cite{Yagi:2013awa}. We summarize the
+posterior and the recovered Love-Q relation in figure~\ref{5-d_Love_Q}, where
+all 20 events are included in the inference.
+ In the
+left panel, though the true values (the values in Yagi-Yunes Love-Q
+relation~\cite{Yagi:2013awa}) are almost centered in the 50\% and 90\% credible
+regions, the posteriors are much wider than those in the linear case, reaching
+the prior boundaries. This indicates that the $\Lambda$ and $Q$ measurements
+from these events are not informative enough to well constrain all the five
+parameters. In other words, the observation precision is not high enough to
+capture the higher-order terms introduced by the additional three parameters
+$c_5, d_5$ and $e_5$. This is also reflected in the strong correlations between
+the three parameter shown in the left panel of figure~\ref{5-d_Love_Q}.
+In the right panel of figure~\ref{5-d_Love_Q}, the 90\% credible regions of the
+recovered Love-Q relation are also wider than those in the linear case,
+especially for large $\Lambda$ where the higher-order terms become more
+important. For $\Lambda \sim 400$, the widths of the 90\% credible region between
+the two models are similar, which is consistent with the fact that most of the
+simulated events gather around this region.
+The Yagi-Yunes Love-Q relation is mostly covered by the 50\% credible
+region, and well within the 90\% credible region.
 
 %=============================
-\subsection{More Polynomial Fitting Models}
+\subsection{Quadratic and Cubic Polynomial Models}
 \label{sec4_3}
 %=============================
 
@@ -425,12 +480,40 @@ We summarize the quartic polynomial Love-Q relation constraining results in the 
     figure~\ref{2-d_Love_Q}.
     }
 \end{figure}
+As shown in the previous two subsections, the observations from 20 simulated GW
+events can well constrain the two parameters in the linear model, while can not
+effectively constrain the five parameters in the quartic polynomial model. The
+two models are adopted in previous
+studies~\cite{Yagi:2013awa, Samajdar:2020xrd}, while here we further test the models in between them and see how the
+constraints change with the number of parameters. We perform the inference for
+the quadratic and cubic polynomial models, which contain three parameters 
+$\{a_3, b_3, c_3\}$
+and four parameters $\{a_4, b_4, c_4, d_4\}$, respectively. Similar to the linear model, the reference values of
+these parameters are obtained by directly fitting the Yagi-Yunes
+Love-Q relation and listed in table~\ref{prior_table}. The priors of the
+hyperparameters keep the same as their counterparts in the quartic polynomial
+model, which are also listed in table~\ref{prior_table}.
 
-We have mentioned in section~\ref{sec4_2} that it will be harder to constrain every hyper-parameter as the 
-degree of freedom increases, thus we perform hyper-parameter inferences for quadratic and cubic polynomial (three-parameter and four-parameter) fitting models. Figure~\ref{3-d_4-d_Love_Q} demonstrates the posteriors and the corresponding Love-Q inference results for these two models. In the quadratic case, we find strong degeneracy among the three parameters. The marginalized posterior distributions of $a_3$ and $c_3$ have very wide and flat peaks, while $b_3$ is so poorly constrained that its posterior is similar to its prior. When it comes to the four-parameter inference results, degeneracy still emerges and again we find the marginalized posterior of one hyper-parameter $b_4$ resemble the prior. These results imply that for our simulation data size, a two-parameter linear fitting model is enough and the two fitting coefficients can be well constrained by our hierarchical Bayesian inference.
+We summarize the posterior distributions of the hyperparameters in the top row of figure~\ref{3-d_4-d_Love_Q}. In the quadratic model, strong
+degeneracy arises among the three parameters. 
+The posterior of $b_3$ is almost the same as its prior. For $a_3$ and $c_3$,
+though the posteriors are narrower than the priors, their marginal distributions
+have very wide and flat peaks. In the cubic model, strong degeneracy still exists
+between $c_4$ and $d_4$, and the posterior of $b_4$ is also similar to its
+prior. Usually, posterior with large correlations and prior-like marginal
+distributions indicates redundant parameters in the model. Therefore, we
+conclude that the linear model is accurate enough in constraining the Love-Q
+relation with XG GW observations. This is consistent with the argument in
+Ref.~\cite{Samajdar:2020xrd} based on qualitative analysis, and in this work we
+present a quantitative demonstration. 
 
-Same as before, we plot the constraint of Love-Q relation according to the posterior samples in the two lower panels 
-of figure~\ref{3-d_4-d_Love_Q}. Like two-parameter and five-parameter results, the width of the $90\%$ region where most of the data points gather is insensitive to our parameterization of the Love-Q relation. We expect a better constraint to the both ends of the 90\% regions based on more GW events, which may contain more information for the behavior of the Love-Q relation with $\Lambda \sim 100$ or $\Lambda > 500$.
+Same as before, we plot recovered Love-Q relations in the lower panels 
+of figure~\ref{3-d_4-d_Love_Q}. We find the widths of the 90\% credible regions
+around $\Lambda \sim 400$ are similar for all the four models. While for
+$\Lambda$ away from this region ($\Lambda \lesssim 200$ or $\Lambda \gtrsim
+500$), the widths increase with the number of parameters. This may be the result
+of both the increased model complexity and the lack of data points in these
+regions. 
 
 %=============================
 \section{Testing Modified Gravity: Dynamical Chern-Simons Gravity}
@@ -453,7 +536,9 @@ of figure~\ref{3-d_4-d_Love_Q}. Like two-parameter and five-parameter results, t
     \caption{Comparison of the hierarchical inference results and CS predictions with different coupling constants fixed. The blue regions are the same as figure~\ref{2-d_Love_Q} (Linear fitting model). For each of the coupling constants of CS gravity $\zeta, \xi_{\mathrm{CS}}$ and $\bar\xi$, three possible values are taken and the corresponding Love-Q relations for AP4 EOS are drawn respectively as references.}
     \label{cs_Love_Q}
 \end{figure}
-
+In this section, we investigate the potential of testing gravity theories with
+the inferred Love-Q relation from the GW observations.
+By comparing the I-Love-Q 
 For some parity-violating modified gravity theories that have not been stringently constrained yet, an I-Love-Q test can be powerful due to the significant difference in I-Love-Q relation emerging in these theories compared with GR prediction~\cite{Yagi_2017, Yunes:2025xwp}. We select the dynamical Chern-Simons (dCS) gravity~\cite{Jackiw:2003pm, Smith:2007jm, Alexander:2009tp}, which is well-motivated from heterotic superstring theory~\cite{Polchinski:1998rq, Polchinski:1998rr}, loop quantum gravity~\cite{Alexander:2004xd, Taveras:2008yf, Calcagni:2009xz} and effective field theories of inflation~\cite{Weinberg:2008hq}, for discussion. The dCS gravity predicts a Love-Q relation different from the one in GR for any finite value of the coupling constant~\cite{Yagi:2013bca, Yagi:2013awa, Gupta:2017vsl}. By comparing this difference with the uncertainty given by our inference results, we can see to what extent can our results constrain the coupling constants in dCS gravity at most. 
 
 %The dCS gravity introduces parity violation and quadratic curvature terms into the action~\cite{Alexander:2009tp, Gupta:2017vsl}
