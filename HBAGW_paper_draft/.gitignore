@@ -21,6 +21,7 @@ diff.*
 *.par
 _minted*
 
+*.pdf
 
 # 编译缓存 (例如 arara)
 .arara/
