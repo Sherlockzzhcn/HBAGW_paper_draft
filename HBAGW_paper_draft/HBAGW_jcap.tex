@@ -79,23 +79,23 @@ Sciences, Beijing 100012, China}
 
 \abstract{Nuclear and gravity theories have predicted a universal ``Love-Q'' 
 relation between the dimensionless tidal deformability $\Lambda$ and the 
-dimensionless quadrupole moment $Q$ of neutron stars. However, this Love-Q 
+dimensionless quadrupole moment $Q$ of neutron stars (NSs). However, this Love-Q 
 relation has not yet been directly measured in an observational aspect. 
-Gravitational waves (GWs) emitted from binary neutron star (BNS) systems serve as 
-a powerful tool for probing NS properties and in the future, the next-generation 
-GW detectors are expected to yield numerous BNS events with high-precision 
-measurement. In this study, we explore the prospect of constraining the Love-Q 
+Gravitational waves (GWs) emitted from binary NS systems serve as 
+a powerful tool for probing NS properties. The future next-generation 
+GW detectors are expected to yield numerous BNS events with high-precision  
+measurements. In this study, we explore the prospects of constraining the Love-Q 
 relation with future GW observations. Adopting a hierarchical Bayesian framework, 
-we are able to combine multiple GW events in a more systematic and robust manner. 
-We simulate 1000 GW sources and select the loudest 20 of them for the analysis. 
-We find that compared with the full quartic polynomial model, a linear relation 
-between $\ln\Lambda$ and $\ln Q$ is accurate enough. We also discuss a quadratic 
-and cubic polynomial Love-Q relations and find correlations between the parameters 
-characterizing the Love-Q relation from linear to quartic polynomial models. 
-Furthermore, we investigate the potential of the inferred Love-Q relation in 
-testing modified gravity. Taking the dynamical Chern-Simons gravity as an example, 
+we are able to combine multiple GW events in a more systematic manner. 
+We simulate 1000 GW sources and select the loudest 20 events for the analysis.
+By considering four polynomial models from linear to quartic terms, we find that 
+a linear relation 
+between $\ln\Lambda$ and $\ln Q$ is accurate enough in constraining the Love-Q
+    relation with GWs.
+Strong correlations between the parameters are found in all four models. 
+Furthermore, we utilize the inferred Love-Q relation in testing modified gravity. Taking the dynamical Chern-Simons gravity as an example, 
 our results suggest that the characteristic length $\xi_{CS}^{1/4}$ can be limited 
-to about $\mathcal{O}(10^1)$~km or less with future GW observations. 
+to about $10\, \mathrm{km}$ or less with future GW observations. 
 }
 
 \begin{document}
@@ -112,72 +112,85 @@ gravitational physics due to their extreme densities and strong gravitational
 fields. Electromagnetic observations of NSs, such as their observed maximum 
 mass~\cite{Ozel:2010bz,Hebeler:2013nza,Antoniadis:2013pzd} and mass-radius 
 relation~\cite{Lattimer:2006xb,Steiner:2010fz,Ozel:2010fw,Özel_2013,Guver:2013xa}, 
-allow us to probe the properties of nuclear matter at densities exceeding nuclear 
-saturation density. Besides, the recent observation of GW170817 has opened up a 
+allow one to probe the properties of nuclear matter at densities exceeding nuclear 
+saturation density. Additionally, the recent observation of GW170817 has opened up a 
 new observational window for investigating NS properties using gravitational waves 
-(GWs) emitted during binary neutron star (BNS) coalescences~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
-LIGOScientific:2018hze}. Some of NS properties, including tidal deformability and 
-spin-induced quadrupole moment, enter the GW waveform~\cite{Poisson:1997ha,
+(GWs) emitted during binary NS (BNS) coalescences~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
+LIGOScientific:2018hze}. Some of NS properties, including the tidal
+deformability and the
+spin-induced quadrupole moment, contribute to the GW emission
+~\cite{Poisson:1997ha,
 Vines:2011ud,Favata:2013rwa,Wade:2014vqa,Samajdar:2019ulq,Abac:2023ujg} and 
-therefore can be extracted from GW signals through parameter estimation~\cite{Harry:2018hke,
+therefore can be measured from GW observations~\cite{Harry:2018hke,
 Baiotti:2019sew,Chatziioannou:2020pqz,Agathos:2015uaa,Krishnendu:2017shb,Krishnendu:2019tjp,Lyu:2023zxv}. 
 
-In a BNS system, tidal deformation occurs to each star due to the gravitational 
-field of its companion~\cite{Hinderer:2007mb,Damour:2009vw}. The effect is 
+In a BNS system, each NS is deformed due to the gravitational field of its
+companion, leading to an induced mass quadrupole moment
+~\cite{Hinderer:2007mb,Damour:2009vw}. The effect is 
 characterized by the tidal deformability $\Lambda=2k_2/(3C^5)$, where $k_2$ is the 
 tidal Love number and $C$ is the NS compactness~\cite{Flanagan:2007ix}. Also, a 
-rotating NS experiences another deformation due to its spin, which induces a 
-quadrupole moment $\mathcal{Q}=-Q\chi^2 m^3$ (spin-induced quadrupole moment, 
-SIQM), where $Q$ is the dimensionless quadrupole moment,\footnote{We only talk 
-about the dimensionless quadrupole moment later in the text. For simplicity, we 
-call $Q$ ``the quadrupole moment'' without causing ambiguity.} $\chi$ is the NS 
-dimensionless spin and $m$ is the NS mass~\cite{Hartle:1968,Laarakkers:1997hb}. 
-Both $\Lambda$ and $Q$ can be calculated from $m$ with a fixed equation of state 
-(EOS)~\cite{Yagi:2013awa}, which determine the pressure ($p$) as a function of density ($\rho$). 
+rotating NS experiences another deformation due to its spin, which induces another
+quadrupole moment $\mathcal{Q}=-Q\chi^2 m^3$, called the spin-induced quadrupole
+moment, where $Q$ is the dimensionless quadrupole moment, $\chi$ and $m$ are 
+the dimensionless spin and mass of the NS respectively~\cite{Hartle:1968,Laarakkers:1997hb}. 
+Both $\Lambda$ and $Q$ are determined by $m$
+ with a given equation of state 
+(EOS)~\cite{Yagi:2013awa}, which describes the relation between pressure and
+density of the NS.
 
-Current observations have not yet confidently determined the actual EOS, but Yagi 
+On the one hand, the EOS of NSs have not yet been determined by current
+observations. On the
+other hand, Yagi 
 and Yunes~\cite{Yagi:2013bca,Yagi:2013awa} proposed a universal relation between 
-$\Lambda$ (or tidal Love number) and $Q$. This Love-Q relation is EOS-insensitive 
-with variation of about $1\%$ or less for different EOSs yet they can be dependent 
-on the underlying gravity theory. Hence, measuring Love-Q relation allows for 
-tests of gravity theories avoiding the interference from the uncertainty of 
-EOS~\cite{Yagi:2013bca,Silva:2020acr,Shao:2022koz}. Previous works also adopted 
-Love-Q relation to infer $Q$ from $\Lambda$ and to better estimate the spin 
-parameters of BNSs~\cite{Yagi:2013bca,LIGOScientific:2018cki,
-LIGOScientific:2018hze,LIGOScientific:2020aai} with current GW detectors. 
+$\Lambda$ (or tidal Love number) and $Q$, which is EOS-insensitive 
+with variation of about $1\%$ or less for different EOSs in general relativity (GR).
+However, this relation is dependent on the underlying gravity theory and thus
+provides a powerful approach to testing gravity while avoiding the uncertainties
+from the unknown EOS~\cite{Yagi:2013bca,Silva:2020acr,Shao:2022koz}. If the Love-Q relation in GR is adopted as a prior in the waveform
+model, the number of independent parameters can be reduced, which helps to
+better estimate the spin parameters of BNSs~\cite{Yagi:2013bca,LIGOScientific:2018cki,
+LIGOScientific:2018hze,LIGOScientific:2020aai}. 
 
 Future next-generation ground based GW detectors, including the Cosmic Explorer 
 (CE)~\cite{Reitze:2019iox,Reitze:2019dyk} and the Einstein Telescope (ET)~\cite{Punturo:2010zz,Hild:2010id,Sathyaprakash:2012jk}, 
-will detect much more GW signals up to about $10^5$--$10^6$ events per year
+are expected to
+ detect much more GW signals, up to about $10^5-10^6$ events per year
 ~\cite{LIGOScientific:2017zlf,Sathyaprakash:2019yqt,Kalogera:2021bya,Samajdar:2021egv}, 
 thanks to their 
-increased sensitivity and lower cutoff frequencies. These high-precision GW 
-observations allow us to directly measure $\Lambda$ and $Q$ from BNS events and 
-further infer the Love-Q relation. Samajdar and Dietrich~\cite{Samajdar:2020xrd} 
+increased sensitivity and lower cutoff frequencies. These high-precision GW observations allow us to treat $\Lambda$ and $Q$ as independent parameters in the waveform model, measuring them directly from GWs. This enables further constraints on the Love-Q relation from an observational perspective.
+Samajdar and Dietrich~\cite{Samajdar:2020xrd} 
 have first performed an analysis discussing the prospect of constraining Love-Q 
-relation with GW observations, where they adopt a weighted linear regression. 
-This treatment might miss the degeneracies and non-Gaussianality in the posterior of $\Lambda$ and $Q$. 
+relation with GW observations, where a weighted linear regression is adopted.
+This treatment might miss possible degeneracy and non-Gaussianality in the posterior of $\Lambda$ and $Q$. 
 
-In this work, we adopt a hierarchical Bayesian framework combining multiple GW 
-events to infer Love-Q relation with next-generation GW detector network. 
-This framework has been applied in population property studies and EOS constraints
-~\cite{Mandel:2009nx,Mandel:2009pc,Adams:2012qw,Lackey:2014fwa,Mandel:2018mve,Thrane_2019,KAGRA:2021duu,Wang:2024xon}. 
+In this work, we are the first to adopt the hierarchical Bayesian framework in inferring the Love-Q relation with next-generation GW observations.
+This framework has been successfully applied in 
+population studies of compact binary coalescences, or probing the EOS of NSs~\cite{Mandel:2009nx,Mandel:2009pc,Adams:2012qw,Lackey:2014fwa,Mandel:2018mve,Thrane_2019,KAGRA:2021duu,Wang:2024xon}. 
 Regarding the Love-Q relation parameters as hyperparameters, the hierarchical 
 Bayesian framework separates the inferences of these hyperparameters and the 
-single-event parameters into two levels. The framework is also able to deal with 
-highly degenerate and non-Gaussian posteriors of single-event inferences, comprehensively utilizing the information contained therein. 
-
-In our simulation, we generate 1000 GW sources according to some population models 
-introduced by Refs.~\cite{Fishbach:2018edt,Farrow:2019xnc,Samajdar:2020xrd} and 
-select the loudest 20 of them for the analysis. We find that the major information 
-for Love-Q relation constraint comes from the loudest 10 GW events, consistent 
-with Lackey and Wade~\cite{Lackey:2014fwa}. We also find that a linear relation 
-between $\ln\Lambda$ and $\ln Q$ has enough accuracy for an inference of Love-Q 
-relation using 20 GW events, consistent with Samajdar and Dietrich~\cite{Samajdar:2020xrd}. 
-And we probe how the inferred Love-Q relation serves as a test of gravity. 
-Taking the dynamical Chern-Simons gravity as an example, our results 
-suggest that the characteristic length $\xi_{CS}^{1/4}$ can be limited to about 
-$\mathcal{O}(10^1)$~km or less with future GW observations. 
+single-event parameters into two layers to avoid a direct high-dimensional inference
+for all unknown parameters, which significantly reduce the computational cost
+in combining information from multiple events.
+ Also, the construction of the quasi-likelihood
+function in this framework incorporates the full shape of the
+posterior in single-event inference beyond Gaussianality, thus
+utilize the information contained therein in a more comprehensive way.
+We simulate 1000 GW events based on population models of
+NSs~\cite{Fishbach:2018edt,Farrow:2019xnc,Samajdar:2020xrd} and select the 20
+loudest events for analysis. We find that the primary information for
+constraining the Love-Q relation comes from the 10 loudest GW events,
+qualitatively consistent
+with phenomena found in
+previous studies~\cite{Lackey:2014fwa}. In the pioneering work of Samajdar and
+Dietrich~\cite{Samajdar:2020xrd}, a linear relation between $\ln\Lambda$ and $\ln Q$
+is adopted. By further considering four polynomial models
+from linear to quartic terms in fitting the relation, we quantitatively show
+ that
+the linear relation is accurate enough when constraining the Love-Q relation
+with GWs. Additionally, we apply the inferred Love-Q relation in gravity tests.
+Taking the dynamical Chern-Simons gravity as an example, we find that the
+characteristic length $\xi_{\rm CS}^{1/4}$ can be limited to $\lesssim 10\,{\rm km}$
+with future GW observations. 
 
 This paper is organized as follows. In section~\ref{sec:framework} we construct 
 the hierarchical Bayesian framework and derive the posterior of the hyperparameters. 
@@ -197,24 +210,28 @@ gravity as a test in section~\ref{sec:dCS}. Finally, we conclude this work in se
 \subsection{Parameterizations of Love-Q relation} 
 \label{subsec:framework_parameterization}
 %=============================
-Yagi and Yunes fit the Love-Q relation in a quadratic polynomial model with five 
-parameters as follows~\cite{Yagi:2013bca,Yagi:2013awa,Yagi_2017}
+Yagi and Yunes fit the Love-Q relation with a quadratic polynomial model as~\cite{Yagi:2013bca,Yagi:2013awa,Yagi_2017}
 \begin{equation}
 \label{5-d_Love_Q_eq}
     \ln Q_{5}=a_5 + b_5 \ln \Lambda + c_5 \ln^2\Lambda + d_5 \ln^3\Lambda + e_5 \ln^4 \Lambda\,,
 \end{equation}
-For the Yagi-Yunes relation, we have $a_5=0.1940$, $b_5=0.09163$, $c_5=0.04812$, 
-$d_5=-4.283\times10^{-3}$, and $e_5=1.245\times10^{-4}$~\cite{Yagi_2017}. Yagi and 
-Yunes found that such relation applies to most of the EOSs they have studied with 
-relative fractional differences less than $1\%$ in general relativity (GR). In Ref.
-~\cite{Samajdar:2020xrd}, higher order terms $\propto \ln^k \Lambda$ with $k>1$ 
-are removed and Love-Q relation is fitted by a linear model with two parameters
+where the dimensionless fitting coefficients are 
+$a_5=0.1940$, $b_5=0.09163$, $c_5=0.04812$, 
+$d_5=-4.283\times 10^{-3}$ and $e_5=1.245\times 10^{-4}$~\cite{Yagi_2017}, and 
+the lower subscript $5$ indicates five model parameters.
+They found that such relation applies to most of the EOSs with 
+relative differences less than $1\%$ in GR. When constraining the Love-Q
+relation with GWs, \citet{Samajdar:2020xrd} adopt a linear model to describe the
+relation,
 \begin{equation}
 \label{2-d_Love_Q_eq}
-    \ln Q_{2} = a_2 + b_2 \ln \Lambda\,.
+    \ln Q_{2} = a_2 + b_2 \ln \Lambda\,,
 \end{equation}
+where only two parameters are involved. \ZW{Do we need to list the fitting
+results in Samajdar? It seems the values are not consistent with the values in
+table \ref{prior_table}.}
 In figure~\ref{relative_difference}, we plot the Yagi-Yunes relation as well as 
-its linear fit. We also plot the Love-Q relation calculated assuming the APR4 
+its linear fit. \ZW{Again, we need to point that how we conduct the linear fit.}We also plot the Love-Q relation calculated assuming the APR4 
 EOS~\cite{PhysRevC.58.1804} as a reference. APR4 is a soft EOS consistent with the 
 LIGO-Virgo tidal measurements~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
 LIGOScientific:2018hze}. In this case, the relative differences in $\ln Q$ between 
