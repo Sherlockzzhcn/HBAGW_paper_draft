@@ -14,7 +14,7 @@
   \renewcommand{\tablename}{Table}
 }
 \usepackage[utf8]{inputenc}
-\usepackage{natbib}
+% \usepackage{natbib}
 \usepackage[colorlinks=true, citecolor=blue, urlcolor=blue, linkcolor=blue]{hyperref} 
 \usepackage{graphicx}
 \usepackage{subfigure}% Include figure files
@@ -52,7 +52,7 @@
 \author[c,e,1]{and Lijing Shao}
 
 
-% The "\note" macro will give a warning: "Ignoring empty anchor..."
+% The "\note" macro will give a warning: "Ignoring empty anchor\cdots"
 % you can safely ignore it.
 
 \affiliation[a]{School of Yuanpei, Peking University,
@@ -221,7 +221,9 @@ $d_5=-4.283\times 10^{-3}$ and $e_5=1.245\times 10^{-4}$~\cite{Yagi_2017}, and
 the lower subscript $5$ indicates five model parameters.
 They found that such relation applies to most of the EOSs with 
 relative differences less than $1\%$ in GR. When constraining the Love-Q
-relation with GWs, \citet{Samajdar:2020xrd} adopt a linear model to describe the
+relation with GWs, \citet{Samajdar:2020xrd} \ZW{
+I recommend to use `` \textbackslash citet'', not ``Ref.'' or ``Samajdar +
+\textbackslash cite'' }adopt a linear model to describe the
 relation,
 \begin{equation}
 \label{2-d_Love_Q_eq}
@@ -231,20 +233,13 @@ where only two parameters are involved. \ZW{Do we need to list the fitting
 results in Samajdar? It seems the values are not consistent with the values in
 table \ref{prior_table}.}
 In figure~\ref{relative_difference}, we plot the Yagi-Yunes relation as well as 
-its linear fit. \ZW{Again, we need to point that how we conduct the linear fit.}We also plot the Love-Q relation calculated assuming the APR4 
-EOS~\cite{PhysRevC.58.1804} as a reference. APR4 is a soft EOS consistent with the 
-LIGO-Virgo tidal measurements~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
+its linear fit. \ZW{Again, we need to point that how we conduct the linear fit.}
+As the example of a typical EOS, we plot the Love-Q relation calculated assuming the APR4 
+EOS~\cite{PhysRevC.58.1804}, a soft EOS consistent with the 
+observations of GW170817~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
 LIGOScientific:2018hze}. In this case, the relative differences in $\ln Q$ between 
-these two parameterization manners and the APR4 result are within $\mathcal{O}(1\%)$. 
+these two models and the APR4 EOS are smaller than $1\%$. 
 
-The fitting coefficients in Eq.~\eqref{5-d_Love_Q_eq} and Eq.~\eqref{2-d_Love_Q_eq} 
-do not directly enter the GW waveform but determine the relation between $\Lambda$ and $Q$, 
-thus leading to an impact on the GW signals. We denote these coefficients $\{a_2, b_2\}$ or 
-$\{a_5, b_5, c_5, d_5, e_5\}$ as $\bm{H}$, and they provide a delta-function-type prior for GW parameters $\Lambda$ and $Q$ as follows
-\begin{equation}
-\label{delta function prior}
-\pi(Q|\Lambda,\bm{H}) = \delta(Q-f(\Lambda;\bm{H}))\,.
-\end{equation}
 
 \begin{figure}[tbp]
 \centering
@@ -261,25 +256,51 @@ the relative differences.}
 \label{subsec:framework_principles}
 %=============================
 
-Hierarchical Bayesian inference is a framework that allows us to combine multiple 
-observations to infer the hyperparameters in a systematic way. In this framework, 
-we want to find the posterior distribution of the hyperparameters $p(\bm{H}|D)$. 
-The data $D=\{d_1,...,d_n\}$ contains data streams $d_i$ of $n$ GW events from the 
-detector network. hyperparameters and single-event parameters are unknown. We 
-apply Bayes' theorem first to obtain the posterior of the hyperparameters $\bm{H}$ 
-and the waveform parameters $\{\bm{\theta}_1,...,\bm{\theta}_n\}$
+The coefficients in Eq.~\eqref{5-d_Love_Q_eq} and Eq.~\eqref{2-d_Love_Q_eq} 
+do not contribute directly to the GW waveform. Instead, they 
+determine a relation between the waveform parameters
+$\Lambda$ and $Q$, denoted as $Q=f(\Lambda;\bm{H})$, where $\bm{H}$ represents
+the coefficients, $\bm{H} = \{a_2, b_2\}$ or $\bm{H} = \{a_5, b_5, c_5, d_5,
+e_5\}$.
+This leads to a delta-function-type prior between GW parameters $\Lambda$ and $Q$
+\begin{equation}
+\label{delta function prior}
+\pi(Q|\Lambda,\bm{H}) = \delta\big(Q-f(\Lambda;\bm{H})\big)\,.
+\end{equation}
+Intuitively, one can measure $\Lambda$ and $Q$ from BNS GW events, and then fit
+the relation with the measurements. This procedure can be implemented within the
+hierarchical Bayesian framework, which is a powerful formalism in studying population
+properties of GW events beyond individual observations~\cite{Thrane_2019}. The
+population properties, 
+are characterized by a set of hyperparameters, such as the power index of the
+mass distribution. These hyperparameters do not enter the waveform directly,
+while can only be inferred from a collection of measurements of single-event
+parameters. Similarly, the EOS parameters determine the relation between the
+$\Lambda-m$ relation and the $Q-m$ relation, and can be regarded as
+hyperparameters and analyzed in the hierarchical Bayesian
+framework~\cite{Lackey:2014fwa}.\ZW{Plz add more references here.} In this work,
+we adopt this framework to the inference of the Love-Q relation.
+
+
+In this subsection, we briefly introduce the hierarchical Bayesian framework and
+describe the customization in inferring the Love-Q relation.
+The hierarchical Bayesian framework aims to
+find the posterior distribution of the hyperparameters $p(\bm{H}|D)$, give the
+catalog-level data $D=\{d_1,\cdots,d_n\}$ consisting of $n$ individual GW events.
+Since both the hyperparameters $\bm{H}$ and the single-event parameters
+$\{\bm{\theta}_1,\cdots,\bm{\theta}_n\}$ are unknown, we write the Bayes'
+theorem as 
 \begin{equation}
 \label{bayes2}
-p(\bm{H},\bm{\theta}_1,...,\bm{\theta}_n|D)=\pi(\bm{H},\bm{\theta}_1,...,\bm{\theta}_n)\frac{p(D|\bm{H},\bm{\theta}_1,...,\bm{\theta}_n)}{p(D)}\,,
+p(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n|D)=\frac{p(D|\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)\pi(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)}{p(D)}\,,
 \end{equation}
-where $\pi(\bm{H},\bm{\theta}_1,...,\bm{\theta}_n)$ is the prior probability 
-density for the hyperparameters and waveform parameters, $p(D|\bm{H},\bm{\theta}_1,...,\bm{\theta}_n)$ 
-is the likelihood function, and $p(D)$ is the evidence which we do not need to 
-calculate. To acquire the marginalized posterior for only hyperparameters, we 
-marginalize over the entire parameter space
+where $\pi(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)$ is the prior, $p(D|\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)$ 
+is the likelihood function, and $p(D)$ denotes the evidence. Then, $p(\bm{H}|D)$
+can be obtained by 
+marginializing over the single-event parameters
 \begin{equation}
 \label{bayes1}
-p(\bm{H}|D) = \int p(\bm{H},\bm{\theta}_1,...,\bm{\theta}_n|D) \text{d}\bm{\theta}_1...\text{d}\bm{\theta}_n\,,
+p(\bm{H}|D) = \int p(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n|D) \text{d}\bm{\theta}_1\cdots\text{d}\bm{\theta}_n\,,
 \end{equation}
 
 We first consider the priors. Assuming that the $n$ events are independent, the 
@@ -287,7 +308,7 @@ prior can be decomposed into parts of hyperparameters and waveform parameters
 using the product rule of probability $p(A,B)=p(A)p(B|A)$
 \begin{equation}
 \label{bayes3}
-\pi(\bm{H},\bm{\theta}_1,...,\bm{\theta}_n) = \pi(\bm{H}) \prod_{i=1}^n \pi(\bm{\theta}_i|\bm{H})\,.
+\pi(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n) = \pi(\bm{H}) \prod_{i=1}^n \pi(\bm{\theta}_i|\bm{H})\,.
 \end{equation}
 
 Since Love-Q relation is yet to be determined, we treat tidal deformabilities $\bm
@@ -306,7 +327,7 @@ Analogously to the prior, we decompose the likelihood into a product of
 single-event likelihoods for $n$ independent BNS observations
 \begin{subequations}
 \begin{align}
-p(D|\bm{H},\bm{\theta}_1,...,\bm{\theta}_n)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{H},\bm{\theta}_i)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{\theta}_i)\,,
+p(D|\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{H},\bm{\theta}_i)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{\theta}_i)\,,
 \end{align}   
 \end{subequations}
 note that we have used the fact that the hyperparameters do not enter the waveform 
@@ -316,7 +337,7 @@ Based on the derivation above, now the marginalized posterior distribution (Eq.~
 \begin{equation}
 \label{hierarchical bayes}
 \begin{aligned}
-p(\bm{H}|D)&=\frac{1}{p(D)}\pi(\bm{H})\int \text{d}\bm{\theta}_1...\text{d}\bm{\theta}_n \prod_{i=1}^n \big[\pi(\bm{\Lambda}_i|\bm{H})\pi(\bm{Q}_i|\bm{\Lambda}_i,\bm{H})\pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i)\big] \\
+p(\bm{H}|D)&=\frac{1}{p(D)}\pi(\bm{H})\int \text{d}\bm{\theta}_1\cdots\text{d}\bm{\theta}_n \prod_{i=1}^n \big[\pi(\bm{\Lambda}_i|\bm{H})\pi(\bm{Q}_i|\bm{\Lambda}_i,\bm{H})\pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i)\big] \\
 &=\frac{1}{p(D)} \pi(\bm{H}) \prod_{i=1}^n
 \int \text{d}\bm{\Lambda}_i\text{d}\bm{Q}_i\pi(\bm{\Lambda}_i|\bm{H})\delta\big(\bm{Q}_i-\bm{f}(\bm{\Lambda}_i;\bm{H})\big) \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i)\\
 &=\frac{1}{p(D)} \pi(\bm{H}) \prod_{i=1}^n
@@ -871,7 +892,7 @@ promising prospect to infer the Love-Q relation and provide tests of gravitation
 
 \clearpage
 
-\bibliographystyle{JHEP}
+\bibliographystyle{apsrev4-1}
 % \bibliographystyle{unsrt}
 \bibliography{HBAGW_jcap}
 \end{document}
