@@ -303,37 +303,38 @@ marginializing over the single-event parameters
 p(\bm{H}|D) = \int p(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n|D) \text{d}\bm{\theta}_1\cdots\text{d}\bm{\theta}_n\,,
 \end{equation}
 
-We first consider the priors. Assuming that the $n$ events are independent, the 
-prior can be decomposed into parts of hyperparameters and waveform parameters 
-using the product rule of probability $p(A,B)=p(A)p(B|A)$
+Assuming that the $n$ events are independent, the 
+prior can be decomposed into parts of hyperparameters and single-event parameters,
 \begin{equation}
 \label{bayes3}
 \pi(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n) = \pi(\bm{H}) \prod_{i=1}^n \pi(\bm{\theta}_i|\bm{H})\,.
 \end{equation}
-
-Since Love-Q relation is yet to be determined, we treat tidal deformabilities $\bm
+Since we are inferring the Love-Q relation, the tidal deformabilities $\bm
 {\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$ and quadrupole moments $\bm{Q}_i=\{Q_
-{1i},Q_{2i}\}$ as independent variables. Note that Love-Q relation is insensitive 
-to the EOS and we select no particular EOS in the inference part, we assume that 
-the prior distributions for nuisance parameters, including the two mass 
-parameters, are independent of $\bm{\Lambda}_i, \bm{Q}_i$ and $\bm{H}$. 
-In this way, the conditional prior for the waveform parameters in Eq.~\eqref{bayes3} can be further decomposed with the product rule
+{1i},Q_{2i}\}$ \ZW{I still recommend to use $Q^{(i)}_1$ and $Q^{(i)}_2$ for a
+more clearer notation. But maybe current description does not cause confusion.
+What's others' opinion?
+} of the two NSs of the $i\text{-th}$ event are treated as independent
+parameters in $\bm{\theta}_i$. Note that Love-Q relation is insensitive 
+to the EOS, the prior of mass parameters $m_1$ and $m_2$ are chosen to be
+independent of $\bm{\Lambda}_i, \bm{Q}_i$ and $\bm{H}$. Other parameters in
+$\bm{\theta}_i$ are also assumed to be independent chosen. 
+In this way, the conditional prior of $\bm{\theta}_i$
+ can be further decomposed as
 \begin{equation}
 \label{prior}
-\pi(\bm{\theta}_i|\bm{H})=\pi(\bm{\Lambda}_i|\bm{H})\pi(\bm{Q}_i|\bm{\Lambda}_i,\bm{H})\times\pi(\bm{\xi}_i)\,.
+\pi(\bm{\theta}_i|\bm{H})=\pi(\bm{\Lambda}_i|\bm{H})\pi(\bm{Q}_i|\bm{\Lambda}_i,\bm{H})\times\pi(\bm{\xi}_i)\,,
 \end{equation}
+where $\bm{\xi}_i$ denotes the other parameters in $\bm{\theta}_i$ except for
+$\bm{\Lambda}_i$ and $\bm{Q}_i$, called nuisance parameters hereafter.
+Analogously to the prior, the catalog likelihood can be factorized
+ into the product of single-event likelihoods
+\begin{equation}
+    p(D|\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{H},\bm{\theta}_i)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{\theta}_i)\,,\label{eq:catalog_likelihood}
+\end{equation}
+where the second equality comes from the fact that the hyperparameters do not enter the waveform.
 
-Analogously to the prior, we decompose the likelihood into a product of 
-single-event likelihoods for $n$ independent BNS observations
-\begin{subequations}
-\begin{align}
-p(D|\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{H},\bm{\theta}_i)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{\theta}_i)\,,
-\end{align}   
-\end{subequations}
-note that we have used the fact that the hyperparameters do not enter the waveform 
-thus the likelihood only depends on $\bm{\theta}_i$, i.e., $p(\bm{d}_i|\bm{H},\bm{\theta}_i)=p(\bm{d}_i|\bm{\theta}_i)$.
-
-Based on the derivation above, now the marginalized posterior distribution (Eq.~\eqref{bayes1}) becomes
+Given the specific form of the prior and the likelihood, the marginalized posterior distribution (Eq.~\eqref{bayes1}) becomes
 \begin{equation}
 \label{hierarchical bayes}
 \begin{aligned}
@@ -341,46 +342,50 @@ p(\bm{H}|D)&=\frac{1}{p(D)}\pi(\bm{H})\int \text{d}\bm{\theta}_1\cdots\text{d}\b
 &=\frac{1}{p(D)} \pi(\bm{H}) \prod_{i=1}^n
 \int \text{d}\bm{\Lambda}_i\text{d}\bm{Q}_i\pi(\bm{\Lambda}_i|\bm{H})\delta\big(\bm{Q}_i-\bm{f}(\bm{\Lambda}_i;\bm{H})\big) \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i)\\
 &=\frac{1}{p(D)} \pi(\bm{H}) \prod_{i=1}^n
-\int \text{d}\bm{\Lambda}_i\pi(\bm{\Lambda}_i|\bm{H})L_i\big(\bm{\Lambda}_i,\bm{f}(\bm{\Lambda}_i;\bm{H})\big)\,,
+\int \text{d}\bm{\Lambda}_i\pi(\bm{\Lambda}_i|\bm{H})L_i\big(\bm{\Lambda}_i,\bm{f}(\bm{\Lambda}_i;\bm{H})\big)\,.
 \end{aligned}
 \end{equation}
-where the quasi-likelihood function for $\bm{\Lambda}_i,\bm{Q}_i$ is
+In the second line, the bold font $\bm{f}(\bm{\Lambda}_i;\bm{H})$ is used to denote the vector form
+of the Love-Q relation applied to the two NSs in a BNS system. In the third line,
+$L_i(\bm{\Lambda}_i,\bm{Q}_i)$, called the quasi-likelihood,
+ is defined as the integral over the nuisance
+parameters
 \begin{equation}
 \label{quasi-likelihood}
     L_i(\bm{\Lambda}_i,\bm{Q}_i)=\int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i)\,.
 \end{equation}
 
-%What we need to compute now are the quasi-likelihood functions (eq.~(\ref{quasi-likelihood})) for each GW event and then 
-%substitute them into eqs.~(\ref{hierarchical bayes}). Since the hyperparameters $\bm{H}$ do not appear in eq.~(\ref{quasi-likelihood}) 
-%and $L_i(\bm{\Lambda}_i,\bm{Q}_i)$ only depend on the data and parameters of the $i\text{-th}$ event, we can perform a single-event Bayesian inference for each event 
-%respectively to compute its quasi-likelihood function~\cite{Lackey:2014fwa,Thrane:2018qnx,Golomb:2021tll, Wang:2024xon}. 
-
-In the hierarchical Bayesian framework, the quasi-likelihood of each event can be 
-computed independently on $\bm{H}$. For the $i\text{-th}$ event, we write down Bayes' theorem
+The quasi-likelihood of each event can be 
+computed independently of $\bm{H}$. For the $i\text{-th}$ event, we write down
+the Bayes' theorem
 \begin{equation}
 \label{single bayes}
     p(\bm{\theta}_i|\bm{d}_i)\propto \pi(\bm{\theta}_i|\varnothing)p(\bm{d}_i|\bm{\theta}_i)\,,
 \end{equation}
-where $\pi(\bm{\theta}_i|\varnothing)$ is regarded as an auxilliary prior 
-independent on $\bm{H}$. $p(\bm{d}_i|\bm{\theta}_i)$ is the single-event likelihood~\cite{Finn:1992wt} given by
+where $\pi(\bm{\theta}_i|\varnothing)$ denotes an auxilliary prior 
+independent of $\bm{H}$. $p(\bm{d}_i|\bm{\theta}_i)$ is the single-event
+likelihood (same as in Eq.~\eqref{eq:catalog_likelihood}), whose explicit form is
+ given by assuming stationary, Gaussian noise~\cite{Finn:1992wt}
 \begin{equation}
-p(\bm{d}_i|\bm{\theta}_i)\propto \mathrm{e}^{-\frac{1}{2}\langle d_i-h(\bm{\theta}_i),d_i-h(\bm{\theta}_i)\rangle}\,.
+p(\bm{d}_i|\bm{\theta}_i)\propto \mathrm{e}^{-\frac{1}{2}\langle d_i-h(\bm{\theta}_i),d_i-h(\bm{\theta}_i)\rangle}\,,
 \end{equation}
-$h(\bm{\theta}_i)$ is given by the waveform model we select. $\langle g, h\rangle$ 
-is the inner product of $g(t)$ and $h(t)$ weighted by the power spectrum density (PSD) of $S_n(f)$ of the noise.
+with the data $d_i$ and the waveform model $h(\bm{\theta}_i)$. $\langle u, v\rangle$ 
+is the inner product of $u(t)$ and $v(t)$ weighted by the power spectrum density
+(PSD) of $S_n(f)$ of the noise, defined as
 \begin{equation}
-    \langle g, h\rangle:= 2\int_{-\infty}^{\infty}\frac{\tilde{g}(f)\tilde{h}^{*}(f)}{S_n(|f|)} \text{d}f\,,
+    \langle u, v\rangle:= 2\int_{-\infty}^{\infty}\frac{\tilde{u}(f)\tilde{v}^{*}(f)}{S_n(|f|)} \text{d}f\,,
 \end{equation}
-where $\tilde{g}(f)$ and $\tilde{h}(f)$ are the Fourier transforms of $g(t)$ and $h(t)$.
+where $\tilde{u}(f)$ and $\tilde{v}(f)$ are the Fourier transforms of $u(t)$ and $v(t)$.
 
-Rearranging terms of Eq.~\eqref{single bayes} and substituting it into Eq.~\eqref{quasi-likelihood}, we obtain
+Rearranging terms of Eq.~\eqref{single bayes} and substituting it into
+Eq.~\eqref{quasi-likelihood}, one finds that
 \begin{equation}
 \label{quasi-posterior}
 \begin{aligned}
     L_i(\bm{\Lambda}_i,\bm{Q}_i) = \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i) \propto \int \text{d}\bm{\xi}_i \frac{\pi(\bm{\xi}_i)}{\pi(\bm{\theta}_i|\varnothing)}p(\bm{\theta}_i|\bm{d}_i)\,.
 \end{aligned}  
 \end{equation}
-If we choose single-event prior $\pi(\bm{\theta}_i|\varnothing)\propto\pi(\bm{\xi}_i)$, 
+If we further choose $\pi(\bm{\theta}_i|\varnothing)\propto\pi(\bm{\xi}_i)$, 
 i.e., a flat prior for $\bm{\Lambda}_i$ and $\bm{Q}_i$, Eq.~\eqref{quasi-posterior} can be further simplified as 
 \begin{equation}
 \label{quasi-marginalized}
@@ -388,14 +393,16 @@ i.e., a flat prior for $\bm{\Lambda}_i$ and $\bm{Q}_i$, Eq.~\eqref{quasi-posteri
     L_i(\bm{\Lambda}_i,\bm{Q}_i) \propto \int \text{d}\bm{\xi}_i p(\bm{\theta}_i|\bm{d}_i)\propto p(\bm{\Lambda}_i,\bm{Q}_i|\bm{d}_i)\,.
 \end{aligned}  
 \end{equation}
-We find that under this choice of prior, the quasi-likelihood is proportional to 
-the marginalized posterior for the single-event inference. Now we can see that the 
+This means that the quasi-likelihood is proportional to the marginalized
+posterior of the auxiliary single-event inference with a flat prior on
+$\bm{\Lambda}_i$ and $\bm{Q}_i$. The
 hierarchical Bayesian framework, as its name implies, introduces two levels of 
-inference for the single-event parameters and the hyperparameters. The first level 
-consists of single-event Bayesian inferences, based on Eq.~\eqref{single bayes}. 
-The second is the hyperparameter inference, based on Eq.~\eqref{hierarchical 
-bayes}. As a bridge connecting these two levels of inference, Eq.~\eqref{quasi-marginalized} 
-allows us to construct the quasi-likelihoods with the marginalized posteriors obtained from single-event inferences.
+inferences. The first level 
+consists of single-event Bayesian inferences based on Eq.~\eqref{single bayes},
+where the quasi-likelihoods are constructed according to
+Eq.~\eqref{quasi-marginalized}. In the second level, the quasi-likelihoods are
+combined to infer the hyperparameters based on Eq.~\eqref{hierarchical bayes}.
+
 
 %=============================
 \section{Simulation}
