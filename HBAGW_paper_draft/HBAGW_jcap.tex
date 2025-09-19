@@ -151,7 +151,7 @@ model, the number of independent parameters can be reduced, which helps to
 better estimate the spin parameters of BNSs~\cite{Yagi:2013bca,LIGOScientific:2018cki,
 LIGOScientific:2018hze,LIGOScientific:2020aai}. 
 
-Future next-generation ground based GW detectors, including the Cosmic Explorer 
+Future next-generation (XG) ground-based GW detectors, including the Cosmic Explorer 
 (CE)~\cite{Reitze:2019iox,Reitze:2019dyk} and the Einstein Telescope (ET)~\cite{Punturo:2010zz,Hild:2010id,Sathyaprakash:2012jk}, 
 are expected to
  detect much more GW signals, up to about $10^5-10^6$ events per year
@@ -163,7 +163,7 @@ have first performed an analysis discussing the prospect of constraining Love-Q
 relation with GW observations, where a weighted linear regression is adopted.
 This treatment might miss possible degeneracy and non-Gaussianality in the posterior of $\Lambda$ and $Q$. 
 
-In this work, we are the first to adopt the hierarchical Bayesian framework in inferring the Love-Q relation with next-generation GW observations.
+In this work, we are the first to adopt the hierarchical Bayesian framework in inferring the Love-Q relation with XG GW observations.
 This framework has been successfully applied in 
 population studies of compact binary coalescences, or probing the EOS of NSs~\cite{Mandel:2009nx,Mandel:2009pc,Adams:2012qw,Lackey:2014fwa,Mandel:2018mve,Thrane_2019,KAGRA:2021duu,Wang:2024xon}. 
 Regarding the Love-Q relation parameters as hyperparameters, the hierarchical 
@@ -360,9 +360,9 @@ computed independently of $\bm{H}$. For the $i\text{-th}$ event, we write down
 the Bayes' theorem
 \begin{equation}
 \label{single bayes}
-    p(\bm{\theta}_i|\bm{d}_i)\propto \pi(\bm{\theta}_i|\varnothing)p(\bm{d}_i|\bm{\theta}_i)\,,
+    p(\bm{\theta}_i|\bm{d}_i, \varnothing)\propto \pi(\bm{\theta}_i|\varnothing)p(\bm{d}_i|\bm{\theta}_i)\,,
 \end{equation}
-where $\pi(\bm{\theta}_i|\varnothing)$ denotes an auxilliary prior 
+where $\pi(\bm{\theta}_i|\varnothing)$ denotes an auxiliary prior 
 independent of $\bm{H}$. $p(\bm{d}_i|\bm{\theta}_i)$ is the single-event
 likelihood (same as in Eq.~\eqref{eq:catalog_likelihood}), whose explicit form is
  given by assuming stationary, Gaussian noise~\cite{Finn:1992wt}
@@ -382,7 +382,7 @@ Eq.~\eqref{quasi-likelihood}, one finds that
 \begin{equation}
 \label{quasi-posterior}
 \begin{aligned}
-    L_i(\bm{\Lambda}_i,\bm{Q}_i) = \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i) \propto \int \text{d}\bm{\xi}_i \frac{\pi(\bm{\xi}_i)}{\pi(\bm{\theta}_i|\varnothing)}p(\bm{\theta}_i|\bm{d}_i)\,.
+    L_i(\bm{\Lambda}_i,\bm{Q}_i) = \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i) \propto \int \text{d}\bm{\xi}_i \frac{\pi(\bm{\xi}_i)}{\pi(\bm{\theta}_i|\varnothing)}p(\bm{\theta}_i|\bm{d}_i,\varnothing)\,.
 \end{aligned}  
 \end{equation}
 If we further choose $\pi(\bm{\theta}_i|\varnothing)\propto\pi(\bm{\xi}_i)$, 
@@ -390,7 +390,7 @@ i.e., a flat prior for $\bm{\Lambda}_i$ and $\bm{Q}_i$, Eq.~\eqref{quasi-posteri
 \begin{equation}
 \label{quasi-marginalized}
 \begin{aligned}
-    L_i(\bm{\Lambda}_i,\bm{Q}_i) \propto \int \text{d}\bm{\xi}_i p(\bm{\theta}_i|\bm{d}_i)\propto p(\bm{\Lambda}_i,\bm{Q}_i|\bm{d}_i)\,.
+    L_i(\bm{\Lambda}_i,\bm{Q}_i) \propto \int \text{d}\bm{\xi}_i p(\bm{\theta}_i|\bm{d}_i,\varnothing)\propto p(\bm{\Lambda}_i,\bm{Q}_i|\bm{d}_i,\varnothing)\,.
 \end{aligned}  
 \end{equation}
 This means that the quasi-likelihood is proportional to the marginalized
@@ -414,21 +414,18 @@ combined to infer the hyperparameters based on Eq.~\eqref{hierarchical bayes}.
 \label{subsec:simulation_preliminaries}
 %=============================
 
-For our simulation, we adopt the {\sc imrphenomxas\_nrtidalv3} waveform model~\cite{Abac:2023ujg}, 
-which is an aligned spin waveform model and includes tidal amplitude corrections as well as spin-induced quadrupole moment terms up to 3.5PN. 
-The parameter set is composed of the binary masses $m_1$ and $m_2$, the 
-dimensionless tidal deformabilities $\Lambda_1$ and $\Lambda_2$ and spin-induced 
-quadrupole moments $Q_1$ and $Q_2$ of each component, the dimensionless spin 
-aligned with the direction of the orbital angular momentum $\chi_1$ and $\chi_2$, the 
+In our simulation, we adopt the {\sc IMRPhenomXAS\_NRTidalv3} waveform model~\cite{Abac:2023ujg}, 
+which includes tidal amplitude corrections as well as spin-induced quadrupole
+moment terms up to 3.5PN with aligned spins.
+The single-event parameters $\bm{\theta}$ include 
+ the binary masses $m_1$ and $m_2$, the 
+dimensionless tidal deformabilities $\Lambda_1$ and $\Lambda_2$, spin-induced 
+quadrupole moments $Q_1$ and $Q_2$, the dimensionless spin $\chi_1$ and $\chi_2$, the 
 luminosity distance $D_L$, the merge time $t_c$, the right ascension $\alpha$ and 
 declination $\delta$, the inclination angle $\iota$, the GW polarization angle 
-$\psi$ and the phase of coalescence $\phi_c$. We denote the entire parameter set as a vector $\bm{\theta}$, i.e.,
-\begin{equation}
-\label{parameter set}
-\bm{\theta} = \{m_1,m_2,\Lambda_1,\Lambda_2,Q_1,Q_2,\chi_1,\chi_2,D_L,t_c,\alpha,\delta,\iota,\psi,\phi_c\}\,.
-\end{equation}
+$\psi$ and the phase of coalescence $\phi_c$.
 
-We adopt the BNS mass population model proposed by Farrow~et~al.~\cite{Farrow:2019xnc}. 
+When generating the BNS events, we adopt the population model proposed by \citet{Farrow:2019xnc}. 
 According to their spin magnitude, the model divides BNS into a recycled star and a nonrecycled 
 (\emph{slow}) one, for which the masses are labeled $m_r$ and $m_s$, respectively. 
 The distribution of $m_r$ has two Gaussian components while $m_s$ follow a uniform distribution,
@@ -443,28 +440,22 @@ The distribution of $m_r$ has two Gaussian components while $m_s$ follow a unifo
 \end{subequations}
 where $\alpha=0.68$, $\mu_1=1.34\,\mathrm{M}_{\odot}$, $\sigma_1=0.02\,\mathrm{M}_
 {\odot}$, $\mu_2=1.47\,\mathrm{M}_{\odot}$, $\sigma_2=0.15\,\mathrm{M}_{\odot}$ 
-and $m_s^l=1.14\,\mathrm{M}_{\odot}$, $m_s^u=1.46\,\mathrm{M}_{\odot}$. When 
-generating simulation GW signals, for each event we just select the larger one of 
-$m_r$ and $m_s$ as the primary mass $m_1$ and the other as the secondary mass 
-$m_2$, since we always demand $m_1 \geq m_2$.
-
+and $m_s^l=1.14\,\mathrm{M}_{\odot}$, $m_s^u=1.46\,\mathrm{M}_{\odot}$.\ZW{In
+principle, we are recommended to use $m_{\rm r}$ and $m_{\rm s}$ (the regular
+font).
+} Then, the NS with a larger mass is labeled as the primary star with mass $m_1$ and the other as the secondary star with mass $m_2$.
 The tidal deformability and quadrupole moments of the binary are calculated from 
-the stellar mass assuming the APR4 EOS. Refs.~\cite{Yagi:2013awa,Atta:2024ckt} 
-demonstrates in detail how to derive tidal deformability $\Lambda_i$ and 
-quadrupole moment $Q_i$ given the mass $m_i$ and the EOS. For the dimensionless 
-spin component $\chi_r$ of recycled stars, we adopt a uniform distribution $\mathcal{U}(-0.5,0.5)$, 
-while in the case of slow stars, the spin $\chi_s$ is drawn from $\mathcal{U}(-0.1,0.1)$.
-
+the stellar mass assuming the APR4 EOS with methods described in Refs.~\cite{Yagi:2013awa,Atta:2024ckt}. For the spin of recycled stars $\chi_r$, we adopt a uniform distribution $\mathcal{U}(-0.5,0.5)$, 
+while for $\chi_s$ we draw from $\mathcal{U}(-0.1,0.1)$.
 Using the cosmological parameters provided by the Planck Collaboration~\cite{Planck:2018vyg}, 
 we simulate 1000 GW sources distributed uniformly in co-moving volume from 15Mpc to 150Mpc
-~\cite{Fishbach:2018edt,KAGRA:2021duu}, with isotropic sky locations and orientations. 
+~\cite{Fishbach:2018edt,KAGRA:2021duu},\ZW{Why this citation?}with isotropic sky locations and orientations. 
 This corresponds to the observed local merger rate $7.6$--$250\,\mathrm{Gpc}^{-3}\mathrm{yr}^{-1}$ from current GW 
-detections~\cite{LIGOScientific:2025pvj,LIGOScientific:2020aai}. Without loss of generality, all 
-these GW events are injected with an arbitrary coalescence time $t_c=0$.
+detections~\cite{LIGOScientific:2025pvj,LIGOScientific:2020aai}.\ZW{The logic?} Without loss of generality, all GW events are injected with $t_c=0$.
 
-We select a ground based network consisting of two CE detectors and one ET 
-detector. We use the noise curves of the CE and ET detectors with the CE-2~\cite{Reitze:2019iox,Reitze:2019dyk} 
-and ET-D~\cite{Punturo:2010zz,Hild:2010id,Sathyaprakash:2012jk} configurations respectively. 
+We select a XG detector network consisting of two CE detectors and one ET 
+detector, whose sensitivities are taken as CE-2~\cite{Reitze:2019iox,Reitze:2019dyk} 
+and ET-D~\cite{Punturo:2010zz,Hild:2010id,Sathyaprakash:2012jk}, respectively. 
 The two CE detectors are positioned at the current sites of the two LIGO detectors, 
 while the ET detector is set at the current location of the Virgo detector with a triangular shape. 
 
@@ -473,65 +464,50 @@ while the ET detector is set at the current location of the Virgo detector with 
 \label{subsec:simulation_implementation}
 %=============================
 
-The evaluation of the marginalized posterior for hyperparameters can be divided 
-into two steps, according to the discussion in section~\ref{subsec:framework_principles}. 
-We firstly perform Bayesian inference for each event. The quasi-likelihood (Eq.~\eqref{quasi-posterior}) 
-can be obtain through a density estimation method introduced by Ref.~\cite{Talbot:2020oeu}; 
-then we substitute the quasi-likelihoods into Eq.~\eqref{hierarchical bayes} and 
-finish the integral as the likelihood of the hyperparameter inference. Secondly, 
-we conduct another sampling procedure to finally obtain the posterior samples of 
-hyperparameters with flat priors. 
-
-In the first step, when conducting single-event Bayesian inference, we choose 
-$\mathcal{M}$ and $\eta$ as mass parameters. In this way, the parameter set of 
-single-event Bayesian inference becomes $\bm{\theta} = \{\mathcal{M},\eta,
+According to the discussion in section~\ref{subsec:framework_principles}, the inference of the Love-Q relation
+can be divided into two steps.
+In the auxiliary single-event inference, the variable parameters are $\bm{\theta} = \{\mathcal{M},\eta,
 \Lambda_1,\Lambda_2,Q_1,Q_2,\chi_1,\chi_2,D_L,t_c,\alpha,\delta,\iota,\psi,\phi_c\}
-$. The priors of $\mathcal{M},\eta,\chi_1,\chi_2,t_c,\phi_c$ are uniform, while 
-the prior of $D_L$ is uniform in the co-moving volume and source frame time. We 
+$. The priors of $\mathcal{M}$, $\eta$, $\chi_1$, $\chi_2$, $t_c$ and $\phi_c$ are uniform, and
+the prior of $D_L$ is uniform in the comoving volume and source frame time.
+\ZW{So why it is different from the simulation prior?
+} We 
 set isotropic priors for the angle variables $\alpha,\delta,\iota,\psi$. For tidal 
 and quadrupole moment parameters, we treat $\Lambda_s$ and $Q_s$ of the slow 
-binary component as nuisance parameters, considering that the spin-induced 
-quadrupole moment is poorly estimated with low spin~\cite{Yagi:2013awa}. We select 
-uniform priors for $\Lambda_1,\Lambda_2$ and $Q_1,Q_2$ and now Eq.~\eqref{quasi-posterior} becomes
-\begin{equation}
-    \label{quasi-marginalized1}
-    \begin{aligned}
-        L_i(\Lambda_{ri},Q_{ri}) \propto p(\Lambda_{ri},Q_{ri}|\bm{d}_i)\,,
-    \end{aligned}  
-\end{equation}
-where $\Lambda_{ri}$ and $Q_{ri}$ are the tidal deformability and quadrupole 
-moment of the recycled binary component of the $i$-th event, respectively. Eq.
-~\eqref{quasi-marginalized} reveals that the quasi-likelihood is proportional to 
-the marginalized posterior $p(\Lambda_{ri},Q_{ri}|\bm{d}_i)$, indicating that we 
-can directly construct the quasi-likelihood from posterior samples.
+binary component as nuisance parameters, since the spin-induced 
+quadrupole moment is poorly estimated for NSs with low spins~\cite{Yagi:2013awa}.
+According to the arguments around Eq.~\eqref{quasi-marginalized}, we choose
+uniform priors for $\Lambda_1$, $\Lambda_2$, $Q_1$ and $Q_2$ in the auxiliary inference.
+For calculating the posterior, we generate samples with the {\sc
+Bilby}~\cite{Ashton:2018jfp} implementation of the {\sc nessai}
+sampler~\cite{Skilling:2004pqw,Skilling:2006gxv,michael_j_williams_2025_14627250,PhysRevD.103.103006,Williams:2023ppp}.
+To calculate the integral in Eq.~\eqref{hierarchical bayes}, we need the
+fuctional form of the quasi-likelihood, which is proportional to the
+distribution function of the posterior
+$p(\bm{\Lambda}_i,\bm{Q}_i|\bm{d}_i,\varnothing)$. We follow
+\citet{Golomb:2021tll} and adopt the Gaussian mixture 
+model to estimate the density of the posterior samples.
+In the second step, the priors of the hyperparameters $\pi(\bm{H})$ are listed
+in table~\ref{prior_table}. For the conditional prior $\pi(\bm
+{\Lambda}_i|\bm{H})$, we choose the uniform distribution $\mathcal{U}(10,2000)$. 
 
-After sampling, we obtain the quasi-likelihood of each event from $\Lambda_r$ and 
-$Q_r$ samples. To complete the integral in Eq.~\eqref{hierarchical bayes}, we must 
-create a functional form for each quasi-likelihood using the posterior samples. 
-Following Golomb and Talbot~\cite{Golomb:2021tll}, we adopt the Gaussian mixture 
-model (GMM) method developed by Ref.~\cite{Talbot:2020oeu} as the density 
-estimation method to obtain the quasi-likelihood with Eq.~\eqref{quasi-likelihood}. 
-Substitute the results of density estimation into Eq.~\eqref{hierarchical bayes}, 
-and then the likelihood function of the hyperparameter estimation can be constructed.
-
-In the second step, we sample the integrand of Eq.~\eqref{hierarchical bayes} with 
-Bayesian inference. For hyperparameters $\pi(\bm{H})$, we use uniform priors with 
-the boundaries listed in table~\ref{prior_table} and for the prior $\pi(\bm
-{\Lambda}_i|\bm{H})$, we use the uniform distribution $\mathcal{U}(10,2000)$. For 
-Bayesian inference in both steps, posterior samples are generated with {\sc NESSAI}
-~\cite{Skilling:2004pqw,Skilling:2006gxv,michael_j_williams_2025_14627250,PhysRevD.103.103006,Williams:2023ppp} 
-of the {\sc BILBY}~\cite{Ashton:2018jfp} package. We simulate 1000 GW events as 
+We simulate 1000 GW events as 
 described in section~\ref{subsec:simulation_preliminaries}. 
-
-Ref.~\cite{Lackey:2014fwa} found that the overwhelming majority of the information 
-for population properties comes from the events with the highest SNRs and Ref.
-~\cite{Yagi:2013awa} concluded that the spin-induced quadrupole moment is poorly 
-estimated with a low spin. Considering these findings, we only pick some of the 
-simulated GW sources and leave the full-population study for future work. In 
-practice, we first draw 100 sources with the highest SNRs; then among these 100 
-sources we further select 20 sources whose recycled components rotate the fastest 
-(i.e., with the largest $|\chi_{ri}|$). 
-
+Though the hierarchical procedure avoids a direct high-dimensional inference for
+$\bm{H}$ and $\{\bm{\theta}_1,\cdots,\bm{\theta}_n\}$ simultaneously, the
+computational cost still increases with the number of events $n$.
+\citet{Lackey:2014fwa} found that when constraining the EOS of NSs, several events
+with the highest signal-to-noise ratios (SNRs)
+ contribute most of the information. Also,
+\citet{Yagi:2013awa} concluded that the spin-induced quadrupole moment can not
+be well measured for NSs with low spins. Considering these findings, we first
+draw 100 sources with the highest SNRs, then further select 20 sources with the
+largest $|\chi_{r}|$ among them. \ZW{So, for the 20 sources are all $\chi_{r}$
+is $\chi_{1}$? If $m_r<m_s$, then $\chi_{r}=\chi_{2}$, and $Q_2$ is regarded as
+nuisance parameter?} As we will show in section~\ref{sec:results}, the primary
+information for constraining the Love-Q relation comes from the 10 loudest GW
+events. We leave a more comprehensive study of the whole population for future
+work. 
 \begin{table}[htbp]
     \centering
     \sisetup{
@@ -798,22 +774,20 @@ The dCS gravity introduces parity violation and quadratic curvature terms into t
    S = \int \mathrm{d}^4 x \sqrt{-g}\left[ \kappa_g \mathcal{R} + \frac{\alpha}{4} \mathcal{\vartheta} \mathcal{R}_{\nu\mu\rho\sigma} {}^{*}\mathcal{R}^{\mu\nu\rho\sigma} - \frac{\beta}{2}\left(\nabla_{\mu}\mathcal{\vartheta}\nabla^{\mu}\mathcal{\vartheta}+2V(\mathcal{\vartheta})\right) + \mathcal{L}_{\mathrm{mat}}\right]\,,
 \end{equation}
 where $g$ is the determinant of the metric, $\kappa_g= 1/16\pi$, $\mathcal{R}$ is 
-the Ricci scalar, $\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density 
-and $\alpha$ and $\beta$ are the coupling constants in dCS gravity. The dual of the Riemann tensor is defined by 
-\begin{equation}
-    \label{dual riemann tensor}
-    {}^{*}\mathcal{R}^{\mu\nu\rho\sigma}\equiv\frac{1}{2}\varepsilon^{\rho\sigma\alpha\beta}\mathcal{R}^{\mu\nu}{}_{\alpha\beta}
-\end{equation}
-where $\varepsilon^{\rho\sigma\alpha\beta}$ is the Levi-Civita tensor. We omit the 
-potential for the pseudo-scalar field $\mathcal{\vartheta}$ in the action, 
+the Ricci scalar, $\mathcal{R}_{\nu\mu\rho\sigma}$ and
+$^{*}\mathcal{R}^{\mu\nu\rho\sigma}$ denote the Riemann tensor and its dual,
+\ZW{What is $V(\mathcal{\vartheta})$?},
+$\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density,
+$\alpha$ and $\beta$ are the coupling constants in dCS gravity. We omit the 
+potential for the pseudo-scalar field $\mathcal{\vartheta}$\ZW{V?} in the action, 
 following Ref.~\cite{Gupta:2017vsl}. $\mathcal{\vartheta}$ is taken to be 
-dimensionless, making the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
-(\kappa\beta)]^{1/4}$ have a unit of $(\text{length})^{1}$ and can be explained as 
+dimensionless, and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
+(\kappa\beta)]^{1/4}$ can be explained as 
 the characteristic length of dCS gravity~\cite{Yunes:2009hc,Yagi:2012ya}. 
 
 %\ZW{Maybe you need to re-introduce the parameters in the Love-Q relation and the relation between them and the coupling constant in dCS gravity.}
 The dCS gravity predicts Love-Q relations that are degenerate with the one in GR 
-only when the coupling constants infinitely approach zero~\cite{Yagi:2013bca,
+only when the coupling constants approach zero~\cite{Yagi:2013bca,
 Yagi:2013awa,Gupta:2017vsl}. The characteristic length has been constrained by 
 current Solar System observations to $\xi_{\mathrm{CS}}^{1/4}<\mathcal{O}(10^8)$~km~\cite{Ali-Haimoud:2011zme,Yagi:2012ya}. 
 For a Love-Q test, Ref.~\cite{Yagi:2013mbt} obtained the dCS correction to the NS 
@@ -849,24 +823,34 @@ $\zeta \lesssim \mathcal{O}(10^{-2})$ and $\bar{\xi} \lesssim \mathcal{O}(10^{3}
 \label{sec:conclusion}
 %=============================
 
-In this work we adopted a hierarchical Bayesian framework to estimate the Love-Q 
-relation of NSs. By separating the inferences of single-event parameters and 
-hyperparameters, this framework provides a systematic and robust statistical 
-method for hyperparameter estimation combining multiple GW events. We applied this 
-framework to simulated GW events for a next-generation ground based GW detector 
-network to examine the potential of constraining the Love-Q relation with GW 
-observations. The results demonstrated that with this network, one can obtain a 
-reliable measurement of the Love-Q relation through hierarchical Bayesian 
-inference. We have also verified that the major information for inference of the 
-hyperparameters is contained in the loudest 10 events, which is in agreement with the findings of Ref.~\cite{Lackey:2014fwa}.
+In this work, we investigate the prospects of inferring the Love-Q relation of NSs
+with future ground based GW observations.
+Extending the inference procedure in
+Ref.~\cite{Samajdar:2020xrd}, 
+We adopt the hierarchical Bayesian framework to effectively combine the
+information from multiple GW events, extending the linear fitting model in
+previous works~\cite{Samajdar:2020xrd}. The hierarchical Bayesian framework
+separate the inferences into two steps, the auxiliary single-event
+inference and the hyperparameter inference, which avoids a direct high-dimensional
+inference for all the parameters simultaneously while still takes into account
+degeneracy and non-Gaussianity in the single-event parameters. We also discuss
+the impact of the event number on the constraints, and find that the loudest 10 events
+dominate the information in constraining the Love-Q relation. Similar phenomena
+were also found in studies of constraining the EOSs with GW observations~\cite{Lackey:2014fwa,Wang:2024xon}.
 
-We then investigated the impact of different parameterizations for Love-Q relation 
-on the inference. We found that constraint of the Love-Q relation is insensitive 
-to the parameterization in the region where most data points gather. Also, as 
-shown by the posterior distributions, degeneracies between hyperparameters exist 
-in all cases studied. Furthermore, for all but the linear model, at least one 
-hyperparameter was poorly constrained, exhibiting wide and flat posterior. These 
-results indicate that a two-parameter (linear) model is sufficient for our data volume (20 GW events).
+We are the first to conduct a systematic study on different parameterizations
+when inferring the Love-Q relation with GWs. Considering the quartic polynomial
+model proposed by \citet{Yagi:2013awa} and the linear model adopted by
+\citet{Samajdar:2020xrd} as two extremes, we conduct the inference with
+four polynomial models
+from linear to quartic terms respectively. As shown in
+section~\ref{sec:results}, we quantitatively demonstrate that
+the linear model is accurate enough to describe the Love-Q relation in the
+inference. Also, as the number of parameters increases, more significant
+degeneracy or poorly constrained parameters appear in the posteriors, while the
+recovered Love-Q relations keep similar in the region where most data points gather.
+
+
 
 Finally, as a practical application, we compared our inference results with the 
 theoretical predictions of the dCS gravity. The Love-Q relation measurement 
