@@ -195,8 +195,8 @@ with future GW observations.
 This paper is organized as follows. In section~\ref{sec:framework} we construct 
 the hierarchical Bayesian framework and derive the posterior of the hyperparameters. 
 The simulation procedure is explained in detail in section~\ref{sec:simulation}. 
-Then we present the results of our inference and discuss the inpact from different 
-Love-Q relation parameterizations in section~\ref{sec:results}. 
+Then we present the results of our inference and discuss the differences between different 
+Love-Q relation parameterization models in section~\ref{sec:results}. 
 We compare our inference results with the predictions of the dynamical Chern-Simons 
 gravity as a test in section~\ref{sec:dCS}. Finally, we conclude this work in section~\ref{sec:conclusion}.
 
@@ -207,7 +207,7 @@ gravity as a test in section~\ref{sec:dCS}. Finally, we conclude this work in se
 %=============================
 
 %=============================
-\subsection{Parameterizations of Love-Q relation} 
+\subsection{Polynomial models of Love-Q relation} 
 \label{subsec:framework_parameterization}
 %=============================
 Yagi and Yunes fit the Love-Q relation with a quadratic polynomial model as~\cite{Yagi:2013bca,Yagi:2013awa,Yagi_2017}
@@ -244,11 +244,18 @@ these two models and the APR4 EOS are smaller than $1\%$.
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.8\textwidth]{2d-5d difference.pdf}% Here is how to import EPS art
-\caption{\label{relative_difference} The upper panel shows the relation between 
-$\Lambda$ and $Q$ for the Yagi-Yunes relation (Eq.~\eqref{5-d_Love_Q_eq}) and its 
-linear fit (Eq.~\eqref{2-d_Love_Q_eq}). $\Lambda$ and $Q$ calculated assuming APR4 
-EOS are also plotted as a comparison ($Q_{\mathrm{APR4}}$). The lower panel shows 
-the relative differences.}
+\caption{Illustration of the Love-Q relation. In the upper panel, the orange
+solid line indicates the original Yagi-Yunes relation, a quartic polynomial model
+ in
+Eq.~\eqref{5-d_Love_Q_eq}, while the green dashed line represents our fitting
+with the linear model in Eq.~\eqref{2-d_Love_Q_eq}. \ZW{Still, need to point out
+how to conduct the linear fit in the main text.} We also show the Love-Q
+relation in the case of APR4 EOS for reference, plotted with blue circles.
+In the lower panel, we show the absolute relative differences of the quadrupole
+moments
+between the two
+models (denoted as $Q_5$ and $Q_2$) and the APR4 EOS (denoted as $Q_{\rm
+APR4}$), respectively.}\label{relative_difference}
 \end{figure}
 
 %=============================
@@ -508,17 +515,21 @@ nuisance parameter?} As we will show in section~\ref{sec:results}, the primary
 information for constraining the Love-Q relation comes from the 10 loudest GW
 events. We leave a more comprehensive study of the whole population for future
 work. 
-\begin{table}[htbp]
+\begin{table}[t]
     \centering
     \sisetup{
         table-align-text-post = false, 
         separate-uncertainty = true 
     }
-    \caption{\label{prior_table}The best fit values of Yagi-Yunes relation and the 
-    priors of the hyperparameters in different polynomial models with $j=2, 3, 4, 
-    5$ parameters for the Bayesian inference. The best fit values are calculated 
-    as direct fittings of the Yagi-Yunes relation with different polynomial models 
-    and are regarded as reference values in our inference.}
+        \caption{The reference values and priors of the coefficients in different models
+        of the Love-Q relation, with $j$ being the number of parameters in
+        the polynomial
+        model. $j=5$ indicates the original Yagi-Yunes
+        relation~\cite{Yagi_2017}. For $j = $ 2, 3 and 4, the values are
+        obtained by \ZW{Fix this sentence, may describe how to do the
+        fitting}. Priors are chosen to be uniform distributions, and the ranges
+        are same for different $j$ to ensure a fair comparison.
+        }\label{prior_table}
     \begin{tabular}{
         l
         S[table-format=-1.4]
@@ -528,7 +539,7 @@ work.
         S[table-format=1.3e-1]
     }
         \toprule
-        \multicolumn{6}{c}{Best fit values} \\
+        \multicolumn{6}{c}{Reference values} \\
         %\cmidrule(l){2-6}
         $j$ & {$a_j$} & {$b_j$} & {$c_j$} & {$d_j$} & {$e_j$} \\
         \midrule
@@ -572,34 +583,22 @@ discussed in section~\ref{subsec:results_quadratic_cubic}.
 \label{subsec:results_linear_model}
 %=============================
 %\ZW{I delete ``fitting'', since it is not informative.}
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=0.5\linewidth]{comparison_corner_plot.pdf}
-    \caption{Posterior distributions of the hyperparameters in the linear fitting 
-    case. The contours refer to 50\% and 90\% credible regions for both inferences 
-    based on the loudest 10 and 20 events. The numbers above the histograms stand 
-    for the median and the central 50\% credible interval of each marginalized 
-    distribution in the 20 event inference. The orange lines represent the best 
-    fit values of the parameters in table~\ref{prior_table}. The priors are also 
-    drawn in black for the histograms on the diagonal.}
+    \caption{Posterior of the hyperparameters ${\bm H} = \{a_2,b_2\}$
+     in the linear fitting model. The contours refer to 50\% and 90\% credible
+     regions, while the numbers above the histograms on the diagonal stand 
+    for the median and the central 50\% credible interval of the marginalized
+     distribution. We use blue and red colors to represent the results based on
+     the loudest 20 and 10 events among the 1000
+    simulated events, respectively.
+     The orange lines represent the reference values in table~\ref{prior_table}.
+     The black lines on the diagonal represent the priors for comparison.}
     \label{corner2-d}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{hierarchical_results_APR4_2d.pdf}
-    \caption{Results of the hierarchical Bayesian inference for linear Love-Q 
-    relation. In the left panel, the Love-Q relation is inferred based on 20 
-    simulated GW events. The gray error bars demonstrate the $1\sigma$ credible 
-    interval of $\Lambda$ and $Q$. The orange solid line represents the Yagi-Yunes 
-    Love-Q relation and the green solid line refs to the result given by Samajdar 
-    \& Dietrich, 2020~\cite{Samajdar:2020xrd}. The blue regions from dark to light 
-    represent the $50\%$ and $90\%$ credible intervals of $Q$. The blue solid line 
-    and the red dashed line are the median and peak of the distribution of $Q$ 
-    with certain $\Lambda$. In the right panel, contours correspond to $90\%$ 
-    credible intervals for the inference result based on the loudest 5, 10, 15, 20 events, respectively.
-    \label{2-d_Love_Q}}
-\end{figure}
+
 We first perform the inference for the linear model, which is also the model 
 adopted in Ref.~\cite{Samajdar:2020xrd}. The posterior distribution of the 
 hyperparameters $\{a_2,b_2\}$ is shown in figure~\ref{corner2-d}. Compared
@@ -618,6 +617,25 @@ credible regions in the 10-event inference are only slightly larger than those i
 the 20-event inference. This reveals that the loudest 10 events dominate the 
 information in constraining the Love-Q relation, and including quieter events will 
 not significantly improve the results.
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{hierarchical_results_APR4_2d.pdf}
+    \caption{Recovered Love-Q relation from the posterior of the hyperparameters
+    in the linear model. In the left panel, the Love-Q relation is inferred with
+    the 20 loudest events among the 1000
+    simulated GW events. The gray points mark the median values of inferred
+    $\Lambda$ and $Q$ for each event with $68\%$ error bars. The blue solid line
+    marks the median of the distribution of $Q$ with certain $\Lambda$, accompanied
+    by the $50\%$ and $90\%$ credible intervals represented in shaded regions.
+    The red dashed line represents the maximum-posterior relation. For
+    comparison, we plot the original Yagi-Yunes
+    Love-Q relation~\cite{Yagi_2017} in orange and the recovered relation with
+    linear regression in \citet{Samajdar:2020xrd}. The right panel shows how the
+    $90\%$ credible region of the recovered Love-Q relation depends on the
+    number of events, marked with different colors.}    \label{2-d_Love_Q}
+\end{figure}
 
 In figure~\ref{2-d_Love_Q}, we show the recovered Love-Q relation according to the 
 posterior samples. For each $\Lambda$, every sample in the posterior of the 
@@ -647,11 +665,11 @@ where the recovered $\Lambda$-$m$ relation were also dominated by the several lo
 \begin{minipage}[t]{0.49\textwidth}
 \includegraphics[width=\linewidth]{hierarchical_results_APR4_5d.pdf}
 \end{minipage}
-    \caption{\label{5-d_Love_Q} Left panel: posterior distribution of the 
-    hyperparameters in the quartic polynomial model. The inference is based on all 
-    of the 20 events. The orange lines represent the values in the Yagi-Yunes 
-    Love-Q relation. Right panel: similar to figure~\ref{2-d_Love_Q}, but for the 
-    quartic polynomial model. Still, the Yagi-Yunes Love-Q relation is included in the $90\%$ credible region.} 
+    \caption{The posterior of the hyperparameters and the recovered Love-Q relation
+    in the quartic polynomial model, where all 20 loudest events are included in
+    the inference. Plotting styles are similar to those in figure~\ref{corner2-d} and
+    figure~\ref{2-d_Love_Q}.
+    } \label{5-d_Love_Q} 
 \end{figure}
 
 For the quartic polynomial model, the Love-Q relation is fitted with five 
@@ -680,7 +698,7 @@ mostly covered by the 50\% credible region, and well within the 90\% credible re
 \label{subsec:results_quadratic_cubic}
 %=============================
 
-\begin{figure}
+\begin{figure}[t]
     \begin{minipage}[t]{0.49\textwidth}
     \centering
     \includegraphics[width=0.8\linewidth]{Hyper_parameter_3d.pdf}
@@ -694,12 +712,15 @@ mostly covered by the 50\% credible region, and well within the 90\% credible re
     \begin{minipage}[t]{\textwidth}
     \includegraphics[width=\linewidth]{hierarchical_results_APR4_3d.pdf}
     \end{minipage}
-    \caption{\label{3-d_4-d_Love_Q} Results of quadratic and cubic polynomial 
-    fitting models. The two upper panels demonstrate the posteriors of the 
-    hyperparameters. And the best fit values (see table~\ref{prior_table}) are 
-    marked in orange. The two bottom panels present the inference results in 
-    Love-Q plane, similar to figure~\ref{2-d_Love_Q}.
-    }
+    \caption{Similar to figure~\ref{5-d_Love_Q}, while for the quadratic and
+    cubic polynomial models. Note that in the posterior, the orange lines
+    indicate
+    the reference values in table~\ref{prior_table}, while in the Love-Q
+    panels, the orange lines indicate the original Yagi-Yunes Love-Q relation.
+    \ZW{Therefore, I recommend to use different colors for these two kinds of
+    ``true'' values, e.g., use black for the reference values in the posterior
+    panels. (gray for the priors)}
+    }\label{3-d_4-d_Love_Q}
 \end{figure}
 As shown in the previous two subsections, the observations from 20 simulated GW 
 events can well constrain the two parameters in the linear model, while can not 
@@ -739,7 +760,7 @@ regions.
 \label{sec:dCS}
 %=============================
 
-\begin{figure}[htbp]
+\begin{figure}[t]
     \centering
     \begin{minipage}{0.48\linewidth}
         \includegraphics[width=\linewidth]{CS_zeta_APR4_2d.pdf}
@@ -752,12 +773,14 @@ regions.
     \begin{minipage}{0.48\linewidth}
         \includegraphics[width=\linewidth]{CS_xi_bar_APR4_2d.pdf}
     \end{minipage}
-    \caption{Comparison of the hierarchical inference results and CS predictions 
-    with different coupling constants fixed. The blue regions are the same as 
-    figure~\ref{2-d_Love_Q} (Linear model). For each of the coupling constants of 
-    CS gravity $\zeta, \xi_{\mathrm{CS}}$ and $\bar\xi$, three possible values are 
-    taken and the corresponding Love-Q relations for APR4 EOS are drawn 
-    respectively as references.}
+    \caption{Comparison of recovered Love-Q relation in GR
+    and CS \ZW{Where is ``d''?} predictions 
+    with different coupling constants. Similar to figure~\ref{2-d_Love_Q}, the
+    blue lines indicate the median of the recovered Love-Q relation, while the
+    shaded regions represent the $50\%$ and $90\%$ credible intervals. For each of the coupling constants of 
+    CS gravity $\zeta, \xi_{\mathrm{CS}}$ and $\bar\xi$, we take three values
+    and plot corresponding Love-Q relations with APR4 EOS.\ZW{Still need to
+    modified after the discussion in the main text.}}
     \label{cs_Love_Q}
 \end{figure}
 In this section, we investigate the potential of testing gravity theories with the 
@@ -838,7 +861,7 @@ the impact of the event number on the constraints, and find that the loudest 10 
 dominate the information in constraining the Love-Q relation. Similar phenomena
 were also found in studies of constraining the EOSs with GW observations~\cite{Lackey:2014fwa,Wang:2024xon}.
 
-We are the first to conduct a systematic study on different parameterizations
+We are the first to conduct a systematic study on different parameterization models
 when inferring the Love-Q relation with GWs. Considering the quartic polynomial
 model proposed by \citet{Yagi:2013awa} and the linear model adopted by
 \citet{Samajdar:2020xrd} as two extremes, we conduct the inference with
@@ -847,36 +870,39 @@ from linear to quartic terms respectively. As shown in
 section~\ref{sec:results}, we quantitatively demonstrate that
 the linear model is accurate enough to describe the Love-Q relation in the
 inference. Also, as the number of parameters increases, more significant
-degeneracy or poorly constrained parameters appear in the posteriors, while the
-recovered Love-Q relations keep similar in the region where most data points gather.
+degeneracy or poorly constrained parameters appear in the posteriors, while the recovered Love-Q relations keep similar in the region where most data points gather.
 
+We also test the potential of using the inferred Love-Q relation to
+constrain modified gravity theories in Section~\ref{sec:dCS}.
+Taking the dCS gravity as an example, we find that the inferred Love-Q relation
+can place a constraint on the dCS characteristic length about
+$\xi_{\mathrm{CS}}^{1/4} \lesssim \mathcal{O}(10^1)$~km, which is seven orders
+of magnitude tighter than that from current Solar System
+observations~\cite{Ali-Haimoud:2011zme,Yagi:2012ya}, and consistent with
+previous predictions~\cite{Yagi:2013bca,Yagi:2013awa}. This highlights the power
+of inferring the Love-Q relation from GWs in testing gravity theories. \ZW{Plz
+check the parameters to be constrained and corresponding limits.}
 
-
-Finally, as a practical application, we compared our inference results with the 
-theoretical predictions of the dCS gravity. The Love-Q relation measurement 
-precision of our hierarchical Bayesian inference allows us to place a constraint 
-on the dCS characteristic length $\xi_{\mathrm{CS}}^{1/4} \lesssim \mathcal{O}(10^1)$~km. 
-This result is consistent with previous works~\cite{Yagi:2013bca,Yagi:2013awa} and 
-highlights the power of the Love-Q relation inference for testing gravity theories.
-
-However, several issues remain to be addressed in future works. First, we have 
-only considered the statistical uncertainties in our analysis, while systematic 
-biases may arise from the inaccurate waveform model and the neglected spin 
-precession effects. These biases can affect the inference results especially for 
-high-SNR GW events from future ground based GW detections~\cite{Williamson:2017evr,Purrer:2019jcp,Gamba:2020wgg}. 
-Second, the possible overlap of GW signals due to the high detection rate also 
-leads to non-negligible biases in the measurements of GW parameters~\cite{Pizzati:2021apa,Hu:2022bji,Wang:2023ldq}. 
-Plus, we have not taken account of the effect of the octupole or higher-order multipole moments of NSs, 
-which enter the GW waveform as well and can be universally related to the quadrupole moment
-~\cite{Yagi_2017,Abac:2023ujg}. We leave a simultaneous inference of the universal 
-relations between the tidal deformability, quadrupole and octupole moments to 
-future works. Moreover, the universal relations we talk about are typically 
-derived for a single NS. For BNS systems, universal relations may hold when the 
-two NSs have similar masses, but whether they still hold for NSs with very 
-different masses needs further inspections~\cite{Shao:2022koz}. Ref.~\cite{Saffer:2021gak} 
-have made a first attempt to study this question, but a more thorough analysis is necessary. 
-These extensions are left for future work and to sum up, future GW observations do have a 
-promising prospect to infer the Love-Q relation and provide tests of gravitational theories. 
+However, several issues\ZW{I will not say ``issues'', since it seems that there
+are problems with the work. Similar for ``However''. Maybe we can just say ``
+There are several
+extensions to this work.
+} remain to be addressed in future works. Firstly, we assume the aligned-spin
+BNS systems, while
+realistic BNS systems may have spin precession, which leads to additional
+biases or uncertainties~\cite{Williamson:2017evr}. The waveform modelling can
+also have similar issues~\cite{Purrer:2019jcp,Gamba:2020wgg}. 
+Also, in the XG era, the GW signals are possibly overlapping with each
+other, complicating the data analysis~\cite{Pizzati:2021apa, Samajdar:2021egv,
+Wang:2023ldq, Johnson:2024foj, Wang:2025ckw}.
+Moreover, the Yagi-Yunes universal relations were originally found and discussed
+for a single NS. For BNS systems, these universal relations may hold when the
+two NSs have similar masses, but still require careful
+inspection~\cite{Shao:2022koz, Saffer:2021gak}. Additionally, the octupole or
+higher-order multipole moments of NSs also contribute to the GW waveform and can
+be universally related to the quadrupole moment~\cite{Yagi_2017,Abac:2023ujg}.
+We leave the exploration of simultaneous or independent inference of more
+universal relations to future works.
 
 %=============================
 \acknowledgments
