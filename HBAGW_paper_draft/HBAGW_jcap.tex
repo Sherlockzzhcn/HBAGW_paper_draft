@@ -14,7 +14,7 @@
   \renewcommand{\tablename}{Table}
 }
 \usepackage[utf8]{inputenc}
-% \usepackage{natbib}
+\usepackage{natbib}
 \usepackage[colorlinks=true, citecolor=blue, urlcolor=blue, linkcolor=blue]{hyperref} 
 \usepackage{graphicx}
 \usepackage{subfigure}% Include figure files
@@ -154,18 +154,18 @@ LIGOScientific:2018hze,LIGOScientific:2020aai}.
 Future next-generation (XG) ground-based GW detectors, including the Cosmic Explorer 
 (CE)~\cite{Reitze:2019iox,Reitze:2019dyk} and the Einstein Telescope (ET)~\cite{Punturo:2010zz,Hild:2010id,Sathyaprakash:2012jk}, 
 are expected to
- detect much more GW signals, up to about $10^5-10^6$ events per year
+ detect much more GW signals, up to about $10^5$--$10^6$ events per year
 ~\cite{LIGOScientific:2017zlf,Sathyaprakash:2019yqt,Kalogera:2021bya,Samajdar:2021egv}, 
 thanks to their 
 increased sensitivity and lower cutoff frequencies. These high-precision GW observations allow us to treat $\Lambda$ and $Q$ as independent parameters in the waveform model, measuring them directly from GWs. This enables further constraints on the Love-Q relation from an observational perspective.
 Samajdar and Dietrich~\cite{Samajdar:2020xrd} 
 have first performed an analysis discussing the prospect of constraining Love-Q 
 relation with GW observations, where a weighted linear regression is adopted.
-This treatment might miss possible degeneracy and non-Gaussianality in the posterior of $\Lambda$ and $Q$. 
+This treatment might miss possible degeneracy and non-Gaussianity in the posterior of $\Lambda$ and $Q$. 
 
-In this work, we are the first to adopt the hierarchical Bayesian framework in inferring the Love-Q relation with XG GW observations.
+This work is the first to adopt the hierarchical Bayesian framework in inferring the Love-Q relation with XG GW observations.
 This framework has been successfully applied in 
-population studies of compact binary coalescences, or probing the EOS of NSs~\cite{Mandel:2009nx,Mandel:2009pc,Adams:2012qw,Lackey:2014fwa,Mandel:2018mve,Thrane_2019,KAGRA:2021duu,Wang:2024xon}. 
+population studies of compact binary coalescences, or probing the EOS of NSs~\cite{Mandel:2009nx,Mandel:2009pc,Adams:2012qw,Lackey:2014fwa,Mandel:2018mve,Golomb:2021tll,KAGRA:2021duu,Wang:2024xon}. 
 Regarding the Love-Q relation parameters as hyperparameters, the hierarchical 
 Bayesian framework separates the inferences of these hyperparameters and the 
 single-event parameters into two layers to avoid a direct high-dimensional inference
@@ -173,7 +173,7 @@ for all unknown parameters, which significantly reduce the computational cost
 in combining information from multiple events.
  Also, the construction of the quasi-likelihood
 function in this framework incorporates the full shape of the
-posterior in single-event inference beyond Gaussianality, thus
+posterior in single-event inference beyond Gaussianity, thus
 utilize the information contained therein in a more comprehensive way.
 We simulate 1000 GW events based on population models of
 NSs~\cite{Fishbach:2018edt,Farrow:2019xnc,Samajdar:2020xrd} and select the 20
@@ -221,10 +221,7 @@ $d_5=-4.283\times 10^{-3}$ and $e_5=1.245\times 10^{-4}$~\cite{Yagi_2017}, and
 the lower subscript $5$ indicates five model parameters.
 They found that such relation applies to most of the EOSs with 
 relative differences less than $1\%$ in GR. When constraining the Love-Q
-relation with GWs, \citet{Samajdar:2020xrd} \ZW{
-I recommend to use `` \textbackslash citet'', not ``Ref.'' or ``Samajdar +
-\textbackslash cite'' }adopt a linear model to describe the
-relation,
+relation with GWs, \citet{Samajdar:2020xrd} adopt a linear model to describe the relation,
 \begin{equation}
 \label{2-d_Love_Q_eq}
     \ln Q_{2} = a_2 + b_2 \ln \Lambda\,,
@@ -232,8 +229,8 @@ relation,
 where only two parameters are involved. \ZW{Do we need to list the fitting
 results in Samajdar? It seems the values are not consistent with the values in
 table \ref{prior_table}.}
-In figure~\ref{relative_difference}, we plot the Yagi-Yunes relation as well as 
-its linear fit. \ZW{Again, we need to point that how we conduct the linear fit.}
+In figure~\ref{relative_difference}, we plot the Yagi-Yunes relation along with 
+its linear fit. This fit is the result of a least-squares regression performed on 1000 points uniformly sampled in logarithmic space from Yagi-Yunes relation. 
 As the example of a typical EOS, we plot the Love-Q relation calculated assuming the APR4 
 EOS~\cite{PhysRevC.58.1804}, a soft EOS consistent with the 
 observations of GW170817~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
@@ -248,8 +245,7 @@ these two models and the APR4 EOS are smaller than $1\%$.
 solid line indicates the original Yagi-Yunes relation, a quartic polynomial model
  in
 Eq.~\eqref{5-d_Love_Q_eq}, while the green dashed line represents our fitting
-with the linear model in Eq.~\eqref{2-d_Love_Q_eq}. \ZW{Still, need to point out
-how to conduct the linear fit in the main text.} We also show the Love-Q
+with the linear model in Eq.~\eqref{2-d_Love_Q_eq}. We also show the Love-Q
 relation in the case of APR4 EOS for reference, plotted with blue circles.
 In the lower panel, we show the absolute relative differences of the quadrupole
 moments
@@ -285,7 +281,7 @@ while can only be inferred from a collection of measurements of single-event
 parameters. Similarly, the EOS parameters determine the relation between the
 $\Lambda-m$ relation and the $Q-m$ relation, and can be regarded as
 hyperparameters and analyzed in the hierarchical Bayesian
-framework~\cite{Lackey:2014fwa}.\ZW{Plz add more references here.} In this work,
+framework~\cite{Mandel:2009nx,Mandel:2009pc,Adams:2012qw,Lackey:2014fwa,Mandel:2018mve,Golomb:2021tll,KAGRA:2021duu,Wang:2024xon}. In this work,
 we adopt this framework to the inference of the Love-Q relation.
 
 
@@ -337,7 +333,7 @@ $\bm{\Lambda}_i$ and $\bm{Q}_i$, called nuisance parameters hereafter.
 Analogously to the prior, the catalog likelihood can be factorized
  into the product of single-event likelihoods
 \begin{equation}
-    p(D|\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{H},\bm{\theta}_i)=\prod_{i=1}^{n}p(\bm{d}_i|\bm{\theta}_i)\,,\label{eq:catalog_likelihood}
+    p(D|\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)=\prod_{i=1}^{n}p(d_i|\bm{H},\bm{\theta}_i)=\prod_{i=1}^{n}p(d_i|\bm{\theta}_i)\,,\label{eq:catalog_likelihood}
 \end{equation}
 where the second equality comes from the fact that the hyperparameters do not enter the waveform.
 
@@ -345,9 +341,9 @@ Given the specific form of the prior and the likelihood, the marginalized poster
 \begin{equation}
 \label{hierarchical bayes}
 \begin{aligned}
-p(\bm{H}|D)&=\frac{1}{p(D)}\pi(\bm{H})\int \text{d}\bm{\theta}_1\cdots\text{d}\bm{\theta}_n \prod_{i=1}^n \big[\pi(\bm{\Lambda}_i|\bm{H})\pi(\bm{Q}_i|\bm{\Lambda}_i,\bm{H})\pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i)\big] \\
+p(\bm{H}|D)&=\frac{1}{p(D)}\pi(\bm{H})\int \text{d}\bm{\theta}_1\cdots\text{d}\bm{\theta}_n \prod_{i=1}^n \big[\pi(\bm{\Lambda}_i|\bm{H})\pi(\bm{Q}_i|\bm{\Lambda}_i,\bm{H})\pi(\bm{\xi}_i)p(d_i|\bm{\theta}_i)\big] \\
 &=\frac{1}{p(D)} \pi(\bm{H}) \prod_{i=1}^n
-\int \text{d}\bm{\Lambda}_i\text{d}\bm{Q}_i\pi(\bm{\Lambda}_i|\bm{H})\delta\big(\bm{Q}_i-\bm{f}(\bm{\Lambda}_i;\bm{H})\big) \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i)\\
+\int \text{d}\bm{\Lambda}_i\text{d}\bm{Q}_i\pi(\bm{\Lambda}_i|\bm{H})\delta\big(\bm{Q}_i-\bm{f}(\bm{\Lambda}_i;\bm{H})\big) \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(d_i|\bm{\theta}_i)\\
 &=\frac{1}{p(D)} \pi(\bm{H}) \prod_{i=1}^n
 \int \text{d}\bm{\Lambda}_i\pi(\bm{\Lambda}_i|\bm{H})L_i\big(\bm{\Lambda}_i,\bm{f}(\bm{\Lambda}_i;\bm{H})\big)\,.
 \end{aligned}
@@ -359,7 +355,7 @@ $L_i(\bm{\Lambda}_i,\bm{Q}_i)$, called the quasi-likelihood,
 parameters
 \begin{equation}
 \label{quasi-likelihood}
-    L_i(\bm{\Lambda}_i,\bm{Q}_i)=\int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i)\,.
+    L_i(\bm{\Lambda}_i,\bm{Q}_i)=\int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(d_i|\bm{\theta}_i)\,.
 \end{equation}
 
 The quasi-likelihood of each event can be 
@@ -367,14 +363,14 @@ computed independently of $\bm{H}$. For the $i\text{-th}$ event, we write down
 the Bayes' theorem
 \begin{equation}
 \label{single bayes}
-    p(\bm{\theta}_i|\bm{d}_i, \varnothing)\propto \pi(\bm{\theta}_i|\varnothing)p(\bm{d}_i|\bm{\theta}_i)\,,
+    p(\bm{\theta}_i|d_i, \varnothing)\propto \pi(\bm{\theta}_i|\varnothing)p(d_i|\bm{\theta}_i)\,,
 \end{equation}
 where $\pi(\bm{\theta}_i|\varnothing)$ denotes an auxiliary prior 
-independent of $\bm{H}$. $p(\bm{d}_i|\bm{\theta}_i)$ is the single-event
+independent of $\bm{H}$. $p(d_i|\bm{\theta}_i)$ is the single-event
 likelihood (same as in Eq.~\eqref{eq:catalog_likelihood}), whose explicit form is
  given by assuming stationary, Gaussian noise~\cite{Finn:1992wt}
 \begin{equation}
-p(\bm{d}_i|\bm{\theta}_i)\propto \mathrm{e}^{-\frac{1}{2}\langle d_i-h(\bm{\theta}_i),d_i-h(\bm{\theta}_i)\rangle}\,,
+p(d_i|\bm{\theta}_i)\propto \mathrm{e}^{-\frac{1}{2}\langle d_i-h(\bm{\theta}_i),d_i-h(\bm{\theta}_i)\rangle}\,,
 \end{equation}
 with the data $d_i$ and the waveform model $h(\bm{\theta}_i)$. $\langle u, v\rangle$ 
 is the inner product of $u(t)$ and $v(t)$ weighted by the power spectrum density
@@ -389,7 +385,7 @@ Eq.~\eqref{quasi-likelihood}, one finds that
 \begin{equation}
 \label{quasi-posterior}
 \begin{aligned}
-    L_i(\bm{\Lambda}_i,\bm{Q}_i) = \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(\bm{d}_i|\bm{\theta}_i) \propto \int \text{d}\bm{\xi}_i \frac{\pi(\bm{\xi}_i)}{\pi(\bm{\theta}_i|\varnothing)}p(\bm{\theta}_i|\bm{d}_i,\varnothing)\,.
+    L_i(\bm{\Lambda}_i,\bm{Q}_i) = \int \text{d}\bm{\xi}_i \pi(\bm{\xi}_i)p(d_i|\bm{\theta}_i) \propto \int \text{d}\bm{\xi}_i \frac{\pi(\bm{\xi}_i)}{\pi(\bm{\theta}_i|\varnothing)}p(\bm{\theta}_i|d_i,\varnothing)\,.
 \end{aligned}  
 \end{equation}
 If we further choose $\pi(\bm{\theta}_i|\varnothing)\propto\pi(\bm{\xi}_i)$, 
@@ -397,7 +393,7 @@ i.e., a flat prior for $\bm{\Lambda}_i$ and $\bm{Q}_i$, Eq.~\eqref{quasi-posteri
 \begin{equation}
 \label{quasi-marginalized}
 \begin{aligned}
-    L_i(\bm{\Lambda}_i,\bm{Q}_i) \propto \int \text{d}\bm{\xi}_i p(\bm{\theta}_i|\bm{d}_i,\varnothing)\propto p(\bm{\Lambda}_i,\bm{Q}_i|\bm{d}_i,\varnothing)\,.
+    L_i(\bm{\Lambda}_i,\bm{Q}_i) \propto \int \text{d}\bm{\xi}_i p(\bm{\theta}_i|d_i,\varnothing)\propto p(\bm{\Lambda}_i,\bm{Q}_i|d_i,\varnothing)\,.
 \end{aligned}  
 \end{equation}
 This means that the quasi-likelihood is proportional to the marginalized
@@ -439,26 +435,23 @@ The distribution of $m_r$ has two Gaussian components while $m_s$ follow a unifo
 \begin{subequations}
 \label{mass population}
 \begin{equation}
-    P(m_r) = \alpha \mathcal{N}(\mu_1, \sigma_1) + (1-\alpha) \mathcal{N}(\mu_2, \sigma_2)\,,
+    P(m_{\mathrm{r}}) = \alpha \mathcal{N}(\mu_1, \sigma_1) + (1-\alpha) \mathcal{N}(\mu_2, \sigma_2)\,,
 \end{equation}
 \begin{equation}
-    P(m_s) = \mathcal{U}(m_s^l, m_s^u)\,,
+    P(m_{\mathrm{s}}) = \mathcal{U}(m_{\mathrm{s}}^l, m_{\mathrm{s}}^u)\,,
 \end{equation}
 \end{subequations}
 where $\alpha=0.68$, $\mu_1=1.34\,\mathrm{M}_{\odot}$, $\sigma_1=0.02\,\mathrm{M}_
 {\odot}$, $\mu_2=1.47\,\mathrm{M}_{\odot}$, $\sigma_2=0.15\,\mathrm{M}_{\odot}$ 
-and $m_s^l=1.14\,\mathrm{M}_{\odot}$, $m_s^u=1.46\,\mathrm{M}_{\odot}$.\ZW{In
-principle, we are recommended to use $m_{\rm r}$ and $m_{\rm s}$ (the regular
-font).
-} Then, the NS with a larger mass is labeled as the primary star with mass $m_1$ and the other as the secondary star with mass $m_2$.
+and $m_{\mathrm{s}}^l=1.14\,\mathrm{M}_{\odot}$, $m_{\mathrm{s}}^u=1.46\,\mathrm{M}_{\odot}$. Then, the NS with a larger mass is labeled as the primary star with mass $m_1$ and the other as the secondary star with mass $m_2$.
 The tidal deformability and quadrupole moments of the binary are calculated from 
 the stellar mass assuming the APR4 EOS with methods described in Refs.~\cite{Yagi:2013awa,Atta:2024ckt}. For the spin of recycled stars $\chi_r$, we adopt a uniform distribution $\mathcal{U}(-0.5,0.5)$, 
 while for $\chi_s$ we draw from $\mathcal{U}(-0.1,0.1)$.
 Using the cosmological parameters provided by the Planck Collaboration~\cite{Planck:2018vyg}, 
-we simulate 1000 GW sources distributed uniformly in co-moving volume from 15Mpc to 150Mpc
-~\cite{Fishbach:2018edt,KAGRA:2021duu},\ZW{Why this citation?}with isotropic sky locations and orientations. 
-This corresponds to the observed local merger rate $7.6$--$250\,\mathrm{Gpc}^{-3}\mathrm{yr}^{-1}$ from current GW 
-detections~\cite{LIGOScientific:2025pvj,LIGOScientific:2020aai}.\ZW{The logic?} Without loss of generality, all GW events are injected with $t_c=0$.
+we simulate 1000 gravitational wave (GW) sources, a total number estimated from the observed local merger rate 
+$7.6$--$250\,\mathrm{Gpc}^{-3}\mathrm{yr}^{-1}$ from current GW detections~\cite{LIGOScientific:2025pvj,LIGOScientific:2020aai}. 
+These sources are distributed uniformly in source-frame time and co-moving volume between 15~Mpc and 150~Mpc, 
+with isotropic sky locations and orientations. Without loss of generality, all GW events are injected with $t_c=0$.
 
 We select a XG detector network consisting of two CE detectors and one ET 
 detector, whose sensitivities are taken as CE-2~\cite{Reitze:2019iox,Reitze:2019dyk} 
@@ -476,9 +469,7 @@ can be divided into two steps.
 In the auxiliary single-event inference, the variable parameters are $\bm{\theta} = \{\mathcal{M},\eta,
 \Lambda_1,\Lambda_2,Q_1,Q_2,\chi_1,\chi_2,D_L,t_c,\alpha,\delta,\iota,\psi,\phi_c\}
 $. The priors of $\mathcal{M}$, $\eta$, $\chi_1$, $\chi_2$, $t_c$ and $\phi_c$ are uniform, and
-the prior of $D_L$ is uniform in the comoving volume and source frame time.
-\ZW{So why it is different from the simulation prior?
-} We 
+the prior of $D_L$ is uniform in source frame time and co-moving volume. We 
 set isotropic priors for the angle variables $\alpha,\delta,\iota,\psi$. For tidal 
 and quadrupole moment parameters, we treat $\Lambda_s$ and $Q_s$ of the slow 
 binary component as nuisance parameters, since the spin-induced 
@@ -491,7 +482,7 @@ sampler~\cite{Skilling:2004pqw,Skilling:2006gxv,michael_j_williams_2025_14627250
 To calculate the integral in Eq.~\eqref{hierarchical bayes}, we need the
 fuctional form of the quasi-likelihood, which is proportional to the
 distribution function of the posterior
-$p(\bm{\Lambda}_i,\bm{Q}_i|\bm{d}_i,\varnothing)$. We follow
+$p(\bm{\Lambda}_i,\bm{Q}_i|d_i,\varnothing)$. We follow
 \citet{Golomb:2021tll} and adopt the Gaussian mixture 
 model to estimate the density of the posterior samples.
 In the second step, the priors of the hyperparameters $\pi(\bm{H})$ are listed
@@ -509,9 +500,7 @@ with the highest signal-to-noise ratios (SNRs)
 \citet{Yagi:2013awa} concluded that the spin-induced quadrupole moment can not
 be well measured for NSs with low spins. Considering these findings, we first
 draw 100 sources with the highest SNRs, then further select 20 sources with the
-largest $|\chi_{r}|$ among them. \ZW{So, for the 20 sources are all $\chi_{r}$
-is $\chi_{1}$? If $m_r<m_s$, then $\chi_{r}=\chi_{2}$, and $Q_2$ is regarded as
-nuisance parameter?} As we will show in section~\ref{sec:results}, the primary
+largest $|\chi_{r}|$ among them. As we will show in section~\ref{sec:results}, the primary
 information for constraining the Love-Q relation comes from the 10 loudest GW
 events. We leave a more comprehensive study of the whole population for future
 work. 
@@ -526,8 +515,7 @@ work.
         the polynomial
         model. $j=5$ indicates the original Yagi-Yunes
         relation~\cite{Yagi_2017}. For $j = $ 2, 3 and 4, the values are
-        obtained by \ZW{Fix this sentence, may describe how to do the
-        fitting}. Priors are chosen to be uniform distributions, and the ranges
+        the results of least squares regression performed on 1000 points uniformly sampled in logarithmic space from Yagi-Yunes relation. Priors are chosen to be uniform distributions, and the ranges
         are same for different $j$ to ensure a fair comparison.
         }\label{prior_table}
     \begin{tabular}{
@@ -648,7 +636,7 @@ depends on the number of events. We find the widths of the 90\% credible regions
 are almost the same for the 10, 15 and 20 event inferences. This is consistent 
 with the posteriors in figure~\ref{corner2-d}, and again indicates that the 
 loudest 10 events are almost sufficient to constrain the Love-Q relation. Similar 
-phenomena were also found in previous studies~\cite{Lackey:2014fwa,Wang:2024xon}, 
+phenomena were also found in previous studies~\cite{Lackey:2014fwa,Landry:2020vaw,Pang:2020ilf,Finstad:2022oni,Bandopadhyay:2024zrr,Wang:2024xon}, 
 where the recovered $\Lambda$-$m$ relation were also dominated by the several loudest events.
 
 %=============================
@@ -774,7 +762,7 @@ regions.
         \includegraphics[width=\linewidth]{CS_xi_bar_APR4_2d.pdf}
     \end{minipage}
     \caption{Comparison of recovered Love-Q relation in GR
-    and CS \ZW{Where is ``d''?} predictions 
+    and dCS predictions 
     with different coupling constants. Similar to figure~\ref{2-d_Love_Q}, the
     blue lines indicate the median of the recovered Love-Q relation, while the
     shaded regions represent the $50\%$ and $90\%$ credible intervals. For each of the coupling constants of 
@@ -794,15 +782,14 @@ Calcagni:2009xz} and effective field theories of inflation~\cite{Weinberg:2008hq
 The dCS gravity introduces parity violation and quadratic curvature terms into the action~\cite{Alexander:2009tp,Gupta:2017vsl}
 \begin{equation}
    \label{cs_action}
-   S = \int \mathrm{d}^4 x \sqrt{-g}\left[ \kappa_g \mathcal{R} + \frac{\alpha}{4} \mathcal{\vartheta} \mathcal{R}_{\nu\mu\rho\sigma} {}^{*}\mathcal{R}^{\mu\nu\rho\sigma} - \frac{\beta}{2}\left(\nabla_{\mu}\mathcal{\vartheta}\nabla^{\mu}\mathcal{\vartheta}+2V(\mathcal{\vartheta})\right) + \mathcal{L}_{\mathrm{mat}}\right]\,,
+   S = \int \mathrm{d}^4 x \sqrt{-g}\left[ \kappa_g \mathcal{R} + \frac{\alpha}{4} \mathcal{\vartheta} \mathcal{R}_{\nu\mu\rho\sigma} {}^{*}\mathcal{R}^{\mu\nu\rho\sigma} - \frac{\beta}{2}\nabla_{\mu}\mathcal{\vartheta}\nabla^{\mu}\mathcal{\vartheta} + \mathcal{L}_{\mathrm{mat}}\right]\,,
 \end{equation}
 where $g$ is the determinant of the metric, $\kappa_g= 1/16\pi$, $\mathcal{R}$ is 
 the Ricci scalar, $\mathcal{R}_{\nu\mu\rho\sigma}$ and
-$^{*}\mathcal{R}^{\mu\nu\rho\sigma}$ denote the Riemann tensor and its dual,
-\ZW{What is $V(\mathcal{\vartheta})$?},
-$\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density,
-$\alpha$ and $\beta$ are the coupling constants in dCS gravity. We omit the 
-potential for the pseudo-scalar field $\mathcal{\vartheta}$\ZW{V?} in the action, 
+$^{*}\mathcal{R}^{\mu\nu\rho\sigma}$ denote the Riemann tensor and its dual, 
+$\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density, 
+$\alpha$ and $\beta$ are the coupling constants in dCS gravity. We omit any 
+potential for the pseudo-scalar field $\mathcal{\vartheta}$ in the action, 
 following Ref.~\cite{Gupta:2017vsl}. $\mathcal{\vartheta}$ is taken to be 
 dimensionless, and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
 (\kappa\beta)]^{1/4}$ can be explained as 
@@ -859,7 +846,7 @@ inference for all the parameters simultaneously while still takes into account
 degeneracy and non-Gaussianity in the single-event parameters. We also discuss
 the impact of the event number on the constraints, and find that the loudest 10 events
 dominate the information in constraining the Love-Q relation. Similar phenomena
-were also found in studies of constraining the EOSs with GW observations~\cite{Lackey:2014fwa,Wang:2024xon}.
+were also found in studies of constraining the EOSs with GW observations~\cite{Lackey:2014fwa,Landry:2020vaw,Pang:2020ilf,Finstad:2022oni,Bandopadhyay:2024zrr,Wang:2024xon}.
 
 We are the first to conduct a systematic study on different parameterization models
 when inferring the Love-Q relation with GWs. Considering the quartic polynomial
@@ -883,12 +870,7 @@ previous predictions~\cite{Yagi:2013bca,Yagi:2013awa}. This highlights the power
 of inferring the Love-Q relation from GWs in testing gravity theories. \ZW{Plz
 check the parameters to be constrained and corresponding limits.}
 
-However, several issues\ZW{I will not say ``issues'', since it seems that there
-are problems with the work. Similar for ``However''. Maybe we can just say ``
-There are several
-extensions to this work.
-} remain to be addressed in future works. Firstly, we assume the aligned-spin
-BNS systems, while
+There are several extensions to this work. Firstly, we assume the aligned-spin BNS systems, while
 realistic BNS systems may have spin precession, which leads to additional
 biases or uncertainties~\cite{Williamson:2017evr}. The waveform modelling can
 also have similar issues~\cite{Purrer:2019jcp,Gamba:2020wgg}. 
