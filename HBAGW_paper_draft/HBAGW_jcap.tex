@@ -94,7 +94,7 @@ between $\ln\Lambda$ and $\ln Q$ is accurate enough in constraining the Love-Q
     relation with GWs.
 Strong correlations between the parameters are found in all four models. 
 Furthermore, we utilize the inferred Love-Q relation in testing modified gravity. Taking the dynamical Chern-Simons gravity as an example, 
-our results suggest that the characteristic length $\xi_{CS}^{1/4}$ can be limited 
+our results suggest that the characteristic length $\xi_{\mathrm{CS}}^{1/4}$ can be limited 
 to about $10\, \mathrm{km}$ or less with future GW observations. 
 }
 
@@ -424,14 +424,14 @@ The single-event parameters $\bm{\theta}$ include
  the binary masses $m_1$ and $m_2$, the 
 dimensionless tidal deformabilities $\Lambda_1$ and $\Lambda_2$, spin-induced 
 quadrupole moments $Q_1$ and $Q_2$, the dimensionless spin $\chi_1$ and $\chi_2$, the 
-luminosity distance $D_L$, the merge time $t_c$, the right ascension $\alpha$ and 
+luminosity distance $D_L$, the merge time $t_{c}$, the right ascension $\alpha$ and 
 declination $\delta$, the inclination angle $\iota$, the GW polarization angle 
-$\psi$ and the phase of coalescence $\phi_c$.
+$\psi$ and the phase of coalescence $\varphi_{c}$.
 
 When generating the BNS events, we adopt the population model proposed by \citet{Farrow:2019xnc}. 
 According to their spin magnitude, the model divides BNS into a recycled star and a nonrecycled 
-(\emph{slow}) one, for which the masses are labeled $m_r$ and $m_s$, respectively. 
-The distribution of $m_r$ has two Gaussian components while $m_s$ follow a uniform distribution,
+(\emph{slow}) one, for which the masses are labeled $m_{\mathrm{r}}$ and $m_{\mathrm{s}}$, respectively. 
+The distribution of $m_{\mathrm{r}}$ has two Gaussian components while $m_{\mathrm{s}}$ follow a uniform distribution,
 \begin{subequations}
 \label{mass population}
 \begin{equation}
@@ -445,13 +445,13 @@ where $\alpha=0.68$, $\mu_1=1.34\,\mathrm{M}_{\odot}$, $\sigma_1=0.02\,\mathrm{M
 {\odot}$, $\mu_2=1.47\,\mathrm{M}_{\odot}$, $\sigma_2=0.15\,\mathrm{M}_{\odot}$ 
 and $m_{\mathrm{s}}^l=1.14\,\mathrm{M}_{\odot}$, $m_{\mathrm{s}}^u=1.46\,\mathrm{M}_{\odot}$. Then, the NS with a larger mass is labeled as the primary star with mass $m_1$ and the other as the secondary star with mass $m_2$.
 The tidal deformability and quadrupole moments of the binary are calculated from 
-the stellar mass assuming the APR4 EOS with methods described in Refs.~\cite{Yagi:2013awa,Atta:2024ckt}. For the spin of recycled stars $\chi_r$, we adopt a uniform distribution $\mathcal{U}(-0.5,0.5)$, 
-while for $\chi_s$ we draw from $\mathcal{U}(-0.1,0.1)$.
+the stellar mass assuming the APR4 EOS with methods described in Refs.~\cite{Yagi:2013awa,Atta:2024ckt}. For the spin of recycled stars $\chi_{\mathrm{r}}$, we adopt a uniform distribution $\mathcal{U}(-0.5,0.5)$, 
+while for $\chi_{\mathrm{s}}$ we draw from $\mathcal{U}(-0.1,0.1)$.
 Using the cosmological parameters provided by the Planck Collaboration~\cite{Planck:2018vyg}, 
-we simulate 1000 gravitational wave (GW) sources, a total number estimated from the observed local merger rate 
+we simulate 1000 GW sources, a total number estimated from the observed local merger rate 
 $7.6$--$250\,\mathrm{Gpc}^{-3}\mathrm{yr}^{-1}$ from current GW detections~\cite{LIGOScientific:2025pvj,LIGOScientific:2020aai}. 
 These sources are distributed uniformly in source-frame time and co-moving volume between 15~Mpc and 150~Mpc, 
-with isotropic sky locations and orientations. Without loss of generality, all GW events are injected with $t_c=0$.
+with isotropic sky locations and orientations. Without loss of generality, all GW events are injected with $t_{c}=0$.
 
 We select a XG detector network consisting of two CE detectors and one ET 
 detector, whose sensitivities are taken as CE-2~\cite{Reitze:2019iox,Reitze:2019dyk} 
@@ -467,8 +467,8 @@ while the ET detector is set at the current location of the Virgo detector with 
 According to the discussion in section~\ref{subsec:framework_principles}, the inference of the Love-Q relation
 can be divided into two steps.
 In the auxiliary single-event inference, the variable parameters are $\bm{\theta} = \{\mathcal{M},\eta,
-\Lambda_1,\Lambda_2,Q_1,Q_2,\chi_1,\chi_2,D_L,t_c,\alpha,\delta,\iota,\psi,\phi_c\}
-$. The priors of $\mathcal{M}$, $\eta$, $\chi_1$, $\chi_2$, $t_c$ and $\phi_c$ are uniform, and
+\Lambda_1,\Lambda_2,Q_1,Q_2,\chi_1,\chi_2,D_L,t_{c},\alpha,\delta,\iota,\psi,\varphi_{c}\}
+$. The priors of $\mathcal{M}$, $\eta$, $\chi_1$, $\chi_2$, $t_{c}$ and $\varphi_{c}$ are uniform, and
 the prior of $D_L$ is uniform in source frame time and co-moving volume. We 
 set isotropic priors for the angle variables $\alpha,\delta,\iota,\psi$. For tidal 
 and quadrupole moment parameters, we treat $\Lambda_s$ and $Q_s$ of the slow 
@@ -500,7 +500,7 @@ with the highest signal-to-noise ratios (SNRs)
 \citet{Yagi:2013awa} concluded that the spin-induced quadrupole moment can not
 be well measured for NSs with low spins. Considering these findings, we first
 draw 100 sources with the highest SNRs, then further select 20 sources with the
-largest $|\chi_{r}|$ among them. As we will show in section~\ref{sec:results}, the primary
+largest $|\chi_{\mathrm{r}}|$ among them. As we will show in section~\ref{sec:results}, the primary
 information for constraining the Love-Q relation comes from the 10 loudest GW
 events. We leave a more comprehensive study of the whole population for future
 work. 
@@ -750,24 +750,24 @@ regions.
 
 \begin{figure}[t]
     \centering
-    \begin{minipage}{0.48\linewidth}
-        \includegraphics[width=\linewidth]{CS_zeta_APR4_2d.pdf}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.48\linewidth}
-        \includegraphics[width=\linewidth]{CS_xi_cs_APR4_2d.pdf}
-    \end{minipage}
-    \vspace{3mm}
-    \begin{minipage}{0.48\linewidth}
+    %\begin{minipage}{0.48\linewidth}
+    %    \includegraphics[width=\linewidth]{CS_zeta_APR4_2d.pdf}
+    %\end{minipage}
+    %\hfill
+    %\begin{minipage}{0.48\linewidth}
+    %    \includegraphics[width=\linewidth]{CS_xi_cs_APR4_2d.pdf}
+    %\end{minipage}
+    %\vspace{3mm}
+    \begin{minipage}{0.6\linewidth}
         \includegraphics[width=\linewidth]{CS_xi_bar_APR4_2d.pdf}
     \end{minipage}
     \caption{Comparison of recovered Love-Q relation in GR
     and dCS predictions 
-    with different coupling constants. Similar to figure~\ref{2-d_Love_Q}, the
+    with coupling constant $\bar{\xi}$ fixed. Similar to figure~\ref{2-d_Love_Q}, the
     blue lines indicate the median of the recovered Love-Q relation, while the
-    shaded regions represent the $50\%$ and $90\%$ credible intervals. For each of the coupling constants of 
-    CS gravity $\zeta, \xi_{\mathrm{CS}}$ and $\bar\xi$, we take three values
-    and plot corresponding Love-Q relations with APR4 EOS.\ZW{Still need to
+    shaded regions represent the $50\%$ and $90\%$ credible intervals. For the coupling constant 
+    $\bar\xi$, we take three values
+    and plot the corresponding Love-Q relation.\ZW{Still need to
     modified after the discussion in the main text.}}
     \label{cs_Love_Q}
 \end{figure}
@@ -790,24 +790,25 @@ $^{*}\mathcal{R}^{\mu\nu\rho\sigma}$ denote the Riemann tensor and its dual,
 $\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density, 
 $\alpha$ and $\beta$ are the coupling constants in dCS gravity. We omit any 
 potential for the pseudo-scalar field $\mathcal{\vartheta}$ in the action, 
-following Ref.~\cite{Gupta:2017vsl}. $\mathcal{\vartheta}$ is taken to be 
-dimensionless, and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
+following Ref.~\cite{Gupta:2017vsl}. $\mathcal{\vartheta}$ and $\beta$ is taken to be 
+dimensionless, which forces $\alpha$ to have dimensions of $(\mathrm{length})^2$ 
+and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
 (\kappa\beta)]^{1/4}$ can be explained as 
 the characteristic length of dCS gravity~\cite{Yunes:2009hc,Yagi:2012ya}. 
+Current Solar System observations have constrained the characteristic length to 
+$\xi_{\mathrm{CS}}^{1/4}<\mathcal{O}(10^8)$~km~\cite{Ali-Haimoud:2011zme,Yagi:2012ya}. 
 
 %\ZW{Maybe you need to re-introduce the parameters in the Love-Q relation and the relation between them and the coupling constant in dCS gravity.}
-The dCS gravity predicts Love-Q relations that are degenerate with the one in GR 
-only when the coupling constants approach zero~\cite{Yagi:2013bca,
-Yagi:2013awa,Gupta:2017vsl}. The characteristic length has been constrained by 
-current Solar System observations to $\xi_{\mathrm{CS}}^{1/4}<\mathcal{O}(10^8)$~km~\cite{Ali-Haimoud:2011zme,Yagi:2012ya}. 
+The dCS gravity predicts Love-Q relations that deviate from the one in GR~\cite{Yagi:2013bca,Yagi:2013awa,Gupta:2017vsl}, 
+allowing us to test dCS gravity with the inferred Love-Q relation. 
 For a Love-Q test, Ref.~\cite{Yagi:2013mbt} obtained the dCS correction to the NS 
 quadrupole moment and Ref.~\cite{Yagi:2011xp} indicates that the tidal 
 deformability is the same as the one in GR at leading order in small coupling 
-approximation $\zeta \equiv \xi_{\mathrm{CS}} M^2/R^6 \ll 1$, regarding the dCS 
+approximation $\zeta \equiv \xi_{\mathrm{CS}} m^2/R^6 \ll 1$, regarding the dCS 
 gravity as an effective theory. Refs.~\cite{Yagi_2017,Yagi:2013mbt,Gupta:2017vsl} 
 have discussed the Love-Q relation under dCS gravity and find that the relation 
-becomes EOS-sensative with $\xi_{\mathrm{CS}}$ or $\zeta$ fixed. However, but with 
-$\bar{\xi}\equiv \xi_{\mathrm{CS}}/M^4$ fixed, the Love-Q relation remains 
+becomes EOS-sensative with $\xi_{\mathrm{CS}}$ or $\zeta$ fixed. However, with 
+$\bar{\xi}\equiv \xi_{\mathrm{CS}}/m^4$ fixed, the Love-Q relation remains 
 universal and the EOS variation is of $\mathcal{O}(1\%)$. Ref.~\cite{Gupta:2017vsl} 
 parameterized the relation between the dCS correction to $Q$ (denoted as $Q_{\mathrm{CS}}$) and the tidal deformability $\Lambda$ as follows
 \begin{equation}
@@ -816,17 +817,15 @@ parameterized the relation between the dCS correction to $Q$ (denoted as $Q_{\ma
 \end{equation} 
 where the fitting coefficients $a=-3.443, b=-0.550$ and $c=-0.023$. 
 
-Following Ref.~\cite{Yagi_2017}, we calculate the dCS Love-Q relation with $\zeta, \xi_{\mathrm{CS}}$ and $\bar{\xi}$ 
-fixed respectively assuming the APR4 EOS, which has been assumed in our simulation 
-in section~\ref{sec:simulation}. The results are demonstrated in figure~\ref{cs_Love_Q}. 
-We compare the hierarchical Bayesian inference constraint of the Love-Q relation 
-using the linear model (figure~\ref{2-d_Love_Q}) with some possible Love-Q 
-relations with respect to certain coupling constants in dCS gravity. From 
+We compare the inferred constraints of the Love-Q relation 
+using the linear model (figure~\ref{2-d_Love_Q}) and Love-Q 
+relations with $\bar{\xi}$ fixed (Eq.~\ref{cs_Love_Q_eq}) in dCS gravity. From 
 figure~\ref{cs_Love_Q} we can conclude that our Love-Q test of dCS gravity can 
-constrain the characteristic length $\xi_{\mathrm{CS}}^{1/4} \lesssim \mathcal{O}(10^1)$~km, 
-which is in agreement with the results given by Refs.~\cite{Yagi:2013bca,Yagi:2013awa}. 
-For the other two coupling constants, our inference results place constraints of 
-$\zeta \lesssim \mathcal{O}(10^{-2})$ and $\bar{\xi} \lesssim \mathcal{O}(10^{3})$.
+constrain the coupling constant $\bar{\xi} \lesssim 10^{3}$. Substitute typical 
+mass $m=1.4~\mathrm{M_{\odot}}$ and radius $R=10$~km of NSs, we have constraints 
+for the other two coupling constants $\xi_{\mathrm{CS}}^{1/4} \lesssim 10$~km and 
+$\zeta \lesssim 0.1$, which are in agreement with the results 
+given by Refs.~\cite{Yagi:2013bca,Yagi:2013awa}. 
 
 %=============================
 \section{Conclusion}
@@ -853,17 +852,17 @@ when inferring the Love-Q relation with GWs. Considering the quartic polynomial
 model proposed by \citet{Yagi:2013awa} and the linear model adopted by
 \citet{Samajdar:2020xrd} as two extremes, we conduct the inference with
 four polynomial models
-from linear to quartic terms respectively. As shown in
-section~\ref{sec:results}, we quantitatively demonstrate that
-the linear model is accurate enough to describe the Love-Q relation in the
-inference. Also, as the number of parameters increases, more significant
+from linear to quartic terms respectively. As shown in 
+section~\ref{sec:results}, we quantitatively demonstrate that 
+the linear model is accurate enough to describe the Love-Q relation in the 
+inference. Also, as the number of parameters increases, more significant 
 degeneracy or poorly constrained parameters appear in the posteriors, while the recovered Love-Q relations keep similar in the region where most data points gather.
 
 We also test the potential of using the inferred Love-Q relation to
 constrain modified gravity theories in Section~\ref{sec:dCS}.
 Taking the dCS gravity as an example, we find that the inferred Love-Q relation
 can place a constraint on the dCS characteristic length about
-$\xi_{\mathrm{CS}}^{1/4} \lesssim \mathcal{O}(10^1)$~km, which is seven orders
+$\xi_{\mathrm{CS}}^{1/4} \lesssim 10$~km, which is seven orders
 of magnitude tighter than that from current Solar System
 observations~\cite{Ali-Haimoud:2011zme,Yagi:2012ya}, and consistent with
 previous predictions~\cite{Yagi:2013bca,Yagi:2013awa}. This highlights the power
