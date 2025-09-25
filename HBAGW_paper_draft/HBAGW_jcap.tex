@@ -230,7 +230,9 @@ where only two parameters are involved. \ZW{Do we need to list the fitting
 results in Samajdar? It seems the values are not consistent with the values in
 table \ref{prior_table}.}
 In figure~\ref{relative_difference}, we plot the Yagi-Yunes relation along with 
-its linear fit. This fit is the result of a least-squares regression performed on 1000 points uniformly sampled in logarithmic space from Yagi-Yunes relation. 
+its linear fit, which is obtained by a least-square regression performed on 1000
+points uniformly picked
+ in logarithmic space from the Yagi-Yunes relation. 
 As the example of a typical EOS, we plot the Love-Q relation calculated assuming the APR4 
 EOS~\cite{PhysRevC.58.1804}, a soft EOS consistent with the 
 observations of GW170817~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
@@ -448,8 +450,8 @@ The tidal deformability and quadrupole moments of the binary are calculated from
 the stellar mass assuming the APR4 EOS with methods described in Refs.~\cite{Yagi:2013awa,Atta:2024ckt}. For the spin of recycled stars $\chi_{\mathrm{r}}$, we adopt a uniform distribution $\mathcal{U}(-0.5,0.5)$, 
 while for $\chi_{\mathrm{s}}$ we draw from $\mathcal{U}(-0.1,0.1)$.
 Using the cosmological parameters provided by the Planck Collaboration~\cite{Planck:2018vyg}, 
-we simulate 1000 GW sources, a total number estimated from the observed local merger rate 
-$7.6$--$250\,\mathrm{Gpc}^{-3}\mathrm{yr}^{-1}$ from current GW detections~\cite{LIGOScientific:2025pvj,LIGOScientific:2020aai}. 
+we simulate 1000 GW sources, corresponding to a several years' observation with XG detectors with the observed local merger rate 
+$7.6$--$250\,\mathrm{Gpc}^{-3}\mathrm{yr}^{-1}$~\cite{LIGOScientific:2025pvj,LIGOScientific:2020aai}.
 These sources are distributed uniformly in source-frame time and co-moving volume between 15~Mpc and 150~Mpc, 
 with isotropic sky locations and orientations. Without loss of generality, all GW events are injected with $t_{c}=0$.
 
@@ -515,7 +517,7 @@ work.
         the polynomial
         model. $j=5$ indicates the original Yagi-Yunes
         relation~\cite{Yagi_2017}. For $j = $ 2, 3 and 4, the values are
-        the results of least squares regression performed on 1000 points uniformly sampled in logarithmic space from Yagi-Yunes relation. Priors are chosen to be uniform distributions, and the ranges
+        the results of least squares regression performed on 1000 points uniformly picked in logarithmic space from Yagi-Yunes relation. Priors are chosen to be uniform distributions, and the ranges
         are same for different $j$ to ensure a fair comparison.
         }\label{prior_table}
     \begin{tabular}{
@@ -767,8 +769,7 @@ regions.
     blue lines indicate the median of the recovered Love-Q relation, while the
     shaded regions represent the $50\%$ and $90\%$ credible intervals. For the coupling constant 
     $\bar\xi$, we take three values
-    and plot the corresponding Love-Q relation.\ZW{Still need to
-    modified after the discussion in the main text.}}
+    and plot the corresponding Love-Q relation.}
     \label{cs_Love_Q}
 \end{figure}
 In this section, we investigate the potential of testing gravity theories with the 
@@ -788,10 +789,9 @@ where $g$ is the determinant of the metric, $\kappa_g= 1/16\pi$, $\mathcal{R}$ i
 the Ricci scalar, $\mathcal{R}_{\nu\mu\rho\sigma}$ and
 $^{*}\mathcal{R}^{\mu\nu\rho\sigma}$ denote the Riemann tensor and its dual, 
 $\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density, 
-$\alpha$ and $\beta$ are the coupling constants in dCS gravity. We omit any 
-potential for the pseudo-scalar field $\mathcal{\vartheta}$ in the action, 
-following Ref.~\cite{Gupta:2017vsl}. $\mathcal{\vartheta}$ and $\beta$ is taken to be 
-dimensionless, which forces $\alpha$ to have dimensions of $(\mathrm{length})^2$ 
+$\alpha$ and $\beta$ are the coupling constants in dCS gravity and the
+potential for the pseudo-scalar field $\mathcal{\vartheta}$ in the is omitted. $\mathcal{\vartheta}$ and $\beta$ is taken to be 
+dimensionless, so $\alpha$ have the dimension of $(\mathrm{length})^2$ 
 and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
 (\kappa\beta)]^{1/4}$ can be explained as 
 the characteristic length of dCS gravity~\cite{Yunes:2009hc,Yagi:2012ya}. 
@@ -866,8 +866,7 @@ $\xi_{\mathrm{CS}}^{1/4} \lesssim 10$~km, which is seven orders
 of magnitude tighter than that from current Solar System
 observations~\cite{Ali-Haimoud:2011zme,Yagi:2012ya}, and consistent with
 previous predictions~\cite{Yagi:2013bca,Yagi:2013awa}. This highlights the power
-of inferring the Love-Q relation from GWs in testing gravity theories. \ZW{Plz
-check the parameters to be constrained and corresponding limits.}
+of inferring the Love-Q relation from GWs in testing gravity theories. 
 
 There are several extensions to this work. Firstly, we assume the aligned-spin BNS systems, while
 realistic BNS systems may have spin precession, which leads to additional
