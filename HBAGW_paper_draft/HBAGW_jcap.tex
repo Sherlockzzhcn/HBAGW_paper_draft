@@ -77,21 +77,22 @@ Sciences, Beijing 100012, China}
 \emailAdd{ydong@pku.edu.cn}
 \emailAdd{lshao@pku.edu.cn}
 
-\abstract{Nuclear and gravity theories have predicted a universal ``Love-Q'' 
-relation between the dimensionless tidal deformability $\Lambda$ and the 
+\abstract{Theoretical computations have predicted a universal ``Love-Q'' relation 
+between the dimensionless tidal deformability $\Lambda$ and the 
 dimensionless quadrupole moment $Q$ of neutron stars (NSs). However, this Love-Q 
 relation has not yet been directly measured in an observational aspect. 
 Gravitational waves (GWs) emitted from binary NS systems serve as 
 a powerful tool for probing NS properties. The future next-generation 
 GW detectors are expected to yield numerous BNS events with high-precision  
-measurements. In this study, we explore the prospects of constraining the Love-Q 
+measurements, making it possible to conduct an experimental 
+measurement of Love-Q relation with GW observations. 
+In this study, we explore the prospects of constraining the Love-Q 
 relation with future GW observations. Adopting a hierarchical Bayesian framework, 
 we are able to combine multiple GW events in a more systematic manner. 
 We simulate 1000 GW sources and select the loudest 20 events for the analysis.
 By considering four polynomial models from linear to quartic terms, we find that 
-a linear relation 
-between $\ln\Lambda$ and $\ln Q$ is accurate enough in constraining the Love-Q
-    relation with GWs.
+the inferred linear relation between $\ln\Lambda$ and $\ln Q$ 
+is able to provide accurate constraints of the Love-Q relation with GWs. 
 Strong correlations between the parameters are found in all four models. 
 Furthermore, we utilize the inferred Love-Q relation in testing modified gravity. Taking the dynamical Chern-Simons gravity as an example, 
 our results suggest that the characteristic length $\xi_{\mathrm{CS}}^{1/4}$ can be limited 
@@ -116,7 +117,7 @@ allow one to probe the properties of nuclear matter at densities exceeding nucle
 saturation density. Additionally, the recent observation of GW170817 has opened up a 
 new observational window for investigating NS properties using gravitational waves 
 (GWs) emitted during binary NS (BNS) coalescences~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
-LIGOScientific:2018hze}. Some of NS properties, including the tidal
+LIGOScientific:2018hze}. Some of the NS properties, including the tidal
 deformability and the
 spin-induced quadrupole moment, contribute to the GW emission
 ~\cite{Poisson:1997ha,
@@ -136,17 +137,25 @@ the dimensionless spin and mass of the NS respectively~\cite{Hartle:1968,Laarakk
 Both $\Lambda$ and $Q$ are determined by $m$
  with a given equation of state 
 (EOS)~\cite{Yagi:2013awa}, which describes the relation between pressure and
-density of the NS.
+density of the NS. Yet the EOS of NSs has not been determined by current observations.
 
-On the one hand, the EOS of NSs have not yet been determined by current
-observations. On the
-other hand, Yagi 
-and Yunes~\cite{Yagi:2013bca,Yagi:2013awa} proposed a universal relation between 
-$\Lambda$ (or tidal Love number) and $Q$, which is EOS-insensitive 
-with variation of about $1\%$ or less for different EOSs in general relativity (GR).
-However, this relation is dependent on the underlying gravity theory and thus
-provides a powerful approach to testing gravity while avoiding the uncertainties
-from the unknown EOS~\cite{Yagi:2013bca,Silva:2020acr,Shao:2022koz}. If the Love-Q relation in GR is adopted as a prior in the waveform
+When it comes to testing gravity with NS observations, one can encounter a degeneracy
+between uncertainties of both the
+EOS and the underlying gravity theory~\cite{Yagi:2013bca,Yagi:2013awa,Silva:2020acr,Shao:2022koz}. 
+One way to break this degeneracy is to find universal relations among NS properties 
+that are insensitive to EOS uncertainties but dependent on the underlying gravity theory.
+Yagi and Yunes~\cite{Yagi:2013bca,Yagi:2013awa} first proposed such universal relation between 
+$I$ (the moment of inertia), $\Lambda$ (or tidal Love number) and $Q$. 
+On the one hand, this ``I-Love-Q'' relation is insensitive to EOS uncertainties 
+with variations of about $1\%$ or less for different EOSs in general relativity (GR). 
+On the other hand, the relation in modified gravity theories, 
+such as dynamical Chern-Simons (dCS) gravity, can deviate from the one 
+predicted by GR~\cite{Yagi_2017,Gupta:2017vsl,Yunes:2025xwp}. 
+Therefore, an EOS-insensitive test of gravity can be conducted 
+with the I-Love-Q relation. 
+Among the I-Love-Q trio, the Love-Q relation can be probed with GW observations, 
+since both of $\Lambda$ and $Q$ affect the GW emitted by BNS systems. 
+If the Love-Q relation in GR is adopted as a prior in the waveform
 model, the number of independent parameters can be reduced, which helps to
 better estimate the spin parameters of BNSs~\cite{Yagi:2013bca,LIGOScientific:2018cki,
 LIGOScientific:2018hze,LIGOScientific:2020aai}. 
@@ -163,7 +172,7 @@ have first performed an analysis discussing the prospect of constraining Love-Q
 relation with GW observations, where a weighted linear regression is adopted.
 This treatment might miss possible degeneracy and non-Gaussianity in the posterior of $\Lambda$ and $Q$. 
 
-This work is the first to adopt the hierarchical Bayesian framework in inferring the Love-Q relation with XG GW observations.
+This work is the first to adopt the hierarchical Bayesian framework to infer the Love-Q relation with XG GW observations.
 This framework has been successfully applied in 
 population studies of compact binary coalescences, or probing the EOS of NSs~\cite{Mandel:2009nx,Mandel:2009pc,Adams:2012qw,Lackey:2014fwa,Mandel:2018mve,Golomb:2021tll,KAGRA:2021duu,Wang:2024xon}. 
 Regarding the Love-Q relation parameters as hyperparameters, the hierarchical 
@@ -188,7 +197,7 @@ from linear to quartic terms in fitting the relation, we quantitatively show
  that
 the linear relation is accurate enough when constraining the Love-Q relation
 with GWs. Additionally, we apply the inferred Love-Q relation in gravity tests.
-Taking the dynamical Chern-Simons gravity as an example, we find that the
+Taking the dCS gravity as an example, we find that the
 characteristic length $\xi_{\rm CS}^{1/4}$ can be limited to $\lesssim 10\,{\rm km}$
 with future GW observations. 
 
@@ -226,14 +235,12 @@ relation with GWs, \citet{Samajdar:2020xrd} adopt a linear model to describe the
 \label{2-d_Love_Q_eq}
     \ln Q_{2} = a_2 + b_2 \ln \Lambda\,,
 \end{equation}
-where only two parameters are involved. \ZW{Do we need to list the fitting
-results in Samajdar? It seems the values are not consistent with the values in
-table \ref{prior_table}.}
+where only two parameters are involved. 
 In figure~\ref{relative_difference}, we plot the Yagi-Yunes relation along with 
-its linear fit, which is obtained by a least-square regression performed on 1000
+its linear fit, which is obtained by a least squares regression performed on 1000
 points uniformly picked
  in logarithmic space from the Yagi-Yunes relation. 
-As the example of a typical EOS, we plot the Love-Q relation calculated assuming the APR4 
+As an example of a typical EOS, we plot the Love-Q relation calculated assuming the APR4 
 EOS~\cite{PhysRevC.58.1804}, a soft EOS consistent with the 
 observations of GW170817~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
 LIGOScientific:2018hze}. In this case, the relative differences in $\ln Q$ between 
@@ -262,7 +269,7 @@ APR4}$), respectively.}\label{relative_difference}
 %=============================
 
 The coefficients in Eq.~\eqref{5-d_Love_Q_eq} and Eq.~\eqref{2-d_Love_Q_eq} 
-do not contribute directly to the GW waveform. Instead, they 
+do not directly contribute to the GW waveform. Instead, they 
 determine a relation between the waveform parameters
 $\Lambda$ and $Q$, denoted as $Q=f(\Lambda;\bm{H})$, where $\bm{H}$ represents
 the coefficients, $\bm{H} = \{a_2, b_2\}$ or $\bm{H} = \{a_5, b_5, c_5, d_5,
@@ -302,7 +309,7 @@ p(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n|D)=\frac{p(D|\bm{H},\bm{\theta}_1,\c
 where $\pi(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)$ is the prior, $p(D|\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n)$ 
 is the likelihood function, and $p(D)$ denotes the evidence. Then, $p(\bm{H}|D)$
 can be obtained by 
-marginializing over the single-event parameters
+marginalizing over the single-event parameters
 \begin{equation}
 \label{bayes1}
 p(\bm{H}|D) = \int p(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n|D) \text{d}\bm{\theta}_1\cdots\text{d}\bm{\theta}_n\,,
@@ -315,15 +322,12 @@ prior can be decomposed into parts of hyperparameters and single-event parameter
 \pi(\bm{H},\bm{\theta}_1,\cdots,\bm{\theta}_n) = \pi(\bm{H}) \prod_{i=1}^n \pi(\bm{\theta}_i|\bm{H})\,.
 \end{equation}
 Since we are inferring the Love-Q relation, the tidal deformabilities $\bm
-{\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$ and quadrupole moments $\bm{Q}_i=\{Q_
-{1i},Q_{2i}\}$ \ZW{I still recommend to use $Q^{(i)}_1$ and $Q^{(i)}_2$ for a
-more clearer notation. But maybe current description does not cause confusion.
-What's others' opinion?
-} of the two NSs of the $i\text{-th}$ event are treated as independent
+{\Lambda}_i=\{\Lambda^{(i)}_{1},\Lambda^{(i)}_{2}\}$ and quadrupole moments $\bm{Q}_i=\{Q^{(i)}_
+{1},Q^{(i)}_{2}\}$ of the two NSs of the $i\text{-th}$ event are treated as independent
 parameters in $\bm{\theta}_i$. Note that Love-Q relation is insensitive 
-to the EOS, the prior of mass parameters $m_1$ and $m_2$ are chosen to be
+to the EOS, the priors of mass parameters $m_1$ and $m_2$ are chosen to be
 independent of $\bm{\Lambda}_i, \bm{Q}_i$ and $\bm{H}$. Other parameters in
-$\bm{\theta}_i$ are also assumed to be independent chosen. 
+$\bm{\theta}_i$ are also assumed to be independently chosen. 
 In this way, the conditional prior of $\bm{\theta}_i$
  can be further decomposed as
 \begin{equation}
@@ -428,7 +432,7 @@ dimensionless tidal deformabilities $\Lambda_1$ and $\Lambda_2$, spin-induced
 quadrupole moments $Q_1$ and $Q_2$, the dimensionless spin $\chi_1$ and $\chi_2$, the 
 luminosity distance $D_L$, the merge time $t_{c}$, the right ascension $\alpha$ and 
 declination $\delta$, the inclination angle $\iota$, the GW polarization angle 
-$\psi$ and the phase of coalescence $\varphi_{c}$.
+$\psi$ and the phase of coalescence $\phi_{c}$.
 
 When generating the BNS events, we adopt the population model proposed by \citet{Farrow:2019xnc}. 
 According to their spin magnitude, the model divides BNS into a recycled star and a nonrecycled 
@@ -469,11 +473,11 @@ while the ET detector is set at the current location of the Virgo detector with 
 According to the discussion in section~\ref{subsec:framework_principles}, the inference of the Love-Q relation
 can be divided into two steps.
 In the auxiliary single-event inference, the variable parameters are $\bm{\theta} = \{\mathcal{M},\eta,
-\Lambda_1,\Lambda_2,Q_1,Q_2,\chi_1,\chi_2,D_L,t_{c},\alpha,\delta,\iota,\psi,\varphi_{c}\}
-$. The priors of $\mathcal{M}$, $\eta$, $\chi_1$, $\chi_2$, $t_{c}$ and $\varphi_{c}$ are uniform, and
+\Lambda_1,\Lambda_2,Q_1,Q_2,\chi_1,\chi_2,D_L,t_{c},\alpha,\delta,\iota,\psi,\phi_{c}\}
+$. The priors of $\mathcal{M}$, $\eta$, $\chi_1$, $\chi_2$, $t_{c}$ and $\phi_{c}$ are uniform, and
 the prior of $D_L$ is uniform in source frame time and co-moving volume. We 
 set isotropic priors for the angle variables $\alpha,\delta,\iota,\psi$. For tidal 
-and quadrupole moment parameters, we treat $\Lambda_s$ and $Q_s$ of the slow 
+and quadrupole moment parameters, we treat $\Lambda_{\mathrm{s}}$ and $Q_{\mathrm{s}}$ of the slow 
 binary component as nuisance parameters, since the spin-induced 
 quadrupole moment is poorly estimated for NSs with low spins~\cite{Yagi:2013awa}.
 According to the arguments around Eq.~\eqref{quasi-marginalized}, we choose
@@ -482,7 +486,7 @@ For calculating the posterior, we generate samples with the {\sc
 Bilby}~\cite{Ashton:2018jfp} implementation of the {\sc nessai}
 sampler~\cite{Skilling:2004pqw,Skilling:2006gxv,michael_j_williams_2025_14627250,PhysRevD.103.103006,Williams:2023ppp}.
 To calculate the integral in Eq.~\eqref{hierarchical bayes}, we need the
-fuctional form of the quasi-likelihood, which is proportional to the
+functional form of the quasi-likelihood, which is proportional to the
 distribution function of the posterior
 $p(\bm{\Lambda}_i,\bm{Q}_i|d_i,\varnothing)$. We follow
 \citet{Golomb:2021tll} and adopt the Gaussian mixture 
@@ -583,8 +587,8 @@ discussed in section~\ref{subsec:results_quadratic_cubic}.
      distribution. We use blue and red colors to represent the results based on
      the loudest 20 and 10 events among the 1000
     simulated events, respectively.
-     The orange lines represent the reference values in table~\ref{prior_table}.
-     The black lines on the diagonal represent the priors for comparison.}
+     The black lines represent the reference values in table~\ref{prior_table}.
+     The grey lines on the diagonal represent the priors for comparison.}
     \label{corner2-d}
 \end{figure}
 
@@ -632,7 +636,7 @@ posterior samples. For each $\Lambda$, every sample in the posterior of the
 hyperparameters corresponds to a $Q$ value. With $\Lambda$ fixed, we find the 
 credible intervals of $Q$, and then vary $\Lambda$ continuously to form credible 
 regions. In the left panel, we show the results of the 20-event inference. Similar 
-to figure~\ref{corner2-d}, the Yagi-Yunes Love-Q relation iscovered by the 90\% credible region. 
+to figure~\ref{corner2-d}, the Yagi-Yunes Love-Q relation is covered by the 90\% credible region. 
 In the right panel, we select the loudest 5, 10, 15 and 20 events from the 20 events to test how the recovered Love-Q relation 
 depends on the number of events. We find the widths of the 90\% credible regions 
 are almost the same for the 10, 15 and 20 event inferences. This is consistent 
@@ -703,13 +707,10 @@ mostly covered by the 50\% credible region, and well within the 90\% credible re
     \includegraphics[width=\linewidth]{hierarchical_results_APR4_3d.pdf}
     \end{minipage}
     \caption{Similar to figure~\ref{5-d_Love_Q}, while for the quadratic and
-    cubic polynomial models. Note that in the posterior, the orange lines
-    indicate
-    the reference values in table~\ref{prior_table}, while in the Love-Q
-    panels, the orange lines indicate the original Yagi-Yunes Love-Q relation.
-    \ZW{Therefore, I recommend to use different colors for these two kinds of
-    ``true'' values, e.g., use black for the reference values in the posterior
-    panels. (gray for the priors)}
+    cubic polynomial models.
+    %\ZW{Therefore, I recommend to use different colors for these two kinds of
+    %``true'' values, e.g., use black for the reference values in the posterior
+    %panels. (gray for the priors)}
     }\label{3-d_4-d_Love_Q}
 \end{figure}
 As shown in the previous two subsections, the observations from 20 simulated GW 
@@ -775,8 +776,8 @@ regions.
 In this section, we investigate the potential of testing gravity theories with the 
 inferred Love-Q relation from the GW observations. The I-Love-Q test can be 
 powerful when significant difference in I-Love-Q relation between GR and modified 
-gravity theories exists, for example, some parity-violating theories~\cite{Yagi_2017, Yunes:2025xwp}. 
-Here we take the dynamical Chern-Simons (dCS) gravity~\cite{Jackiw:2003pm, Smith:2007jm,Alexander:2009tp} for discussion, 
+gravity theories exists, for example, some parity-violating theories~\cite{Yagi_2017,Yunes:2025xwp}. 
+Here we take the dynamical Chern-Simons (dCS) gravity~\cite{Jackiw:2003pm,Smith:2007jm,Alexander:2009tp} for discussion, 
 which is well-motivated from heterotic superstring theory~\cite{Polchinski:1998rq,
 Polchinski:1998rr}, loop quantum gravity~\cite{Alexander:2004xd,Taveras:2008yf,
 Calcagni:2009xz} and effective field theories of inflation~\cite{Weinberg:2008hq}. 
@@ -807,7 +808,7 @@ deformability is the same as the one in GR at leading order in small coupling
 approximation $\zeta \equiv \xi_{\mathrm{CS}} m^2/R^6 \ll 1$, regarding the dCS 
 gravity as an effective theory. Refs.~\cite{Yagi_2017,Yagi:2013mbt,Gupta:2017vsl} 
 have discussed the Love-Q relation under dCS gravity and find that the relation 
-becomes EOS-sensative with $\xi_{\mathrm{CS}}$ or $\zeta$ fixed. However, with 
+becomes EOS-sensitive with $\xi_{\mathrm{CS}}$ or $\zeta$ fixed. However, with 
 $\bar{\xi}\equiv \xi_{\mathrm{CS}}/m^4$ fixed, the Love-Q relation remains 
 universal and the EOS variation is of $\mathcal{O}(1\%)$. Ref.~\cite{Gupta:2017vsl} 
 parameterized the relation between the dCS correction to $Q$ (denoted as $Q_{\mathrm{CS}}$) and the tidal deformability $\Lambda$ as follows
@@ -821,7 +822,7 @@ We compare the inferred constraints of the Love-Q relation
 using the linear model (figure~\ref{2-d_Love_Q}) and Love-Q 
 relations with $\bar{\xi}$ fixed (Eq.~\ref{cs_Love_Q_eq}) in dCS gravity. From 
 figure~\ref{cs_Love_Q} we can conclude that our Love-Q test of dCS gravity can 
-constrain the coupling constant $\bar{\xi} \lesssim 10^{3}$. Substitute typical 
+constrain the coupling constant $\bar{\xi} \lesssim 10^{3}$. Substituting typical 
 mass $m=1.4~\mathrm{M_{\odot}}$ and radius $R=10$~km of NSs, we have constraints 
 for the other two coupling constants $\xi_{\mathrm{CS}}^{1/4} \lesssim 10$~km and 
 $\zeta \lesssim 0.1$, which are in agreement with the results 
@@ -833,7 +834,7 @@ given by Refs.~\cite{Yagi:2013bca,Yagi:2013awa}.
 %=============================
 
 In this work, we investigate the prospects of inferring the Love-Q relation of NSs
-with future ground based GW observations.
+with future ground-based GW observations.
 Extending the inference procedure in
 Ref.~\cite{Samajdar:2020xrd}, 
 We adopt the hierarchical Bayesian framework to effectively combine the
@@ -870,7 +871,7 @@ of inferring the Love-Q relation from GWs in testing gravity theories.
 
 There are several extensions to this work. Firstly, we assume the aligned-spin BNS systems, while
 realistic BNS systems may have spin precession, which leads to additional
-biases or uncertainties~\cite{Williamson:2017evr}. The waveform modelling can
+biases or uncertainties~\cite{Williamson:2017evr}. The waveform modeling can
 also have similar issues~\cite{Purrer:2019jcp,Gamba:2020wgg}. 
 Also, in the XG era, the GW signals are possibly overlapping with each
 other, complicating the data analysis~\cite{Pizzati:2021apa, Samajdar:2021egv,
