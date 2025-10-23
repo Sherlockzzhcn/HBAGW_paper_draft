@@ -31,7 +31,7 @@
 \newcommand{\rmd}{{\rm{d}}}
 \newcommand{\ZW}[1]{\textcolor{magenta}{$\mathcal{ZW}$:~#1}}
 
-% \newcommand{\LS}[1]{\textcolor{cyan}{\bf #1}} 
+ \newcommand{\LS}[1]{\textcolor{magenta}{\bf #1}} 
 % \newcommand{\ZW}[2]{{\color{blue} \sout{#1} ZW: {#2}}} % For comment
 % \newcommand{\Reply}[1]{{\bf\color{blue} #1}}
 
@@ -209,12 +209,12 @@ future GW observations.
 
 This paper is organized as follows. In section~\ref{sec:framework} we construct 
 the hierarchical Bayesian framework and derive the posterior of the
-hyperparameters.  The simulation procedure is explained in detail in
+hyperparameters.  The simulation procedure is explained in
 section~\ref{sec:simulation}.  We present the results of our inference and
-discuss the differences between different Love-Q relation parameterization
-models in section~\ref{sec:results}.  We compare our inference results with the
-predictions of the dCS gravity in section~\ref{sec:dCS}. Finally, we conclude
-in section~\ref{sec:conclusion}.
+discuss the differences between different Love-Q parameterization models in
+section~\ref{sec:results}.  We compare our inference results with the
+predictions in the dCS gravity in section~\ref{sec:dCS}. Finally, we conclude in
+section~\ref{sec:conclusion}.
 
 
 %=============================
@@ -226,49 +226,54 @@ in section~\ref{sec:conclusion}.
 \subsection{Polynomial models of Love-Q relation} 
 \label{subsec:framework_parameterization}
 %=============================
-Yagi and Yunes fit the Love-Q relation with a quadratic polynomial model as~\cite{Yagi:2013bca,Yagi:2013awa,Yagi_2017}
+
+Yagi and Yunes~\cite{Yagi:2013bca, Yagi:2013awa, Yagi_2017} fit the Love-Q
+relation with a quadratic polynomial model as,
+%--
 \begin{equation}
 \label{5-d_Love_Q_eq}
-    \ln Q_{5}=a_5 + b_5 \ln \Lambda + c_5 \ln^2\Lambda + d_5 \ln^3\Lambda + e_5 \ln^4 \Lambda\,,
+    \ln Q_{5}=a_5 + b_5 \ln \Lambda + c_5 \ln^2\Lambda + d_5 \ln^3\Lambda + e_5
+    \ln^4 \Lambda\,,
 \end{equation}
-where the dimensionless fitting coefficients are 
-$a_5=0.1940$, $b_5=0.09163$, $c_5=0.04812$, 
-$d_5=-4.283\times 10^{-3}$ and $e_5=1.245\times 10^{-4}$~\cite{Yagi_2017}, and 
-the lower subscript $5$ indicates five model parameters.
-They found that such relation applies to most of the EOSs with 
-relative differences less than $1\%$ in GR. When constraining the Love-Q
-relation with GWs, \citet{Samajdar:2020xrd} adopt a linear model to describe the relation,
+%--
+where the dimensionless fitting coefficients are $a_5=0.1940$, $b_5=0.09163$,
+$c_5=0.04812$, $d_5=-4.283\times 10^{-3}$ and $e_5=1.245\times
+10^{-4}$~\cite{Yagi_2017}, and the lower subscript ``$5$'' indicates five model
+parameters.  They found that such a relation applies to most of the EOSs with 
+relative deviation less than $1\%$ in GR. When constraining the Love-Q relation
+with GWs, \citet{Samajdar:2020xrd} adopted a linear model,
+%--
 \begin{equation}
 \label{2-d_Love_Q_eq}
     \ln Q_{2} = a_2 + b_2 \ln \Lambda\,,
 \end{equation}
-where only two parameters are involved. 
-In figure~\ref{relative_difference}, we plot the Yagi-Yunes relation along with 
-its linear fit, which is obtained by a least squares regression performed on 1000
-points uniformly picked
- in logarithmic space from the Yagi-Yunes relation. 
-As an example of a typical EOS, we plot the Love-Q relation calculated assuming the APR4 
-EOS~\cite{PhysRevC.58.1804}, a soft EOS consistent with the 
-observations of GW170817~\cite{LIGOScientific:2017vwq,LIGOScientific:2018cki,
-LIGOScientific:2018hze}. In this case, the relative differences in $\ln Q$ between 
-these two models and the APR4 EOS are smaller than $1\%$. 
+%--
+where only two parameters, $a_2$ and $b_2$, are involved.  In
+figure~\ref{relative_difference}, we plot the Yagi-Yunes
+relation~(\ref{5-d_Love_Q_eq}) along with its linear fit~(\ref{2-d_Love_Q_eq}),
+which is obtained by a least squares regression performed on 1000 points
+uniformly picked in the logarithmic space from the Yagi-Yunes relation ($a_2=$
+and $b_2=$ \LS{[LS: add values]}).  As an example of a typical EOS, we plot the
+Love-Q relation calculated assuming the APR4 EOS~\cite{PhysRevC.58.1804}, a soft
+EOS consistent with the observations of GW170817~\cite{LIGOScientific:2017vwq,
+LIGOScientific:2018cki, LIGOScientific:2018hze}. In this case, the relative
+differences in $\ln Q$ between these two models and the APR4 EOS are smaller
+than $1\%$. 
 
-
+%---------------------------------------------------------------------
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.8\textwidth]{fig_2d-5d_difference.pdf}% Here is how to import EPS art
+\includegraphics[width=0.8\textwidth]{fig_2d-5d_difference.pdf}
+% Here is how to import EPS art
 \caption{Illustration of the Love-Q relation. In the upper panel, the orange
-solid line indicates the original Yagi-Yunes relation, a quartic polynomial model
- in
-Eq.~\eqref{5-d_Love_Q_eq}, while the green dashed line represents our fitting
-with the linear model in Eq.~\eqref{2-d_Love_Q_eq}. We also show the Love-Q
-relation in the case of APR4 EOS for reference, plotted with blue circles.
-In the lower panel, we show the absolute relative differences of the quadrupole
-moments
-between the two
-models (denoted as $Q_5$ and $Q_2$) and the APR4 EOS (denoted as $Q_{\rm
-APR4}$), respectively.}\label{relative_difference}
+solid line indicates the original Yagi-Yunes relation~\eqref{5-d_Love_Q_eq},
+while the green dashed line represents our fitting with the linear
+model~\eqref{2-d_Love_Q_eq}. We also show the Love-Q relation for the APR4 EOS
+as reference with blue circles.  In the lower panel, we show the absolute
+relative differences between the two models (denoted as $Q_5$ and $Q_2$) and the
+APR4 EOS (denoted as $Q_{\rm APR4}$).}\label{relative_difference}
 \end{figure}
+%---------------------------------------------------------------------
 
 %=============================
 \subsection{Principles}
