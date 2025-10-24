@@ -757,9 +757,10 @@ is dominated by the several loudest events.
 \end{minipage}
     \caption{The posterior of the hyperparameters and the recovered Love-Q
     relation in the quartic polynomial model, where all 20 loudest events are
-    included in the inference. Figure settings are similar to those in
-    figure~\ref{corner2-d} and figure~\ref{2-d_Love_Q}. \LS{[LS: use larger
-    fonts; use ``$10^3 d_5$'' instead of ``$d_5/10^{-3}$'', same for $e_5$]}
+    included in the inference. Figure settings of two panels are respectively
+    similar to those in figure~\ref{corner2-d} and the left panel of
+    figure~\ref{2-d_Love_Q}. \LS{[LS: use larger fonts; use ``$10^3 d_5$''
+    instead of ``$d_5/10^{-3}$'', same for $e_5$]}
     } \label{5-d_Love_Q} 
 \end{figure}
 %---------------------------------------------------------------------
@@ -788,10 +789,11 @@ that most of the simulated events gather around this region.
 % and well within the 90\% credible region.
 
 %=============================
-\subsection{Quadratic and Cubic Polynomial Models}
+\subsection{The Quadratic and Cubic Polynomial Models}
 \label{subsec:results_quadratic_cubic}
 %=============================
 
+%---------------------------------------------------------------------
 \begin{figure}[t]
     \begin{minipage}[t]{0.49\textwidth}
     \centering
@@ -807,43 +809,46 @@ that most of the simulated events gather around this region.
     \includegraphics[width=\linewidth]{fig_hierarchical_results_APR4_3d.pdf}
     \end{minipage}
     \caption{Similar to figure~\ref{5-d_Love_Q}, while for the quadratic and
-    cubic polynomial models.
-    %\ZW{Therefore, I recommend to use different colors for these two kinds of
-    %``true'' values, e.g., use black for the reference values in the posterior
-    %panels. (gray for the priors)}
+    cubic polynomial models. \LS{[LS: use larger fonts; change ``$d_4/10^{-3}$''
+    into ``$10^3 d_4$''; maybe use the same layout as in Figure 4, namely
+    posterior on the left and $Q$-$\Lambda$ relation on the right?]}
     }\label{3-d_4-d_Love_Q}
 \end{figure}
-As shown in the previous two subsections, the observations from 20 simulated GW 
-events can well constrain the two parameters in the linear model, while can not 
-effectively constrain the five parameters in the quartic polynomial model. The two 
-models are adopted in previous studies~\cite{Yagi:2013awa, Samajdar:2020xrd}, 
-while here we further test the models in between them and see how the constraints 
-change with the number of parameters. We perform the inference for the quadratic 
-and cubic polynomial models, which contain three parameters $\{a_3, b_3, c_3\}$ 
-and four parameters $\{a_4, b_4, c_4, d_4\}$, respectively. Similar to the linear 
-model, the reference values of these parameters are obtained by directly fitting 
-the Yagi-Yunes Love-Q relation and listed in table~\ref{prior_table}. The priors of the
-hyperparameters keep the same as their counterparts in the quartic polynomial 
-model, which are also listed in table~\ref{prior_table}.
+%---------------------------------------------------------------------
 
-We summarize the posterior distributions of the hyperparameters in the top row of 
-figure~\ref{3-d_4-d_Love_Q}. In the quadratic model, strong degeneracy arises 
+As shown in the previous two subsections, the observations from 20 simulated GW 
+events can well constrain the two parameters in the linear model, while cannot 
+effectively constrain the five parameters in the quartic polynomial model. The
+above two models were adopted in previous studies~\cite{Yagi:2013awa,
+Samajdar:2020xrd}, and here we further test the models in between them and see
+how the constraints change with the number of hyperparameters. We perform the
+inference for the quadratic and cubic polynomial models, which contain three
+parameters, $\{a_3, b_3, c_3\}$, and four parameters, $\{a_4, b_4, c_4, d_4\}$,
+respectively. Similar to the linear model, the reference values of these
+parameters are obtained by directly fitting the Yagi-Yunes Love-Q relation and
+are listed in table~\ref{prior_table}. The priors of the hyperparameters are
+kept the same as their counterparts in the quartic polynomial model, which are
+also listed in table~\ref{prior_table}.
+
+We summarize the posterior distributions of the hyperparameters in the top row
+of figure~\ref{3-d_4-d_Love_Q}. In the quadratic model, strong degeneracy arises
 among the three parameters. The posterior of $b_3$ is almost the same as its 
 prior. For $a_3$ and $c_3$, though the posteriors are narrower than the priors, 
-their marginal distributions have very wide and flat peaks. In the cubic model, 
-strong degeneracy still exists between $c_4$ and $d_4$, and the posterior of $b_4$ 
-is also similar to its prior. Usually, posterior with large correlations and 
+their marginal distributions have wide and flat plateau. In the cubic model, 
+strong degeneracy  exists between $c_4$ and $d_4$, and the posterior of $b_4$ is
+similar to its prior. In general, posterior with large correlations and 
 prior-like marginal distributions indicates redundant parameters in the model. 
 Therefore, we conclude that the linear model is accurate enough in constraining 
-the Love-Q relation with XG GW observations. This is consistent with the argument 
-in Ref.~\cite{Samajdar:2020xrd} based on qualitative analysis, and in this work we present a quantitative demonstration. 
+the Love-Q relation with XG GW observations. This is consistent with the
+argument in Ref.~\cite{Samajdar:2020xrd} based on qualitative analysis, whereas
+in this work we present a quantitative demonstration. 
 
 Same as before, we plot recovered Love-Q relations in the lower panels of 
-figure~\ref{3-d_4-d_Love_Q}. We find the widths of the 90\% credible regions 
-around $\Lambda \sim 400$ are similar for all the four models. While for
-$\Lambda$ away from this region ($\Lambda \lesssim 200$ or $\Lambda \gtrsim 500$), 
-the widths increase with the number of parameters. This may be the result of both 
-the increased model complexity and the lack of data points in these
+figure~\ref{3-d_4-d_Love_Q}. We find that the widths of the 90\% credible
+regions around $\Lambda \sim 400$ are similar for all of four models. While for
+$\Lambda$ away from this region ($\Lambda \lesssim 200$ or $\Lambda \gtrsim
+500$), the widths increase with the number of parameters. This may have resulted
+from the increased model complexity and the lack of data points in these
 regions. 
 
 %=============================
