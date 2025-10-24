@@ -17,12 +17,11 @@
 \usepackage{natbib}
 \usepackage[colorlinks=true, citecolor=blue, urlcolor=blue, linkcolor=blue]{hyperref} 
 \usepackage{graphicx}
-\usepackage{subfigure}% Include figure files
+\usepackage{subfigure}
 \usepackage[justification=raggedright]{caption}
 \usepackage{tabularx}
-\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{dcolumn}
 \usepackage{bm}
-% \usepackage{ulem}
 
 \newcommand{\ms}{M_\odot}
 \newcommand{\bmt}{{\bm{\theta}}}
@@ -38,21 +37,11 @@
 \title{Inferring neutron-star Love-Q relations from gravitational waves in the
 hierarchical Bayesian framework}
 
-%% %simple case: 2 authors, same institution
-%% \author{A. Uthor}
-%% \author{and A. Nother Author}
-%% \affiliation{Institution,\\Address, Country}
-
-% more complex case: 4 authors, 3 institutions, 2 footnotes
 \author[a]{Zhihao Zheng,}
 \author[b,c,1]{Ziming Wang\note{Corresponding authors.},}
 \author[d]{Jinwen Deng,}
 \author[b,c]{Yiming Dong,}
 \author[c,e,1]{and Lijing Shao}
-
-
-% The "\note" macro will give a warning: "Ignoring empty anchor\cdots"
-% you can safely ignore it.
 
 \affiliation[a]{School of Yuanpei, Peking University, Beijing 100871, China}
 \affiliation[b]{Department of Astronomy, School of Physics, Peking University,
@@ -62,10 +51,6 @@ University, Beijing 100871, China}
 \affiliation[d]{School of Physics, Peking University, Beijing 100871, China}
 \affiliation[e]{National Astronomical Observatories, Chinese Academy of
 Sciences, Beijing 100012, China}
-
-% \affiliation[a]{One University,\\some-street, Country}
-% \affiliation[b]{Another University,\\different-address, Country}
-% \affiliation[c]{A School for Advanced Studies,\\some-location, Country}
 
 % e-mail addresses: one for each author, in the same order as the authors
 \emailAdd{zhzheng@stu.pku.edu.cn}
@@ -271,8 +256,7 @@ while the green dashed line represents our fitting with the linear
 model~\eqref{2-d_Love_Q_eq}. We also show the Love-Q relation for the APR4 EOS
 as reference with blue circles.  In the lower panel, we show the absolute
 relative differences between the two models (denoted as $Q_5$ and $Q_2$) and the
-APR4 EOS (denoted as $Q_{\rm APR4}$). 
-\LS{[LS: why figure is blurred?? Use vector figure, not pixel figure]}}
+APR4 EOS (denoted as $Q_{\rm APR4}$). }
 \label{relative_difference}
 \end{figure}
 %---------------------------------------------------------------------
@@ -671,8 +655,7 @@ section~\ref{subsec:results_quadratic_cubic}.
     \caption{Posterior distributions of the hyperparameters ${\bm H} =
     \{a_2,b_2\}$ in the linear fitting model. The contours refer to 50\% and
     90\% credible regions, while the numbers above the histograms on the
-    diagonal stand for the median and the central 50\% \LS{[LS: maybe we can
-    change them to 90\%?]} credible interval of the marginalized distribution.
+    diagonal stand for the median and the central 90\% credible interval of the marginalized distribution.
     We use blue and red colors to represent the results based on the loudest 20
     and 10 events from the 1000 simulated events, respectively.  The black lines
     represent the reference values in table~\ref{prior_table}.  The grey lines
@@ -703,7 +686,7 @@ quieter events will not significantly change the results.
 %---------------------------------------------------------------------
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{fig_hierarchical_results_APR4_2d.pdf}
+\includegraphics[width=\textwidth]{fig_hierarchical_results_2d.pdf}
     \caption{Recovered Love-Q relation from the posterior of the hyperparameters
     in the linear model. In the left panel, the Love-Q relation is inferred with
     the 20 loudest events from the 1000 simulated GW events. The gray points
@@ -714,11 +697,8 @@ quieter events will not significantly change the results.
     maximum-posterior Love-Q relation. For comparison, we plot the original
     Yagi-Yunes Love-Q relation~\cite{Yagi_2017} in orange. The right panel shows
     how the $90\%$ credible region of the recovered Love-Q relation depends on
-    the number of events, marked with different colors. \LS{[LS: use larger
-    fonts for labels and legends; figure 1 looks good]} \LS{[LS: in the right
-    panel, change ``Yagi-Yunes Relation'' to ``Yagi-Yunes relation'' (same as
-    left panel), and add ``events'' after 5, 10, 15, 20, and remove ``90\%'']}
-    \LS{[LS: add $\Lambda$ to both panels' $x$-axis]} }    \label{2-d_Love_Q}
+    the number of events, marked with different colors.}    
+    \label{2-d_Love_Q}
 \end{figure}
 %---------------------------------------------------------------------
 
@@ -748,19 +728,17 @@ is dominated by the several loudest events.
 \begin{figure}
 \begin{minipage}[t]{0.49\textwidth}
 \centering
-\includegraphics[width=0.8\linewidth]{fig_Hyper_parameter_5d.pdf}
-% Here is how to import EPS art
+\includegraphics[width=0.8\linewidth]{fig_hyper_parameter_5d.pdf}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.49\textwidth}
-\includegraphics[width=\linewidth]{fig_hierarchical_results_APR4_5d.pdf}
+\includegraphics[width=\linewidth]{fig_hierarchical_results_5d.pdf}
 \end{minipage}
     \caption{The posterior of the hyperparameters and the recovered Love-Q
     relation in the quartic polynomial model, where all 20 loudest events are
     included in the inference. Figure settings of two panels are respectively
     similar to those in figure~\ref{corner2-d} and the left panel of
-    figure~\ref{2-d_Love_Q}. \LS{[LS: use larger fonts; use ``$10^3 d_5$''
-    instead of ``$d_5/10^{-3}$'', same for $e_5$]}
+    figure~\ref{2-d_Love_Q}. 
     } \label{5-d_Love_Q} 
 \end{figure}
 %---------------------------------------------------------------------
@@ -785,8 +763,6 @@ the linear case, especially for large $\Lambda$ where the higher-order terms
 become more important. For $\Lambda \sim 400$, the widths of the 90\% credible
 region between the two models are similar, which is consistent with the fact
 that most of the simulated events gather around this region. 
-% The Yagi-Yunes Love-Q relation is mostly covered by the 50\% credible region,
-% and well within the 90\% credible region.
 
 %=============================
 \subsection{The Quadratic and Cubic Polynomial Models}
@@ -797,21 +773,25 @@ that most of the simulated events gather around this region.
 \begin{figure}[t]
     \begin{minipage}[t]{0.49\textwidth}
     \centering
-    \includegraphics[width=0.8\linewidth]{fig_Hyper_parameter_3d.pdf}
+        \includegraphics[width=0.8\linewidth]{fig_hyper_parameter_3d.pdf}
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.49\textwidth}
-    \centering
-    \includegraphics[width=0.8\linewidth]{fig_Hyper_parameter_4d.pdf}
+        \includegraphics[width=\linewidth]{fig_hierarchical_results_3d.pdf}
     \end{minipage}
+
     \vspace{3mm}
-    \begin{minipage}[t]{\textwidth}
-    \includegraphics[width=\linewidth]{fig_hierarchical_results_APR4_3d.pdf}
+
+    \begin{minipage}[t]{0.49\textwidth}
+    \centering
+        \includegraphics[width=0.8\linewidth]{fig_hyper_parameter_4d.pdf}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth}
+        \includegraphics[width=\linewidth]{fig_hierarchical_results_4d.pdf}
     \end{minipage}
     \caption{Similar to figure~\ref{5-d_Love_Q}, while for the quadratic and
-    cubic polynomial models. \LS{[LS: use larger fonts; change ``$d_4/10^{-3}$''
-    into ``$10^3 d_4$''; maybe use the same layout as in Figure 4, namely
-    posterior on the left and $Q$-$\Lambda$ relation on the right?]}
+    cubic polynomial models. 
     }\label{3-d_4-d_Love_Q}
 \end{figure}
 %---------------------------------------------------------------------
@@ -859,24 +839,15 @@ regions.
 %---------------------------------------------------------------------
 \begin{figure}[t]
     \centering
-    %\begin{minipage}{0.48\linewidth}
-    %    \includegraphics[width=\linewidth]{CS_zeta_APR4_2d.pdf}
-    %\end{minipage}
-    %\hfill
-    %\begin{minipage}{0.48\linewidth}
-    %    \includegraphics[width=\linewidth]{CS_xi_cs_APR4_2d.pdf}
-    %\end{minipage}
-    %\vspace{3mm}
     \begin{minipage}{0.6\linewidth}
-        \includegraphics[width=\linewidth]{fig_CS_xi_bar_APR4_2d.pdf}
+        \includegraphics[width=\linewidth]{fig_CS_xi_bar_2d.pdf}
     \end{minipage}
     \caption{Comparison of the recovered Love-Q relation in GR and that are
     predicted by the dCS gravity with coupling constant $\bar{\xi}$ fixed.
     Similar to figure~\ref{2-d_Love_Q}, the blue lines indicate the median of
     the recovered Love-Q relation, while the shaded regions represent the $50\%$
     and $90\%$ credible intervals. For the coupling constant $\bar\xi$, we take
-    three values and plot the corresponding Love-Q relations. \LS{[LS: larger
-    fonts]}}
+    three values and plot the corresponding Love-Q relations.}
     \label{cs_Love_Q}
 \end{figure}
 %---------------------------------------------------------------------
@@ -894,9 +865,7 @@ quantum gravity, and effective field theories of inflation~\cite{Jackiw:2003pm,
 Smith:2007jm, Alexander:2009tp}.  The dCS gravity introduces parity violation
 and quadratic curvature terms in the action~\cite{Alexander:2009tp,
 Gupta:2017vsl},
-% heterotic superstring theory~\cite{Polchinski:1998rq, Polchinski:1998rr}
-% loop quantum gravity~\cite{Alexander:2004xd,Taveras:2008yf, Calcagni:2009xz}
-% effective field theories of inflation~\cite{Weinberg:2008hq}
+
 %--
 \begin{equation}
    \label{cs_action}
@@ -1019,9 +988,6 @@ Program funded by the Max Planck Society, and the High-Performance Computing
 Platform of Peking University. 
 
 
-% \clearpage
-
 \bibliographystyle{apsrev4-1}
-% \bibliographystyle{unsrt}
 \bibliography{HBAGW_jcap}
 \end{document}
