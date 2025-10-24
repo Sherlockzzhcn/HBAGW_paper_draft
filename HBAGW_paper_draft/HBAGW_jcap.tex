@@ -660,7 +660,7 @@ polynomial models, are discussed in
 section~\ref{subsec:results_quadratic_cubic}.
 
 %=============================
-\subsection{Linear Model}
+\subsection{The Linear Model}
 \label{subsec:results_linear_model}
 %=============================
 
@@ -740,46 +740,52 @@ Bandopadhyay:2024zrr, Wang:2024xon}, where the recovered $\Lambda$-$m$ relation
 is dominated by the several loudest events.
 
 %=============================
-\subsection{Quartic Polynomial Model}
+\subsection{The Quartic Polynomial Model}
 \label{subsec:results_quartic}
 %=============================
 
+%---------------------------------------------------------------------
 \begin{figure}
 \begin{minipage}[t]{0.49\textwidth}
 \centering
-\includegraphics[width=0.8\linewidth]{fig_Hyper_parameter_5d.pdf}% Here is how to import EPS art
+\includegraphics[width=0.8\linewidth]{fig_Hyper_parameter_5d.pdf}
+% Here is how to import EPS art
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.49\textwidth}
 \includegraphics[width=\linewidth]{fig_hierarchical_results_APR4_5d.pdf}
 \end{minipage}
-    \caption{The posterior of the hyperparameters and the recovered Love-Q relation
-    in the quartic polynomial model, where all 20 loudest events are included in
-    the inference. Plotting styles are similar to those in figure~\ref{corner2-d} and
-    figure~\ref{2-d_Love_Q}.
+    \caption{The posterior of the hyperparameters and the recovered Love-Q
+    relation in the quartic polynomial model, where all 20 loudest events are
+    included in the inference. Figure settings are similar to those in
+    figure~\ref{corner2-d} and figure~\ref{2-d_Love_Q}. \LS{[LS: use larger
+    fonts; use ``$10^3 d_5$'' instead of ``$d_5/10^{-3}$'', same for $e_5$]}
     } \label{5-d_Love_Q} 
 \end{figure}
+%---------------------------------------------------------------------
 
 For the quartic polynomial model, the Love-Q relation is fitted with five 
-parameters shown in Eq.~\eqref{5-d_Love_Q_eq}, i.e., $\{a_5, b_5, c_5, d_5, e_5\}$. 
-This is also the original model proposed by Yagi and Yunes~\cite{Yagi:2013awa}. We 
-summarize the posterior and the recovered Love-Q relation in figure~\ref{5-d_Love_Q}, where
-all 20 events are included in the inference. In the left panel, though the true 
-values (the values in Yagi-Yunes Love-Q relation~\cite{Yagi:2013awa}) are almost 
-centered in the 50\% and 90\% credible regions, the posteriors are much wider than 
-those in the linear case, reaching the prior boundaries. This indicates that the $\Lambda$ and $Q$ measurements
-from these events are not informative enough to well constrain all the five 
-parameters. In other words, the observation precision is not high enough to 
-capture the higher-order terms introduced by the additional three parameters
-$c_5, d_5$ and $e_5$. This is also reflected in the strong correlations between 
-the three parameter shown in the left panel of figure~\ref{5-d_Love_Q}. In the 
-right panel of figure~\ref{5-d_Love_Q}, the 90\% credible regions of the
-recovered Love-Q relation are also wider than those in the linear case, especially 
-for large $\Lambda$ where the higher-order terms become more important. For 
-$\Lambda \sim 400$, the widths of the 90\% credible region between
-the two models are similar, which is consistent with the fact that most of the 
-simulated events gather around this region. The Yagi-Yunes Love-Q relation is 
-mostly covered by the 50\% credible region, and well within the 90\% credible region.
+parameters shown in Eq.~\eqref{5-d_Love_Q_eq}, i.e., $\{a_5, b_5, c_5, d_5,
+e_5\}$.  This is  the original model proposed by Yagi and
+Yunes~\cite{Yagi:2013awa}. We summarize the posterior and the recovered Love-Q
+relation in figure~\ref{5-d_Love_Q}, where all 20 events are included in the
+inference. In the left panel, though the true values (the values in the
+Yagi-Yunes Love-Q relation~\cite{Yagi:2013awa}) are almost centered in the
+distribution, the posteriors are much wider than those in the linear case,
+reaching the prior boundaries. This indicates that the $\Lambda$ and $Q$
+measurements from these events are not informative enough to well constrain all
+the five parameters. In other words, the observation precision is not high
+enough to capture the higher-order terms introduced by the additional three
+parameters, $c_5, d_5$, and $e_5$. This is also reflected in the strong
+correlations between the three parameters shown in the left panel of
+figure~\ref{5-d_Love_Q}. In the right panel of figure~\ref{5-d_Love_Q}, the 90\%
+credible regions of the recovered Love-Q relation are also wider than that in
+the linear case, especially for large $\Lambda$ where the higher-order terms
+become more important. For $\Lambda \sim 400$, the widths of the 90\% credible
+region between the two models are similar, which is consistent with the fact
+that most of the simulated events gather around this region. 
+% The Yagi-Yunes Love-Q relation is mostly covered by the 50\% credible region,
+% and well within the 90\% credible region.
 
 %=============================
 \subsection{Quadratic and Cubic Polynomial Models}
