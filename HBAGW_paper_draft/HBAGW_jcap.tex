@@ -856,6 +856,7 @@ regions.
 \label{sec:dCS}
 %=============================
 
+%---------------------------------------------------------------------
 \begin{figure}[t]
     \centering
     %\begin{minipage}{0.48\linewidth}
@@ -869,69 +870,87 @@ regions.
     \begin{minipage}{0.6\linewidth}
         \includegraphics[width=\linewidth]{fig_CS_xi_bar_APR4_2d.pdf}
     \end{minipage}
-    \caption{Comparison of recovered Love-Q relation in GR
-    and dCS predictions 
-    with coupling constant $\bar{\xi}$ fixed. Similar to figure~\ref{2-d_Love_Q}, the
-    blue lines indicate the median of the recovered Love-Q relation, while the
-    shaded regions represent the $50\%$ and $90\%$ credible intervals. For the coupling constant 
-    $\bar\xi$, we take three values
-    and plot the corresponding Love-Q relation.}
+    \caption{Comparison of the recovered Love-Q relation in GR and that are
+    predicted by the dCS gravity with coupling constant $\bar{\xi}$ fixed.
+    Similar to figure~\ref{2-d_Love_Q}, the blue lines indicate the median of
+    the recovered Love-Q relation, while the shaded regions represent the $50\%$
+    and $90\%$ credible intervals. For the coupling constant $\bar\xi$, we take
+    three values and plot the corresponding Love-Q relations. \LS{[LS: larger
+    fonts]}}
     \label{cs_Love_Q}
 \end{figure}
-In this section, we investigate the potential of testing gravity theories with the 
-inferred Love-Q relation from the GW observations. The I-Love-Q test can be 
-powerful when significant difference in I-Love-Q relation between GR and modified 
-gravity theories exists, for example, some parity-violating theories~\cite{Yagi_2017,Yunes:2025xwp}. 
-Here we take the dynamical Chern-Simons (dCS) gravity~\cite{Jackiw:2003pm,Smith:2007jm,Alexander:2009tp} for discussion, 
-which is well-motivated from heterotic superstring theory~\cite{Polchinski:1998rq,
-Polchinski:1998rr}, loop quantum gravity~\cite{Alexander:2004xd,Taveras:2008yf,
-Calcagni:2009xz} and effective field theories of inflation~\cite{Weinberg:2008hq}. 
-The dCS gravity introduces parity violation and quadratic curvature terms into the action~\cite{Alexander:2009tp,Gupta:2017vsl}
+%---------------------------------------------------------------------
+
+In this section, we investigate the potential of testing gravity theories with
+the inferred Love-Q relation from the GW observations. The I-Love-Q test can be 
+powerful when significant difference in I-Love-Q relation between GR and
+modified gravity theories exists~\cite{Shao:2022koz}, for example, in some
+parity-violating theories~\cite{Yagi_2017, Yunes:2025xwp}.  Here we take the
+dynamical Chern-Simons (dCS) gravity~\cite{Jackiw:2003pm, Smith:2007jm,
+Alexander:2009tp} for illustration. 
+
+The dCS gravity is well-motivated from heterotic superstring theory, loop
+quantum gravity, and effective field theories of inflation~\cite{Jackiw:2003pm,
+Smith:2007jm, Alexander:2009tp}.  The dCS gravity introduces parity violation
+and quadratic curvature terms in the action~\cite{Alexander:2009tp,
+Gupta:2017vsl},
+% heterotic superstring theory~\cite{Polchinski:1998rq, Polchinski:1998rr}
+% loop quantum gravity~\cite{Alexander:2004xd,Taveras:2008yf, Calcagni:2009xz}
+% effective field theories of inflation~\cite{Weinberg:2008hq}
+%--
 \begin{equation}
    \label{cs_action}
-   S = \int \mathrm{d}^4 x \sqrt{-g}\left[ \kappa_g \mathcal{R} + \frac{\alpha}{4} \mathcal{\vartheta} \mathcal{R}_{\nu\mu\rho\sigma} {}^{*}\mathcal{R}^{\mu\nu\rho\sigma} - \frac{\beta}{2}\nabla_{\mu}\mathcal{\vartheta}\nabla^{\mu}\mathcal{\vartheta} + \mathcal{L}_{\mathrm{mat}}\right]\,,
+   S = \int \mathrm{d}^4 x \sqrt{-g}\left[ \kappa_g \mathcal{R} +
+   \frac{\alpha}{4} \mathcal{\vartheta} \mathcal{R}_{\nu\mu\rho\sigma}
+   {}^{*}\mathcal{R}^{\mu\nu\rho\sigma} -
+   \frac{\beta}{2}\nabla_{\mu}\mathcal{\vartheta}\nabla^{\mu}\mathcal{\vartheta}
+   + \mathcal{L}_{\mathrm{mat}}\right]\,,
 \end{equation}
-where $g$ is the determinant of the metric, $\kappa_g= 1/16\pi$, $\mathcal{R}$ is 
-the Ricci scalar, $\mathcal{R}_{\nu\mu\rho\sigma}$ and
+%--
+where $g$ is the determinant of the metric, $\kappa_g= 1/16\pi$, $\mathcal{R}$
+is the Ricci scalar, $\mathcal{R}_{\nu\mu\rho\sigma}$ and
 $^{*}\mathcal{R}^{\mu\nu\rho\sigma}$ denote the Riemann tensor and its dual, 
-$\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density, 
-$\alpha$ and $\beta$ are the coupling constants in dCS gravity and the
-potential for the pseudo-scalar field $\mathcal{\vartheta}$ in the is omitted. $\mathcal{\vartheta}$ and $\beta$ is taken to be 
-dimensionless, so $\alpha$ have the dimension of $(\mathrm{length})^2$ 
-and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
-(\kappa\beta)]^{1/4}$ can be explained as 
-the characteristic length of dCS gravity~\cite{Yunes:2009hc,Yagi:2012ya}. 
-Current Solar System observations have constrained the characteristic length to 
-$\xi_{\mathrm{CS}}^{1/4}<\mathcal{O}(10^8)$~km~\cite{Ali-Haimoud:2011zme,Yagi:2012ya}. 
+$\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density, $\alpha$ and
+$\beta$ are the coupling constants in the dCS gravity and the potential for the
+pseudo-scalar field $\mathcal{\vartheta}$ is omitted.  $\mathcal{\vartheta}$ and
+$\beta$ is taken to be dimensionless, so $\alpha$ has the dimension of length
+square, and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
+(\kappa\beta)]^{1/4}$ can be explained as the characteristic lengthscale of the
+dCS gravity~\cite{Yunes:2009hc, Yagi:2012ya}.  Current Solar System observations
+have constrained it to $\xi_{\mathrm{CS}}^{1/4} <\mathcal{O}(10^8
+)$~km~\cite{Ali-Haimoud:2011zme, Yagi:2012ya}.
 
-%\ZW{Maybe you need to re-introduce the parameters in the Love-Q relation and the relation between them and the coupling constant in dCS gravity.}
-The dCS gravity predicts Love-Q relations that deviate from the one in GR~\cite{Yagi:2013bca,Yagi:2013awa,Gupta:2017vsl}, 
-allowing us to test dCS gravity with the inferred Love-Q relation. 
-For a Love-Q test, Ref.~\cite{Yagi:2013mbt} obtained the dCS correction to the NS 
-quadrupole moment and Ref.~\cite{Yagi:2011xp} indicates that the tidal 
-deformability is the same as the one in GR at leading order in small coupling 
-approximation $\zeta \equiv \xi_{\mathrm{CS}} m^2/R^6 \ll 1$, regarding the dCS 
-gravity as an effective theory. Refs.~\cite{Yagi_2017,Yagi:2013mbt,Gupta:2017vsl} 
-have discussed the Love-Q relation under dCS gravity and find that the relation 
-becomes EOS-sensitive with $\xi_{\mathrm{CS}}$ or $\zeta$ fixed. However, with 
+The dCS gravity predicts Love-Q relations that deviate from the one in
+GR~\cite{Yagi:2013bca, Yagi:2013awa, Gupta:2017vsl}, allowing us to test the dCS
+gravity with the inferred Love-Q relation.  For a Love-Q test,
+\citet{Yagi:2013mbt} have obtained the dCS correction to the NS quadrupole
+moment, and \citet{Yagi:2011xp} indicates that, regarding the dCS gravity as an
+effective theory, the tidal deformability is the same as  in GR at leading order
+in the small coupling approximation, $\zeta \equiv \xi_{\mathrm{CS}} m^2/R^6 \ll
+1$. Refs.~\cite{Yagi_2017, Yagi:2013mbt, Gupta:2017vsl} have discussed the
+Love-Q relation in the dCS gravity and found that the relation becomes
+EOS-sensitive with $\xi_{\mathrm{CS}}$ or $\zeta$ fixed. However, with 
 $\bar{\xi}\equiv \xi_{\mathrm{CS}}/m^4$ fixed, the Love-Q relation remains 
-universal and the EOS variation is of $\mathcal{O}(1\%)$. Ref.~\cite{Gupta:2017vsl} 
-parameterized the relation between the dCS correction to $Q$ (denoted as $Q_{\mathrm{CS}}$) and the tidal deformability $\Lambda$ as follows
+universal and the  variation with respect to EOS is of $\mathcal{O}(1\%)$.
+\citet{Gupta:2017vsl} parameterized the relation between the dCS correction to
+$Q$ (denoted as $Q_{\mathrm{CS}}$) and the tidal deformability $\Lambda$ as
+%--
 \begin{equation}
     \label{cs_Love_Q_eq}
-    \ln (Q_{\mathrm{CS}}/\bar{\xi}) = a + b \ln \Lambda + c \ln^{2} \Lambda
+    \ln (Q_{\mathrm{CS}}/\bar{\xi}) = a + b \ln \Lambda + c \ln^{2} \Lambda \,,
 \end{equation} 
-where the fitting coefficients $a=-3.443, b=-0.550$ and $c=-0.023$. 
+%--
+where the fitting coefficients are $a=-3.443, b=-0.550$, and $c=-0.023$. 
 
-We compare the inferred constraints of the Love-Q relation 
-using the linear model (figure~\ref{2-d_Love_Q}) and Love-Q 
-relations with $\bar{\xi}$ fixed (Eq.~\ref{cs_Love_Q_eq}) in dCS gravity. From 
-figure~\ref{cs_Love_Q} we can conclude that our Love-Q test of dCS gravity can 
-constrain the coupling constant $\bar{\xi} \lesssim 10^{3}$. Substituting typical 
-mass $m=1.4~\mathrm{M_{\odot}}$ and radius $R=10$~km of NSs, we have constraints 
-for the other two coupling constants $\xi_{\mathrm{CS}}^{1/4} \lesssim 10$~km and 
-$\zeta \lesssim 0.1$, which are in agreement with the results 
-given by Refs.~\cite{Yagi:2013bca,Yagi:2013awa}. 
+We compare the inferred constraints of the Love-Q relation using the linear
+model from figure~\ref{2-d_Love_Q} and Love-Q relations~\eqref{cs_Love_Q_eq}
+with $\bar{\xi}$ fixed in the dCS gravity. From figure~\ref{cs_Love_Q} we
+conclude that our Love-Q test of the dCS gravity can constrain the coupling
+constant to  $\bar{\xi} \lesssim 10^{3}$. Substituting a typical mass
+$m=1.4\,\mathrm{M_{\odot}}$ and a typical radius $R=10$\,km for NSs, we have
+constraints for the other two coupling constants, $\xi_{\mathrm{CS}}^{1/4}
+\lesssim 10$~km and $\zeta \lesssim 0.1$, which are in agreement with the
+results given by Refs.~\cite{Yagi:2013bca, Yagi:2013awa}. 
 
 %=============================
 \section{Conclusion}
