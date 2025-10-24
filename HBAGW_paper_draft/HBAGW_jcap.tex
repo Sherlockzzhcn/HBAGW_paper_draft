@@ -545,59 +545,67 @@ current location of the Virgo detector with a triangular shape.
 \label{subsec:simulation_implementation}
 %=============================
 
-According to the discussion in section~\ref{subsec:framework_principles}, the inference of the Love-Q relation
-can be divided into two steps.
-In the auxiliary single-event inference, the variable parameters are $\bm{\theta} = \{\mathcal{M},\eta,
-\Lambda_1,\Lambda_2,Q_1,Q_2,\chi_1,\chi_2,D_L,t_{c},\alpha,\delta,\iota,\psi,\phi_{c}\}
-$. The priors of $\mathcal{M}$, $\eta$, $\chi_1$, $\chi_2$, $t_{c}$ and $\phi_{c}$ are uniform, and
-the prior of $D_L$ is uniform in source frame time and co-moving volume. We 
-set isotropic priors for the angle variables $\alpha,\delta,\iota,\psi$. For tidal 
-and quadrupole moment parameters, we treat $\Lambda_{\mathrm{s}}$ and $Q_{\mathrm{s}}$ of the slow 
-binary component as nuisance parameters, since the spin-induced 
-quadrupole moment is poorly estimated for NSs with low spins~\cite{Yagi:2013awa}.
-According to the arguments around Eq.~\eqref{quasi-marginalized}, we choose
-uniform priors for $\Lambda_1$, $\Lambda_2$, $Q_1$ and $Q_2$ in the auxiliary inference.
-For calculating the posterior, we generate samples with the {\sc
-Bilby}~\cite{Ashton:2018jfp} implementation of the {\sc nessai}
-sampler~\cite{Skilling:2004pqw,Skilling:2006gxv,michael_j_williams_2025_14627250,PhysRevD.103.103006,Williams:2023ppp}.
-To calculate the integral in Eq.~\eqref{hierarchical bayes}, we need the
-functional form of the quasi-likelihood, which is proportional to the
-distribution function of the posterior
-$p(\bm{\Lambda}_i,\bm{Q}_i|d_i,\varnothing)$. We follow
-\citet{Golomb:2021tll} and adopt the Gaussian mixture 
-model to estimate the density of the posterior samples.
-In the second step, the priors of the hyperparameters $\pi(\bm{H})$ are listed
-in table~\ref{prior_table}. For the conditional prior $\pi(\bm
-{\Lambda}_i|\bm{H})$, we choose the uniform distribution $\mathcal{U}(10,2000)$. 
+According to the discussion in section~\ref{subsec:framework_principles}, the
+inference of the Love-Q relation can be divided into two steps.  In the
+auxiliary single-event inference, the variable parameters are 
+%--
+\begin{align}
+	\bm{\theta} = \{\mathcal{M},\eta, \Lambda_1,\Lambda_2,
+	Q_1,Q_2,\chi_1,\chi_2, D_L,t_{c},\alpha, \delta,\iota,\psi,\phi_{c}\} \,.
+\end{align}
+%--
+In the parameter estimation, the priors of $\mathcal{M}$, $\eta$, $\chi_1$,
+$\chi_2$, $t_{c}$ and $\phi_{c}$ are uniform, and the prior of $D_L$ is such
+that the distribution is uniform in the co-moving volume. We set isotropic
+priors for the angle variables $\alpha,\delta,\iota,\psi$. For tidal and
+quadrupole moment parameters, we treat $\Lambda_{\mathrm{s}}$ and
+$Q_{\mathrm{s}}$ of the slow binary component as nuisance parameters, since the
+spin-induced quadrupole moment is poorly estimated for NSs when the spins are
+slow~\cite{Yagi:2013awa}.  According to the arguments around
+Eq.~\eqref{quasi-marginalized}, we choose uniform priors for $\Lambda_1$,
+$\Lambda_2$, $Q_1$ and $Q_2$ in the auxiliary inference.  To calculate the
+posterior, we generate samples with the {\sc Bilby}~\cite{Ashton:2018jfp}
+implementation of the {\sc nessai} sampler~\cite{Skilling:2004pqw,
+Skilling:2006gxv, michael_j_williams_2025_14627250, PhysRevD.103.103006,
+Williams:2023ppp}.  To calculate the integral in Eq.~\eqref{hierarchical bayes},
+we need the functional form of the quasi-likelihood, which is proportional to
+the distribution function of the posterior $p(\bm{\Lambda}_i,
+\bm{Q}_i|d_i,\varnothing)$. We follow \citet{Golomb:2021tll} and adopt the
+Gaussian mixture model to estimate the density of the posterior samples.  In the
+second step, the priors of the hyperparameters, $\pi(\bm{H})$, are listed in
+table~\ref{prior_table}. For the conditional prior $\pi(\bm
+{\Lambda}_i|\bm{H})$, we choose the uniform distribution $\mathcal{U}(10,2000)$.
 
-We simulate 1000 GW events as 
-described in section~\ref{subsec:simulation_preliminaries}. 
-Though the hierarchical procedure avoids a direct high-dimensional inference for
-$\bm{H}$ and $\{\bm{\theta}_1,\cdots,\bm{\theta}_n\}$ simultaneously, the
-computational cost still increases with the number of events $n$.
-\citet{Lackey:2014fwa} found that when constraining the EOS of NSs, several events
-with the highest signal-to-noise ratios (SNRs)
- contribute most of the information. Also,
-\citet{Yagi:2013awa} concluded that the spin-induced quadrupole moment can not
-be well measured for NSs with low spins. Considering these findings, we first
-draw 100 sources with the highest SNRs, then further select 20 sources with the
-largest $|\chi_{\mathrm{r}}|$ among them. As we will show in section~\ref{sec:results}, the primary
-information for constraining the Love-Q relation comes from the 10 loudest GW
-events. We leave a more comprehensive study of the whole population for future
-work. 
+We simulate 1000 GW events as described in
+section~\ref{subsec:simulation_preliminaries}.  Though the hierarchical
+procedure avoids a direct high-dimensional inference for $\bm{H}$ and
+$\{\bm{\theta}_1,\cdots,\bm{\theta}_n\}$ simultaneously, the computational cost
+still increases with the number of events $n$.  \citet{Lackey:2014fwa} found
+that when constraining the EOS of NSs, several events with the highest
+signal-to-noise ratios (SNRs) contribute most of the information. Also,
+\citet{Yagi:2013awa} concluded that the spin-induced quadrupole moment cannot be
+well measured for NSs with low spins. Considering these findings, we first draw
+100 sources with the highest SNRs, then further select 20 sources with the
+largest $|\chi_{\mathrm{r}}|$ among them. As we will show in
+section~\ref{sec:results}, the primary information for constraining the Love-Q
+relation comes from the 10 loudest GW events. We leave a more comprehensive
+study of the whole population for future work. 
+
+%---------------------------------------------------------------------
 \begin{table}[t]
     \centering
     \sisetup{
         table-align-text-post = false, 
         separate-uncertainty = true 
     }
-        \caption{The reference values and priors of the coefficients in different models
-        of the Love-Q relation, with $j$ being the number of parameters in
-        the polynomial
-        model. $j=5$ indicates the original Yagi-Yunes
-        relation~\cite{Yagi_2017}. For $j = $ 2, 3 and 4, the values are
-        the results of least squares regression performed on 1000 points uniformly picked in logarithmic space from Yagi-Yunes relation. Priors are chosen to be uniform distributions, and the ranges
-        are same for different $j$ to ensure a fair comparison.
+        \caption{The reference values and priors of the coefficients in
+        different models of the Love-Q relation, with $j$ being the number of
+        parameters in the polynomial model. Note that $j=5$ indicates the
+        original Yagi-Yunes relation~\cite{Yagi_2017}. For $j = $ 2, 3 and 4,
+        the values are the results of least squares regression performed on 1000
+        points uniformly picked in the logarithmic space from the Yagi-Yunes
+        relation. Priors are chosen to be uniform distributions, and the ranges
+        are the same for different $j$ to ensure a meaningful comparison.
         }\label{prior_table}
     \begin{tabular}{
         l
@@ -608,15 +616,15 @@ work.
         S[table-format=1.3e-1]
     }
         \toprule
-        \multicolumn{6}{c}{Reference values} \\
+        \multicolumn{6}{c}{Reference Values} \\
         %\cmidrule(l){2-6}
         $j$ & {$a_j$} & {$b_j$} & {$c_j$} & {$d_j$} & {$e_j$} \\
         \midrule
 
         5 \, &  0.1940 & 0.0916 & 4.812e-2 & -4.283e-3 & 1.245e-4 \\
-        4 \, &  0.1290 & 0.1480  & 3.021e-2 & -1.817e-3 & {/}      \\
-        3 \, & -0.0709 & 0.2775  & 3.220e-3 & {/}       & {/}      \\
-        2 \, & -0.1457 & 0.3094  & {/}      & {/}       & {/}      \\
+        4 \, &  0.1290 & 0.1480  & 3.021e-2 & -1.817e-3 & {--}      \\
+        3 \, & -0.0709 & 0.2775  & 3.220e-3 & {--}       & {--}      \\
+        2 \, & -0.1457 & 0.3094  & {--}      & {--}       & {--}      \\
         
         \midrule
 
@@ -626,12 +634,13 @@ work.
         \midrule
 
         5 \, & {$\mathcal{U}(-5.0, 5.0)$} & {$\mathcal{U}(-1.0, 1.0)$} & {$\mathcal{U}(-0.5, 0.5)$} & {$\mathcal{U}(-0.1, 0.1)$} & {$\mathcal{U}(-0.01, 0.01)$} \\
-        4 \, & {$\mathcal{U}(-5.0, 5.0)$} & {$\mathcal{U}(-1.0, 1.0)$} & {$\mathcal{U}(-0.5, 0.5)$} & {$\mathcal{U}(-0.1, 0.1)$} & {/}                         \\
-        3 \, & {$\mathcal{U}(-5.0, 5.0)$} & {$\mathcal{U}(-1.0, 1.0)$} & {$\mathcal{U}(-0.5, 0.5)$} & {/}                       & {/}                         \\
-        2 \, & {$\mathcal{U}(-5.0, 5.0)$} & {$\mathcal{U}(-1.0, 1.0)$} & {/}                       & {/}                       & {/}                         \\
+        4 \, & {$\mathcal{U}(-5.0, 5.0)$} & {$\mathcal{U}(-1.0, 1.0)$} & {$\mathcal{U}(-0.5, 0.5)$} & {$\mathcal{U}(-0.1, 0.1)$} & {--}                         \\
+        3 \, & {$\mathcal{U}(-5.0, 5.0)$} & {$\mathcal{U}(-1.0, 1.0)$} & {$\mathcal{U}(-0.5, 0.5)$} & {--}                       & {--}                         \\
+        2 \, & {$\mathcal{U}(-5.0, 5.0)$} & {$\mathcal{U}(-1.0, 1.0)$} & {--}                       & {--}                       & {--}                         \\
         \bottomrule
     \end{tabular}
 \end{table}
+%---------------------------------------------------------------------
 
 
 %=============================
