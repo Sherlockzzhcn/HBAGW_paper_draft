@@ -223,7 +223,7 @@ section~\ref{sec:conclusion}.
 %=============================
 
 %=============================
-\subsection{Polynomial models of Love-Q relation} 
+\subsection{Polynomial Models of Love-Q Relation} 
 \label{subsec:framework_parameterization}
 %=============================
 
@@ -276,7 +276,7 @@ APR4 EOS (denoted as $Q_{\rm APR4}$).}\label{relative_difference}
 %---------------------------------------------------------------------
 
 %=============================
-\subsection{Hierarchical Bayesian inference}
+\subsection{Hierarchical Bayesian Inference}
 \label{subsec:framework_principles}
 %=============================
 
@@ -484,47 +484,61 @@ Eq.~\eqref{hierarchical bayes}.
 \label{subsec:simulation_preliminaries}
 %=============================
 
-In our simulation, we adopt the {\sc IMRPhenomXAS\_NRTidalv3} waveform model~\cite{Abac:2023ujg}, 
-which includes tidal amplitude corrections as well as spin-induced quadrupole
-moment terms up to 3.5PN with aligned spins.
-The single-event parameters $\bm{\theta}$ include 
- the binary masses $m_1$ and $m_2$, the 
-dimensionless tidal deformabilities $\Lambda_1$ and $\Lambda_2$, spin-induced 
-quadrupole moments $Q_1$ and $Q_2$, the dimensionless spin $\chi_1$ and $\chi_2$, the 
-luminosity distance $D_L$, the merge time $t_{c}$, the right ascension $\alpha$ and 
-declination $\delta$, the inclination angle $\iota$, the GW polarization angle 
-$\psi$ and the phase of coalescence $\phi_{c}$.
+In our simulation, we adopt the {\sc IMRPhenomXAS\_NRTidalv3} waveform
+model~\cite{Abac:2023ujg}, which includes tidal amplitude corrections as well as
+spin-induced quadrupole moment terms up to 3.5\,PN with aligned spins.  The
+single-event parameters $\bm{\theta}$ include the binary masses $m_1$ and $m_2$,
+the dimensionless tidal deformabilities $\Lambda_1$ and $\Lambda_2$,
+spin-induced quadrupole moments $Q_1$ and $Q_2$, the dimensionless spins
+$\chi_1$ and $\chi_2$, the luminosity distance $D_L$, the merge time $t_{c}$,
+the right ascension $\alpha$ and declination $\delta$, the inclination angle
+$\iota$, the GW polarization angle $\psi$, and the phase of coalescence
+$\phi_{c}$.
 
-When generating the BNS events, we adopt the population model proposed by \citet{Farrow:2019xnc}. 
-According to their spin magnitude, the model divides BNS into a recycled star and a nonrecycled 
-(\emph{slow}) one, for which the masses are labeled $m_{\mathrm{r}}$ and $m_{\mathrm{s}}$, respectively. 
-The distribution of $m_{\mathrm{r}}$ has two Gaussian components while $m_{\mathrm{s}}$ follow a uniform distribution,
+When generating the BNS events, we adopt the population model proposed by
+\citet{Farrow:2019xnc}.  According to the spin magnitude, the model divides a
+BNS into a recycled NS and a nonrecycled (\emph{slow}) one, for which the masses
+are labeled as $m_{\mathrm{r}}$ and $m_{\mathrm{s}}$, respectively.  The
+distribution of $m_{\mathrm{r}}$ has two Gaussian components while
+$m_{\mathrm{s}}$ follows a uniform distribution,
+%---
 \begin{subequations}
 \label{mass population}
 \begin{equation}
-    P(m_{\mathrm{r}}) = \alpha \mathcal{N}(\mu_1, \sigma_1) + (1-\alpha) \mathcal{N}(\mu_2, \sigma_2)\,,
+    P(m_{\mathrm{r}}) = \alpha \mathcal{N}(\mu_1, \sigma_1) + (1-\alpha)
+    \mathcal{N}(\mu_2, \sigma_2)\,,
 \end{equation}
 \begin{equation}
     P(m_{\mathrm{s}}) = \mathcal{U}(m_{\mathrm{s}}^l, m_{\mathrm{s}}^u)\,,
 \end{equation}
 \end{subequations}
-where $\alpha=0.68$, $\mu_1=1.34\,\mathrm{M}_{\odot}$, $\sigma_1=0.02\,\mathrm{M}_
-{\odot}$, $\mu_2=1.47\,\mathrm{M}_{\odot}$, $\sigma_2=0.15\,\mathrm{M}_{\odot}$ 
-and $m_{\mathrm{s}}^l=1.14\,\mathrm{M}_{\odot}$, $m_{\mathrm{s}}^u=1.46\,\mathrm{M}_{\odot}$. Then, the NS with a larger mass is labeled as the primary star with mass $m_1$ and the other as the secondary star with mass $m_2$.
-The tidal deformability and quadrupole moments of the binary are calculated from 
-the stellar mass assuming the APR4 EOS with methods described in Refs.~\cite{Yagi:2013awa,Atta:2024ckt}. For the spin of recycled stars $\chi_{\mathrm{r}}$, we adopt a uniform distribution $\mathcal{U}(-0.5,0.5)$, 
-while for $\chi_{\mathrm{s}}$ we draw from $\mathcal{U}(-0.1,0.1)$.
-Using the cosmological parameters provided by the Planck Collaboration~\cite{Planck:2018vyg}, 
-we simulate 1000 GW sources, corresponding to a several years' observation with XG detectors with the observed local merger rate 
-$7.6$--$250\,\mathrm{Gpc}^{-3}\mathrm{yr}^{-1}$~\cite{LIGOScientific:2025pvj,LIGOScientific:2020aai}.
-These sources are distributed uniformly in source-frame time and co-moving volume between 15~Mpc and 150~Mpc, 
-with isotropic sky locations and orientations. Without loss of generality, all GW events are injected with $t_{c}=0$.
+%---
+where $\alpha=0.68$, $\mu_1=1.34\, \mathrm{M}_{\odot}$, $\sigma_1=0.02\,
+\mathrm{M}_ {\odot}$, $\mu_2=1.47\, \mathrm{M}_{\odot}$, $\sigma_2=0.15\,
+\mathrm{M}_{\odot}$, and $m_{\mathrm{s}}^l =1.14\, \mathrm{M}_{\odot}$,
+$m_{\mathrm{s}}^u =1.46\, \mathrm{M}_{\odot}$. The NS with a larger mass is
+labeled as the primary star with mass $m_1$ and the other as the secondary star
+with mass $m_2$.  The tidal deformability and quadrupole moments of the binary
+are calculated from the stellar mass assuming the APR4 EOS with methods
+described in Refs.~\cite{Yagi:2013awa, Atta:2024ckt}.  For the spin of recycled
+stars $\chi_{\mathrm{r}}$, we adopt a uniform distribution
+$\mathcal{U}(-0.5,0.5)$, while for $\chi_{\mathrm{s}}$ we draw from
+$\mathcal{U}(-0.1,0.1)$.  Using the cosmological parameters provided by the
+Planck Collaboration~\cite{Planck:2018vyg}, we simulate 1000 GW sources,
+corresponding to a few years' observation from XG detectors with the observed
+local merger rate, $7.6$--$250\, \mathrm{Gpc}^{-3} \,
+\mathrm{yr}^{-1}$~\cite{LIGOScientific:2025pvj, LIGOScientific:2020aai}.  These
+sources are distributed uniformly in source-frame time and in the co-moving
+volume with distance between 15~Mpc and 150~Mpc, also uniform in sky locations
+and orientations. Without loss of generality, all GW events are injected with
+$t_{c}=0$.
 
 We select a XG detector network consisting of two CE detectors and one ET 
-detector, whose sensitivities are taken as CE-2~\cite{Reitze:2019iox,Reitze:2019dyk} 
-and ET-D~\cite{Punturo:2010zz,Hild:2010id,Sathyaprakash:2012jk}, respectively. 
-The two CE detectors are positioned at the current sites of the two LIGO detectors, 
-while the ET detector is set at the current location of the Virgo detector with a triangular shape. 
+detector, whose sensitivities are taken as CE-2~\cite{Reitze:2019iox,
+Reitze:2019dyk} and ET-D~\cite{Punturo:2010zz, Hild:2010id,
+Sathyaprakash:2012jk}, respectively.  The two CE detectors are positioned at the
+current sites of the two LIGO detectors, while the ET detector is set at the
+current location of the Virgo detector with a triangular shape. 
 
 %=============================
 \subsection{Implementation}
