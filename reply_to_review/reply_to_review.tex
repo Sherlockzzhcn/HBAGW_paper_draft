@@ -1,0 +1,400 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{amsmath, amsthm, amssymb, appendix, bm, graphicx, hyperref, mathrsfs, tabularx}
+\usepackage{mdframed}
+\usepackage{subcaption, float}
+\usepackage{caption}
+\captionsetup[figure]{labelfont=bf, labelsep=colon, font=small}
+
+\definecolor{commentgray}{rgb}{0.95,0.95,0.95}
+\definecolor{revcolor}{rgb}{0.0, 0.4, 0.7} 
+\definecolor{oldcolor}{rgb}{0.8, 0.0, 0.0}
+
+\newenvironment{reviewercomment}[1]{
+    \vspace{1em}
+    \noindent \textbf{#1:} \itshape
+}{
+    \par\vspace{0.5em}
+}
+
+\newenvironment{authorresponse}{
+    \noindent \textbf{Reply:} \normalfont
+}{
+    \par\vspace{1.5em}
+}
+
+\newenvironment{originaltext}{
+    \begin{quote}
+    \color{oldcolor} \small \textbf{Original text:} \\
+}{
+    \end{quote}
+}
+
+\newenvironment{revisedtext}{
+    \begin{quote}
+    \color{revcolor} \small \textbf{Revised text:} \\
+}{
+    \end{quote}
+}
+
+\title{Replies to Editor Report}
+\author{Manuscript ID: JCAP\_160P\_1025}
+%\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent Dear Editor and Reviewers,
+
+We would like to thank the reviewers for their thoughtful comments and constructive suggestions, which have helped us improve our manuscript. For clarity, the original text is in red and the revised content in blue.
+
+\section{Major questions}
+\begin{reviewercomment}{1}
+    The authors picked the 20 events with the largest SNRs (and spins) out of the 1000 sources they simulated. Wouldn't this choice introduce biases or selection effects in the results? 
+\end{reviewercomment}
+
+
+\begin{authorresponse}
+    
+    1. Biases. 
+    
+    We thank the reviewer for pointing out this important issue. As shown in Figure.~\ref{fig:a_b_n}, indeed there are biases for limited number of events. For small $N_{\text{events}}$ (like $N=5$), there is indeed a noticeable offset between the median estimate and the reference value. However, as $N_{\text{events}}$ increases, the median estimate is approaching the reference value. This implies that while biases do exist, the methodology is robust as the sample size grows and our order-of-magnitude estimation for the constraint precision of Love-Q relation still holds. The choice of 20 loudest events can be justified with Figure.~\ref{fig:width_n}. We can observe that the constraint to Love-Q relation at $\Lambda \sim 350$ (the ``waist'' part in Figure.~3 of the manuscript) converge to a stable value.
+
+    2. Selection effects.
+
+    In the gravitational-wave context, detection is usually well approximated as a cut on the observed signal-to-noise ratio(SNR), and selection effect is characterized by detection probability~\cite{LIGOScientific:2016, Mandel2018, Thrane2019}. It is demonstrated in Figure.~\ref{fig:snr_q_spin} that the SNR of one GW event is insensitive to either $Q$ (or Love-Q relation) or the spin component. Change of spin would not lead to a significant change of detection rate, and our inference of Love-Q relation would not be significantly affected by selection effect. In practice we just discard those events with small spins from which no available information on $Q$ can be drawn.
+
+\end{authorresponse}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{2d\_model\_n\_changing.pdf}
+    \caption{The dependency of the 5th, 50th and 95th percentiles of the hyperparameter posterior samples on the number of events. The orange dashed line represents the reference values, i.e. the linear fitting values obtained in section 2.1.}
+    \label{fig:a_b_n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{width\_n\_changing.pdf}
+    \caption{The dependency of 5th and 95th percentiles of $Q$ samples computed at $\Lambda=350$, where most of the data points gather, on the number of events. The orange dashed line represents $Q$ calculated from Yagi-Yunes relation.}
+    \label{fig:width_n}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{snr\_Q\_spin.pdf}
+    \caption{SNR under various parameter combinations. Without loss of generality, we assume a equal mass binary, and two typical values 1.4 and 1.6 $M_{\odot}$ are taken. In the left panel, $Q$ varies for fixed $\Lambda$. Therefore this case can be regarded as the Love-Q relation varies. In the right panel, only the spin of one component is changed.}
+    \label{fig:snr_q_spin}
+\end{figure}
+
+\begin{reviewercomment}{2}
+    Particularly, as a follow-up to 1, what would happen to the posteriors presented, for example, in Figs.~3-4 if more than 20 events are combined? Would the reference values (i.e. the “true” values from the Yagi-Yunes relations) lie outside the 90\% credible level should the constraints get narrower from including more events? Additionally, it would be great if the authors can clarify why the Yagi-Yunes reference values were taken as the true values in these corner plots. 
+\end{reviewercomment}
+
+\begin{authorresponse}
+    We have added the results for more than 20 events in Figure.~\ref{fig:a_b_n} and \ref{fig:width_n}. While the credible interval boundary adjacent to the reference value remains relatively stable, the opposite boundary exhibits a clear contraction toward the reference value as $N_{\text{events}}$ increases. The reference values would not lie outside the 90\% credible level since the constraints shrink on only one side.
+
+    For $j=5$ we take Yagi-Yunes fitting values as the reference values in the corner plot while for other parameterizations we take the fitting results to Yagi-Yunes relation as described in section 2.1. Of course these values are not the real ``true values'' but fitting results to Love-Q relations for various EOSs with $\mathcal{O} (1\%)$ relative differences. So we've revised our corner plots to account for the fitting uncertainties (Figure.~\ref{fig:corner}). The reference values are represented by a band rather than a single line.
+
+\end{authorresponse}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{comparison\_corner\_plot.pdf}
+    \caption{Revised corner plots accounting for the fitting uncertainties of Yagi-Yunes relation. The orange bands represent the 90\% credible interval of the fitting coefficients for various EOSs.}
+    \label{fig:corner}
+\end{figure}
+
+\begin{reviewercomment}{3}
+    Regarding the Yagi-Yunes relations, the I-Love-Q universal relations introduced in Yagi \& Yunes are calculated on the assumption of slow rotation --- it has been shown that for moderate spins ($|\chi|\gtrsim 0.1$) that these universal relations break down (i.e. Pani et al 2015, Doneva et al 2014) and can deviate significantly. Since the authors consider spins up to 0.5, beyond where the universal relation is expected to break down (and much larger than observed spins from within a BNS to date), can the authors comment on how this breakdown of the universal relation would impact their results with appropriate references? In the last chapter the authors consider deviations from Love-Q as a signature of beyond GR theories, but could other assumptions such as not including rotation not also cause deviations that would be confused with this?
+\end{reviewercomment}
+
+\begin{authorresponse}
+    We agree with the reviewer that high spin values ($ |\chi| \gtrsim 0.1$) do introduce deviations from Yagi-Yunes relations which are derived under slow-rotation condition. For rapidly rotating neutron stars, Ref.~\cite{Pani:2015nua} reveals that the I-Love relation becomes more sensitive to EOS. Such cases where no universal relations exist are the boundary of this work and our method does not apply. And in Ref.~\cite{Yagi:2014bxa} it was concluded that the universality becomes weaker as the mode number $l$ increases. However, universal relations that hold for arbitrary rotation are found. With fitting coefficients depending on the spin parameter, Refs.~\cite{Doneva:2013rha,Pappas:2013naa,Doneva:2014faa} have developed new relations insensitive to certain set of EOSs in rapidly-rotating case. Ref.~\cite{Chakrabarti:2013tca} further suggested introducing the fitting coefficients as a function of both spin and radius, extending the universality to various EOSs. When universal relation holds in other parameterizations for rapidly-rotating case, our methodology still works.
+    
+    We acknowledge that high-spin breakdown could potentially be confused with non-GR signatures. The current discussion uses the slow-rotation approximation as a simplified assumption and aims to providing a methodology reference and an estimation for order of magnitude. 
+\end{authorresponse}
+
+\begin{reviewercomment}{4}
+    Can the authors explicitly write in the text how $Q$ was calculated for the parameter estimation injections? It would appear from the references it is using the slow rotation approximation, but clarification would be appropriate. 
+\end{reviewercomment}
+
+\begin{authorresponse}
+    $Q$ was calculated from the neutron star mass given the APR4 equation of state. Thanks for the suggestion, and we've revised our manuscript as follows
+    \begin{originaltext}
+        ``The tidal deformability and quadrupole moments of the binary
+        are calculated from the stellar mass assuming the APR4 EOS with methods
+        described in Refs. [39,78].'' 
+    \end{originaltext}
+
+    \begin{revisedtext}
+        ``The tidal deformability and quadrupole moments of the binary
+        are calculated from the stellar mass assuming the APR4 EOS with methods
+        described in Refs. [39,78] under the slow rotation approximation.''
+    \end{revisedtext}
+\end{authorresponse}
+
+
+\begin{reviewercomment}{5}
+    The authors mentioned that the APR4 equation of state (EOS) was chosen due to its consistency with GW170817. Other EOSs were also consistent with GW170817, such as SLy. Do the results of this study change with different EOS? Furthermore, what happens if multiple EOSs are assumed? Does the linear Love-Q relation inferred in this study hold for a spread of EOSs?
+\end{reviewercomment}
+
+\begin{authorresponse}
+    Different assumptions of EOS just provide different combinations of $\Lambda$ and $Q$, which still follow the universal relation. As shown in Figure.~\ref{fig:corner}, the uncertainties of fitting coefficients brought by multiple EOSs assumed are much smaller compared to those from the hierarchical inference. Thus the change of EOS would not introduce a significant change to the width of constraints, while the median may probably change with EOS selected. 
+
+    As a supplement, we have repeated the inference of linear model for SLy and the results are shown in Figure.~\ref{fig:SLy}. The median and maximum posterior estimations change, but the width of 90\% credible region remains insensitive to the choice of EOS.
+
+    If multiple EOSs are assumed, an intrinsic scatter will be introduced in the injected $\Lambda$ and $Q$. The effect of such scatter to the inference results is of the same order as the uncertainties shown in Figure.~\ref{fig:corner} and is much smaller to the constraints under single EOS assumption. 
+
+\end{authorresponse}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{hierarchical\_results\_SLy\_2d.pdf}
+    \caption{Constraints to Love-Q relation in a linear model for APR4 and SLy.}
+    \label{fig:SLy}
+\end{figure}
+
+\begin{reviewercomment}{6}
+    The authors claim that the linear parameterization is sufficient for the inferred relations. How much of this is physical, and how much of this is a parameterization artifact? Can the authors clarify why, for example, in Fig.~2, the parameters $a_2$ and $b_2$ are already heavily correlated, as in the other parameters in the other parameterizations? Do other parameterizations also exist that are also plausible for use in this case (i.e. beyond polynomial forms)?
+\end{reviewercomment}
+
+\begin{authorresponse}
+    This phenomenon is a parameterization artifact. A key difference between linear model case and others is that the posterior distribution exhibits railing against the prior boundary in other cases. This suggests a parameter degeneracy for models with 3 or more parameters. 
+
+    To understand the correlation between $a_2$ and $b_2$, we perform a principal component analysis on the posterior samples. By reparameterizing the model along the dominant direction, we conduct another inference and conclude the results in Figure.~\ref{fig:1d_inference}. By comparing the results of one- and two-parameter models, we can find that the correlation corresponds to the hourglass-shaped nature of constraints to Love-Q relation.
+
+    Polynomial forms are widely used parameterizations in universal relation studies. Ref.~\cite{Pappas:2013naa} introduced a different parameterization form, but the authors pointed out that their results were equivalent to those using polynomial forms. The correlations in the posterior distributions do suggest different parameterizations, but a priori we assume a polynomial form before the inference.
+
+    \begin{revisedtext}
+        ``To investigate the correlation between $a_2$ and $b_2$, we performed a Principal Component Analysis on the posterior samples of the linear model. By reparameterizing the model along the dominant principal axis, we conducted another hierarchical inference with a single hyperparameter. The corresponding results are presented in Figure 4. Notably, the right panel shows that the constraints almost vanish at $\Lambda \sim 300$. This single-parameter model can be regarded as the limiting case that $a_2$ and $b_2$ are completely correlated. A comparison with the results of linear model reveals that this correlation is linked to the ``hourglass-shaped'' structure of Love-Q relation constraints.''
+    \end{revisedtext}
+\end{authorresponse}
+
+\begin{figure}
+    \begin{minipage}[t]{0.46\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Hyper_parameter_1d_only.pdf}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.52\textwidth}
+    \includegraphics[width=\linewidth]{hierarchical_results_APR_1d.pdf}
+    \end{minipage}
+        \caption{\label{fig:1d_inference} Left panel: posterior distribution of the reparameterized model parameter $X=0.9848(a-\bar{a}) - 0.1738(b-\bar{b})$. Right panel: Recovered Love-Q relation from the posterior samples of $X$.} 
+    \end{figure}
+
+\begin{reviewercomment}{7}
+    How relevant is the choice of a singular waveform model here in the results presented? Can waveform systematics play a role in the posteriors recovered?
+\end{reviewercomment}
+
+\begin{authorresponse}
+    The waveform contains amplitude tidal corrections and higher-order spin-squared and spin-cubed terms at 3.5PN along with their corresponding spin-induced quadrupole moments, in addition to the spin-induced quadrupole moment terms at 2PN and 3PN~\cite{Samajdar:2020xrd}. These corrections or terms are important for our results since we're considering the inference of $\Lambda$ and $Q$. IMRPhenomXAS\_NRTidalv3 is an approximate example with a relatively high accuracy among current models.
+
+    We completely agree that for GW events with SNR $\sim 10^3$, waveform systematics will likely become an important source of error, leading to bias in the posteriors of parameters like $\Lambda$. Following Ref.~\cite{Cutler:2007mi}, we estimate the error introduced by waveform inaccuracy
+    \begin{equation}
+        \Delta \theta^{i} = (\Gamma^{-1}(\theta_{\mathrm{bf}}))^{ij} \langle \partial_j h(\theta_{\mathrm{bf}}) | h_0(\theta_{\mathrm{tr}}) - h(\theta_{\mathrm{tr}})\rangle
+    \end{equation}
+    where $\Gamma$ is the fisher matrix, $\theta_{\mathrm{bf}}$ is the best-fit parameter, $\theta_{\mathrm{tr}}$ is the true parameter, and $h$ and $h_0$ are GW strains assuming two different waveforms. Our calculation with the parameter combinations of the single events indicate that these errors introduced by waveform inaccuracy can be of the same order of magnitude as the statistical uncertainties for the single event inference. Specifically, the error is $\sim 30$ for $\Lambda$ and $\sim 0.5$ for $Q$.
+
+    We have added a comment on this effect in section 6.
+
+    \begin{revisedtext}
+        ``The inaccuracy of waveform itself can also introduce a theoretical error to the posteriors of single event parameters, especially for events with high SNRs [102]. ''
+    \end{revisedtext}
+\end{authorresponse}
+
+
+\section{Minor commments and questions}
+\begin{reviewercomment}{1}
+    On page 2, ``Future next-generation (XG) ground-based GW detectors...events per year''. Can this be clarified as to what would be the specific rate for BNSs?
+\end{reviewercomment}
+
+\begin{authorresponse}
+    We thank the reviewer for pointing this out. The specific detection rate for BNS events is expected to be up to $10^5$--$10^6$ per year~\cite{Samajdar:2021egv}. We have updated the text to provide this specific rate for BNS coalescence.
+
+    \begin{originaltext}
+        ``Future next-generation (XG) ground-based GW detectors,..., are
+        expected to detect many more GW signals, up to about $10^5$--$10^6$ events per
+        year [60-63], thanks to their increased sensitivity and lower cutoff
+        frequencies.'' 
+    \end{originaltext}
+
+    \begin{revisedtext}
+        ``Future next-generation (XG) ground-based GW detectors,..., are expected to detect many more GW signals, up to about $10^5$--$10^6$ events per year for BNS coalescence [60-63], thanks to their increased sensitivity and lower cutoff frequencies.''
+    \end{revisedtext}
+\end{authorresponse}
+
+
+\begin{reviewercomment}{2}
+    On page 3, ``Yagi and Yunes fit the Love-Q relation with a quadratic polynomial model...'' Isn't this supposed to be quintic instead of quadratic?
+\end{reviewercomment}
+
+\begin{authorresponse}
+    Yes, this is a typo. It should be quartic. Thanks for pointing it out.
+    \begin{revisedtext}
+        ``Yagi and Yunes fit the Love-Q relation with a quartic polynomial model...''
+    \end{revisedtext}
+\end{authorresponse}
+
+
+\begin{reviewercomment}{3}
+    On page 4, ``Similarly, the EOS parameters determine the relation between $\Lambda$ and $m$, ...'' The phrasing of this entire statement is a bit awkward. 
+\end{reviewercomment}
+
+\begin{authorresponse}
+    We agree that the original phrasing had a problem. We have rephrased this sentence.
+
+    \begin{originaltext}
+        ``Similarly, the EOS parameters determine the relation between $\Lambda$ and $m$,
+        as well as between $Q$ and $m$, can be regarded as hyperparameters and analyzed
+        in the hierarchical Bayesian framework.'' 
+    \end{originaltext}
+    
+    \begin{revisedtext}
+        ``Similarly, the EOS parameters determining $\Lambda$-$m$ and $Q$-$m$ relations
+        can be regarded as hyperparameters and analyzed in the hierarchical Bayesian framework.''
+    \end{revisedtext}
+\end{authorresponse}
+
+
+\begin{reviewercomment}{4}
+    On page 4, ``Since we are inferring the Love-Q relation, the tidal deformabilities...'' Why treat the tidal deformabilities of a single event as independent when the recovered parameter is usually of the form of the effective tidal deformability $\tilde{\Lambda}$?
+\end{reviewercomment}
+
+\begin{authorresponse}
+    The SNR is high, thus the selection of priors does not matter. Choosing $\Lambda_i$ and $Q_i$ as the independent parameters and adopting a flat prior for them might be a more direct choice. A flat prior of $\Lambda_i$ and $Q_i$ also allows us to simplify Eq.~(2.14) as Eq.~(2.15) in the manuscript.
+
+    \begin{originaltext}
+        ``Since we are inferring the Love-Q relation, the tidal deformabilities, $\bm
+        {\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$, and quadrupole moments,
+        $\bm{Q}_i=\{Q_ {1i},Q_{2i}\}$, of the two NSs of the $i\text{-th}$ event are
+        treated as independent parameters in $\bm{\theta}_i$.'' 
+    \end{originaltext}
+
+    \begin{revisedtext}
+        ``We treat the tidal deformabilities, $\bm{\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$, 
+        and quadrupole moments, $\bm{Q}_i=\{Q_ {1i},Q_{2i}\}$, of the two NSs of the $i\text{-th}$ event 
+        as independent parameters in $\bm{\theta}_i$ and select a flat prior for them. This is a direct choice 
+        since the prior is not important for high-SNR event inference.''
+    \end{revisedtext}
+
+\end{authorresponse}
+
+
+\begin{reviewercomment}{5}
+    On page 6, maybe change ``merger'' time $t_c$ to ``coalescence'' time for consistency with the phase of coalescence $\phi_c$. 
+\end{reviewercomment}
+
+\begin{authorresponse}
+    We agree that ``coalescence time'' is a better expression considering the context.
+\end{authorresponse}
+
+
+\begin{reviewercomment}{6}
+    On page 6, There are several technical reports of the Einstein Telescope (ET) and Cosmic Explorer (CE) placed at several proposed sites. Why assume the current locations of LIGO and Virgo? 
+\end{reviewercomment}
+
+\begin{authorresponse}
+    We acknowledge that the final sites for ET and CE are still under evaluation and will likely differ from the current LIGO and Virgo locations. However, for the purpose of this study, we assumed the current locations as a representative configuration. The exact location choice of the detectors has a marginal impact on the core results and conclusions of our study.
+\end{authorresponse}
+
+
+\begin{reviewercomment}{7}
+    On page 7, what are the range of SNR values for the highest-SNR events selected in this study? 
+\end{reviewercomment}
+
+\begin{authorresponse}
+    In our study, the highest SNR values range from about 1500 to 2500. The sources have luminosity distances near the lower bound 15 Mpc. The significantly lower noise level of next generation detectors lead to a high SNR for these nearby simulated sources.
+\end{authorresponse}
+
+
+\begin{reviewercomment}{8}
+    On page 10, Fig.~4, the blue bands of the right panel have this curving behavior at large $\Lambda$ (and also at small $\Lambda$). Why is this the case? 
+\end{reviewercomment}
+
+\begin{authorresponse}
+    The constraints in the middle where most data points gather are insensitive to the parameterization of Love-Q relation. Under this precondition, the polynomial models with more degrees of freedom naturally span a wider region in the two ends compared with linear case. 
+\end{authorresponse}
+
+
+\begin{reviewercomment}{9,10}
+    On page 11, ``$\theta$ and $\beta$ is taken to be dimensionless...'' Replace ``is'' with ``are''. 
+    
+    On page 12, ``$\alpha$ has the dimension of length square...'' Replace ``square'' with ``squared''.
+\end{reviewercomment}
+
+\begin{authorresponse}
+    We apologize for these mistakes. We thank the reviewer for correcting them.
+\end{authorresponse}
+
+
+\begin{thebibliography}{99}
+    \bibitem{LIGOScientific:2016}
+    B.~P.~Abbott \textit{et al.} [LIGO Scientific and Virgo],
+    \emph{Binary Black Hole Mergers in the first Advanced LIGO Observing Run},
+    \emph{Phys. Rev. X} {\textbf{6}}, no.4, 041015 (2016) [arXiv:1606.04856 [gr-qc]].
+
+    
+    \bibitem{Mandel2018}
+    I. Mandel, W. M. Farr and J. R. Gair,
+    \emph{Extracting distribution parameters from multiple uncertain observations with selection biases},
+    \emph{Mon. Not. Roy. Astron. Soc.} {\bf 486} (2019) 1086 [arXiv:1809.02063 [physics.data-an]].
+    
+    \bibitem{Thrane2019}
+    Thrane, Eric and Talbot, Colm,
+    \emph{An introduction to Bayesian inference in gravitational-wave astronomy: Parameter estimation, model selection, and hierarchical models},
+    \emph{Publications of the Astronomical Society of Australia, Cambridge University Press (CUP)} {\bf 36} (2019) 1086 [arXiv:1809.02063].
+
+    \bibitem{Pani:2015nua}
+    P. Pani, L. Gualtieri and V. Ferrari,
+    \emph{Tidal Love numbers of a slowly spinning neutron star},
+    \emph{Phys. Rev. D} {\textbf{92}}, no.12, 124003 (2015) [arXiv:1509.02171 [gr-qc]].
+
+    \bibitem{Yagi:2014bxa}
+    K.~Yagi, K.~Kyutoku, G.~Pappas, N.~Yunes and T.~A.~Apostolatos,
+    \emph{Effective No-Hair Relations for Neutron Stars and Quark Stars: Relativistic Results},
+    \emph{Phys. Rev. D} \textbf{89}, no.12, 124013 (2014) [arXiv:1403.6243 [gr-qc]].
+
+    \bibitem{Doneva:2013rha}
+    D.~D.~Doneva, S.~S.~Yazadjiev, N.~Stergioulas and K.~D.~Kokkotas,
+    \emph{Breakdown of I-Love-Q universality in rapidly rotating relativistic stars},
+    \emph{Astrophys. J. Lett.} {\textbf{781}}, L6 (2013) [arXiv:1310.7436 [gr-qc]].
+
+    \bibitem{Pappas:2013naa}
+    G.~Pappas and T.~A.~Apostolatos,
+    \emph{Effectively universal behavior of rotating neutron stars in general relativity makes them even simpler than their Newtonian counterparts},
+    \emph{Phys. Rev. Lett.} \textbf{112}, 121101 (2014) [arXiv:1311.5508 [gr-qc]].
+
+    \bibitem{Doneva:2014faa}
+    D.~D.~Doneva, S.~S.~Yazadjiev, K.~V.~Staykov and K.~D.~Kokkotas,
+    \emph{Universal I-Q relations for rapidly rotating neutron and strange stars in scalar-tensor theories},
+    \emph{Phys. Rev. D} \textbf{90}, no.10, 104021 (2014) [arXiv:1408.1641 [gr-qc]].
+
+    \bibitem{Chakrabarti:2013tca}
+    S.~Chakrabarti, T.~Delsate, N.~G{\"u}rlebeck and J.~Steinhoff,
+    \emph{I-Q relation for rapidly rotating neutron stars},
+    \emph{Phys. Rev. Lett.} \textbf{112}, 201102 (2014) [arXiv:1311.6509 [gr-qc]].
+
+    \bibitem{Samajdar:2020xrd}
+    A.~Samajdar and T.~Dietrich,
+    \emph{Constructing Love-Q-Relations with Gravitational Wave Detections},
+    \emph{Phys. Rev. D} \textbf{101}, no.12, 124014 (2020) [arXiv:2002.07918 [gr-qc]].
+
+    \bibitem{Cutler:2007mi}
+    C.~Cutler and M.~Vallisneri,
+    \emph{LISA detections of massive black hole inspirals: Parameter extraction errors due to inaccurate template waveforms},
+    \emph{Phys. Rev. D} \textbf{76}, 104018 (2007) [arXiv:0707.2982 [gr-qc]].
+
+    \bibitem{Samajdar:2021egv}
+    A.~Samajdar, J.~Janquart, C.~Van Den Broeck and T.~Dietrich,
+    \emph{Biases in parameter estimation from overlapping gravitational-wave signals in the third-generation detector era},
+    \emph{Phys. Rev. D} \textbf{104}, no.4, 044003 (2021) [arXiv:2102.07544 [gr-qc]].
+    
+
+    
+\end{thebibliography}
+\end{document}

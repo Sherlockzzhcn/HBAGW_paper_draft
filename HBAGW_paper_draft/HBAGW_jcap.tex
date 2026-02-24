@@ -150,7 +150,7 @@ Future next-generation (XG) ground-based GW detectors, including the Cosmic
 Explorer (CE)~\cite{Reitze:2019iox, Reitze:2019dyk} and the Einstein Telescope
 (ET)~\cite{Punturo:2010zz, Hild:2010id, Sathyaprakash:2012jk, ET:2025xjr}, are
 expected to detect many more GW signals, up to about $10^5$--$10^6$ events per
-year ~\cite{LIGOScientific:2017zlf, Sathyaprakash:2019yqt, Kalogera:2021bya,
+year for BNS coalescence~\cite{LIGOScientific:2017zlf, Sathyaprakash:2019yqt, Kalogera:2021bya,
 Samajdar:2021egv}, thanks to their increased sensitivity and lower cutoff
 frequencies. These high-precision GW observations allow us to treat $\Lambda$
 and $Q$ as independent parameters in the waveform model, to be measured directly
@@ -213,7 +213,7 @@ section~\ref{sec:conclusion}.
 %=============================
 
 Yagi and Yunes~\cite{Yagi:2013bca, Yagi:2013awa, Yagi_2017} fit the Love-Q
-relation with a quadratic polynomial model as,
+relation with a quartic polynomial model as,
 %--
 \begin{equation}
 \label{5-d_Love_Q_eq}
@@ -288,9 +288,8 @@ In the population inference scenario, the population properties are
 characterized by a set of hyperparameters, such as the power index of the mass
 distribution. These hyperparameters do not enter the waveform directly, while
 can be inferred from a collection of measurements of single-event parameters.
-Similarly, the EOS parameters determine the relation between $\Lambda$ and $m$,
-as well as between $Q$ and $m$, can be regarded as hyperparameters and analyzed
-in the hierarchical Bayesian framework~\cite{Mandel:2009nx, Mandel:2009pc,
+Similarly, the EOS parameters determining $\Lambda$-$m$ and $Q$-$m$ relations
+can be regarded as hyperparameters and analyzed in the hierarchical Bayesian framework~\cite{Mandel:2009nx, Mandel:2009pc,
 Adams:2012qw, Lackey:2014fwa, Mandel:2018mve, Golomb:2021tll, KAGRA:2021duu,
 Wang:2024xon}. In this work, we adopt this framework to the inference of the
 Love-Q relation.
@@ -331,10 +330,10 @@ parts of hyperparameters and that of single-event parameters,
 \pi(\bm{\theta}_i|\bm{H})\,.
 \end{equation}
 %--
-Since we are inferring the Love-Q relation, the tidal deformabilities, $\bm
-{\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$, and quadrupole moments,
-$\bm{Q}_i=\{Q_ {1i},Q_{2i}\}$, of the two NSs of the $i\text{-th}$ event are
-treated as independent parameters in $\bm{\theta}_i$. Note that the Love-Q
+We treat the tidal deformabilities, $\bm{\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$, 
+and quadrupole moments, $\bm{Q}_i=\{Q_ {1i},Q_{2i}\}$, of the two NSs of the $i\text{-th}$ event 
+as independent parameters in $\bm{\theta}_i$ and select a flat prior for them. This is a direct choice 
+since the prior is not important for high-SNR event inference. Note that the Love-Q
 relation is insensitive to EOS, the priors of mass parameters, $m_1$ and $m_2$,
 are chosen to be independent of $\bm{\Lambda}_i, \bm{Q}_i$ and $\bm{H}$. Other
 parameters in $\bm{\theta}_i$ are also assumed to be independent.  In this way,
@@ -476,7 +475,7 @@ spin-induced quadrupole moment terms up to 3.5\,PN with aligned spins.  The
 single-event parameters $\bm{\theta}$ include the binary masses $m_1$ and $m_2$,
 the dimensionless tidal deformabilities $\Lambda_1$ and $\Lambda_2$,
 spin-induced quadrupole moments $Q_1$ and $Q_2$, the dimensionless spins
-$\chi_1$ and $\chi_2$, the luminosity distance $D_L$, the merge time $t_{c}$,
+$\chi_1$ and $\chi_2$, the luminosity distance $D_L$, the coalescence time $t_{c}$,
 the right ascension $\alpha$ and declination $\delta$, the inclination angle
 $\iota$, the GW polarization angle $\psi$, and the phase of coalescence
 $\phi_{c}$.
@@ -882,8 +881,8 @@ $^{*}\mathcal{R}^{\mu\nu\rho\sigma}$ denote the Riemann tensor and its dual,
 $\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density, $\alpha$ and
 $\beta$ are the coupling constants in the dCS gravity and the potential for the
 pseudo-scalar field $\mathcal{\vartheta}$ is omitted.  $\mathcal{\vartheta}$ and
-$\beta$ is taken to be dimensionless, so $\alpha$ has the dimension of length
-square, and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
+$\beta$ are taken to be dimensionless, so $\alpha$ has the dimension of length
+squared, and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
 (\kappa\beta)]^{1/4}$ can be explained as the characteristic lengthscale of the
 dCS gravity~\cite{Yunes:2009hc, Yagi:2012ya}.  Current Solar System observations
 have constrained it to $\xi_{\mathrm{CS}}^{1/4} <\mathcal{O}(10^8
@@ -966,7 +965,9 @@ gravity theories in the strong-field regime.
 There can be several extensions to this study. Firstly, we assume  BNS systems
 with aligned spins, while realistic BNS systems may have tilted spins and spin
 precession, which leads to additional contribution in the GW
-waveform~\cite{Williamson:2017evr, Purrer:2019jcp, Gamba:2020wgg}. 
+waveform~\cite{Williamson:2017evr, Purrer:2019jcp, Gamba:2020wgg}. The inaccuracy of 
+waveform itself can also introduce a theoretical error to the posteriors of single event 
+parameters, especially for events with high SNRs~\cite{Cutler:2007mi}. 
 Additionally, in the XG era, the GW signals are possibly overlapping with each
 other, complicating the data analysis~\cite{Pizzati:2021apa, Samajdar:2021egv,
 Wang:2023ldq, Johnson:2024foj, Wang:2025ckw}.  Moreover, the Yagi-Yunes
@@ -975,7 +976,7 @@ systems, these universal relations may hold when the two NSs have similar
 masses, but still require a careful inspection~\cite{Shao:2022koz,
 Saffer:2021gak}. The octupole or higher-order multipole moments of NSs also
 contribute to the GW waveform and can be universally related to the quadrupole
-moment~\cite{Yagi_2017, Abac:2023ujg}.  We leave the exploration of simultaneous
+moment~\cite{Yagi_2017, Abac:2023ujg}. We leave the exploration of simultaneous
 or independent inference of more universal relations to future studies.
 
 %=============================
