@@ -9,6 +9,7 @@
 \usepackage{subcaption, float}
 \usepackage{caption}
 \captionsetup[figure]{labelfont=bf, labelsep=colon, font=small}
+\newcommand{\ZW}[1]{\textcolor{magenta}{$\mathcal{ZW}$:~#1}}
 
 \definecolor{commentgray}{rgb}{0.95,0.95,0.95}
 \definecolor{revcolor}{rgb}{0.0, 0.4, 0.7} 
@@ -43,16 +44,33 @@
 
 \title{Replies to Editor Report}
 \author{Manuscript ID: JCAP\_160P\_1025}
-%\date{\today}
+\date{}
 
 \begin{document}
-\maketitle
 
+% —— 横线 1：标题上方（可选）
+\noindent\rule{\textwidth}{0.8pt}
+
+\begin{center}
+{\LARGE\bfseries Replies to Editor Report\par}
+\vspace{0.2cm}
+{Manuscript ID: JCAP\_160P\_1025\par}
+\end{center}
+\vspace{-0.2cm}
+\noindent\rule{\textwidth}{0.8pt}
+
+\vspace{0.2cm}
 \noindent Dear Editor and Reviewers,
 
-We would like to thank the reviewers for their thoughtful comments and constructive suggestions, which have helped us improve our manuscript. For clarity, the original text is in red and the revised content in blue.
+We would like to thank the reviewers for their thoughtful comments and
+constructive suggestions, which have helped us improve our manuscript.
+For clarity, the {\color{oldcolor} original text} is in {\color{oldcolor} red}
+and the {\color{revcolor} revised content} in {\color{revcolor} blue}.
 
-\section{Major questions}
+\noindent\rule{\textwidth}{0.8pt}
+
+% 正文从这里开始
+\section*{Major questions}
 \begin{reviewercomment}{1}
     The authors picked the 20 events with the largest SNRs (and spins) out of the 1000 sources they simulated. Wouldn't this choice introduce biases or selection effects in the results? 
 \end{reviewercomment}
@@ -62,12 +80,46 @@ We would like to thank the reviewers for their thoughtful comments and construct
     
     1. Biases. 
     
-    We thank the reviewer for pointing out this important issue. As shown in Figure.~\ref{fig:a_b_n}, indeed there are biases for limited number of events. For small $N_{\text{events}}$ (like $N=5$), there is indeed a noticeable offset between the median estimate and the reference value. However, as $N_{\text{events}}$ increases, the median estimate is approaching the reference value. This implies that while biases do exist, the methodology is robust as the sample size grows and our order-of-magnitude estimation for the constraint precision of Love-Q relation still holds. The choice of 20 loudest events can be justified with Figure.~\ref{fig:width_n}. We can observe that the constraint to Love-Q relation at $\Lambda \sim 350$ (the ``waist'' part in Figure.~3 of the manuscript) converge to a stable value.
-
+    We thank the reviewer for pointing out this important issue. As shown in
+    Fig.~\ref{fig:a_b_n}, indeed there are biases for limited number of
+    events. For small $N_{\text{events}}$ (like $N=5$), there is indeed a
+    noticeable offset between the median estimate and the reference value 
+    of the hyperparameters.
+    However, as $N_{\text{events}}$ increases, the median estimate is
+    approaching the reference value. This implies that while biases do exist,
+    the methodology is robust as the sample size grows. The choice of 20 loudest
+    events can be justified with Fig.~\ref{fig:width_n}. We can observe that
+    the constraint to Love-Q relation at $\Lambda \sim 350$ (the ``waist'' part
+    in Fig.~3 of the manuscript) converge to a stable value. 
+\ZW{It may be better if
+     the legends and ticklabels 
+      in the figures are bigger.}
     2. Selection effects.
 
-    In the gravitational-wave context, detection is usually well approximated as a cut on the observed signal-to-noise ratio(SNR), and selection effect is characterized by detection probability~\cite{LIGOScientific:2016, Mandel2018, Thrane2019}. It is demonstrated in Figure.~\ref{fig:snr_q_spin} that the SNR of one GW event is insensitive to either $Q$ (or Love-Q relation) or the spin component. Change of spin would not lead to a significant change of detection rate, and our inference of Love-Q relation would not be significantly affected by selection effect. In practice we just discard those events with small spins from which no available information on $Q$ can be drawn.
-
+    In the gravitational-wave (GW) context, detection is usually well
+    approximated as a cut on the signal-to-noise ratio (SNR), and
+    selection effect is characterized by detection
+    probability~\cite{LIGOScientific:2016, Mandel2018, Thrane2019}. It is
+    demonstrated in Fig.~\ref{fig:snr_q_spin} that the SNR of one GW event is
+    insensitive to either $Q$ (or Love-Q relation) or the spin component.
+    Changing the spins would also not lead to a significant change of SNR and
+    thus the
+    detection probability.\ZW{Do we have some numerical results to support this statement?} Therefore,
+    our
+    inference of Love-Q relation would not be significantly affected by
+    selection effect. In practice, we just discard those events with small spins
+    from which no available information on $Q$ can be drawn. \ZW{It seems that
+    we do not include this point in the manuscript. To reflect our response to
+    the reviewer's comment, it would be better to add a sentence in the manuscript to clarify
+    this point, like ``However, we agree with the reviewer that including the
+    selection effect in the inference is a more rigorous approach, 
+   and we leave it for future work.   
+   We add a sentence on XXX (location in the manuscript) to clarify this point
+   as''}
+    \begin{revisedtext}
+        ``In this work, we omit the selection effects since different $\Lambda$ and $Q$ values do not lead to a significant change of SNR and thus the detection probability.''
+    \end{revisedtext}
+\ZW{You can revise the above sentence for better readability.}
 \end{authorresponse}
 
 \begin{figure}[H]
@@ -95,28 +147,78 @@ We would like to thank the reviewers for their thoughtful comments and construct
     Particularly, as a follow-up to 1, what would happen to the posteriors presented, for example, in Figs.~3-4 if more than 20 events are combined? Would the reference values (i.e. the “true” values from the Yagi-Yunes relations) lie outside the 90\% credible level should the constraints get narrower from including more events? Additionally, it would be great if the authors can clarify why the Yagi-Yunes reference values were taken as the true values in these corner plots. 
 \end{reviewercomment}
 
-\begin{authorresponse}
-    We have added the results for more than 20 events in Figure.~\ref{fig:a_b_n} and \ref{fig:width_n}. While the credible interval boundary adjacent to the reference value remains relatively stable, the opposite boundary exhibits a clear contraction toward the reference value as $N_{\text{events}}$ increases. The reference values would not lie outside the 90\% credible level since the constraints shrink on only one side.
-
-    For $j=5$ we take Yagi-Yunes fitting values as the reference values in the corner plot while for other parameterizations we take the fitting results to Yagi-Yunes relation as described in section 2.1. Of course these values are not the real ``true values'' but fitting results to Love-Q relations for various EOSs with $\mathcal{O} (1\%)$ relative differences. So we've revised our corner plots to account for the fitting uncertainties (Figure.~\ref{fig:corner}). The reference values are represented by a band rather than a single line.
-
-\end{authorresponse}
-
-\begin{figure}[H]
+\begin{figure}[t]
     \centering
     \includegraphics[width=0.5\textwidth]{comparison\_corner\_plot.pdf}
     \caption{Revised corner plots accounting for the fitting uncertainties of Yagi-Yunes relation. The orange bands represent the 90\% credible interval of the fitting coefficients for various EOSs.}
     \label{fig:corner}
 \end{figure}
+\begin{authorresponse}
+
+    For the number of considered events, we have shown the results for more than 20 events in Fig.~\ref{fig:a_b_n}
+    and \ref{fig:width_n}. While the credible interval boundary adjacent to the
+    reference value remains relatively stable, the opposite boundary exhibits a
+    clear contraction toward the reference value as $N_{\text{events}}$
+    increases. More importantly, the median estimate approaches the reference value as $N_{\text{events}}$ increases. This suggests that the reference values would not lie outside the 90\% credible level when more events are included.
+     
+    For the choice of reference values, in the linear model case, we have written
+\begin{originaltext}
+    ``As a comparison, we also mark the fitting values of the
+hyperparameters in a direct fit of the Yagi-Yunes Love-Q relation, and regard
+them as ``true'' values of the linear model for reference.''
+\end{originaltext}
+We admit that the definition of ``true'' values is somewhat ambiguous, and in
+the following we refer to this choice as reference values. Also, the fitting
+itself have uncertainties with $\mathcal{O} (1\%)$ relative differences, which
+represent the errors between the model and the EOS data. Therefore,
+we've revised our corner plots to account for the fitting uncertainties
+(Fig.~\ref{fig:corner}). The reference values are now represented by a band
+rather than a single line. For the quatric model ($j=5$), we adopt the same
+procedure as to obtain the reference values and uncertainties. These values are
+slightly different from the original Yagi-Yunes values (which also adopted a
+quartic model) since the fitting is performed with different data points and
+different EOSs, but the relative differences are still $\mathcal{O}
+(1\%)$\ZW{Plz check}. 
+As a short summary, the ``true'' values in the corner plots are the fitting
+values in our direct fit, instead of the original Yagi-Yunes values. However,
+as the main goal is to constrain the Love-Q relation, in Figs.~3-4 of the
+manuscript we also plot the original Yagi-Yunes relation as a reference. 
+
+Considering the reviewer's comment, we have revised the corner plots and
+corresponding descriptions in the manuscript to clarify the choice of reference
+values and to account for the fitting uncertainties. For example, when
+describing Fig.~2, we write \ZW{Plz add corresponding descriptions in the
+manuscript and here. Both marked in blue.}
+\end{authorresponse}
+
+
 
 \begin{reviewercomment}{3}
     Regarding the Yagi-Yunes relations, the I-Love-Q universal relations introduced in Yagi \& Yunes are calculated on the assumption of slow rotation --- it has been shown that for moderate spins ($|\chi|\gtrsim 0.1$) that these universal relations break down (i.e. Pani et al 2015, Doneva et al 2014) and can deviate significantly. Since the authors consider spins up to 0.5, beyond where the universal relation is expected to break down (and much larger than observed spins from within a BNS to date), can the authors comment on how this breakdown of the universal relation would impact their results with appropriate references? In the last chapter the authors consider deviations from Love-Q as a signature of beyond GR theories, but could other assumptions such as not including rotation not also cause deviations that would be confused with this?
 \end{reviewercomment}
 
 \begin{authorresponse}
-    We agree with the reviewer that high spin values ($ |\chi| \gtrsim 0.1$) do introduce deviations from Yagi-Yunes relations which are derived under slow-rotation condition. For rapidly rotating neutron stars, Ref.~\cite{Pani:2015nua} reveals that the I-Love relation becomes more sensitive to EOS. Such cases where no universal relations exist are the boundary of this work and our method does not apply. And in Ref.~\cite{Yagi:2014bxa} it was concluded that the universality becomes weaker as the mode number $l$ increases. However, universal relations that hold for arbitrary rotation are found. With fitting coefficients depending on the spin parameter, Refs.~\cite{Doneva:2013rha,Pappas:2013naa,Doneva:2014faa} have developed new relations insensitive to certain set of EOSs in rapidly-rotating case. Ref.~\cite{Chakrabarti:2013tca} further suggested introducing the fitting coefficients as a function of both spin and radius, extending the universality to various EOSs. When universal relation holds in other parameterizations for rapidly-rotating case, our methodology still works.
+    We agree with the reviewer that high spin values ($ |\chi| \gtrsim 0.1$) do
+    introduce deviations from Yagi-Yunes relations which are derived under
+    slow-rotation condition. For rapidly rotating neutron stars,
+    Ref.~\cite{Pani:2015nua} reveals that the I-Love relation becomes more
+    sensitive to EOS. Such cases where no universal relations exist are the
+    boundary of this work. However, there are still some efforts to find new
+    universal relations for rapidly rotating neutron stars. With fitting
+    coefficients depending on the spin parameter,
+    Refs.~\cite{Doneva:2013rha,Pappas:2013naa,Doneva:2014faa} have developed new
+    relations insensitive to certain set of EOSs in rapidly-rotating case.
+    Ref.~\cite{Chakrabarti:2013tca} further suggested introducing the fitting
+    coefficients as a function of both spin and radius, extending the
+    universality to various EOSs. In these cases, the hierarchical inference
+    still applies with appropriate model parameterizations and modifications, and our work provides a useful reference.
     
-    We acknowledge that high-spin breakdown could potentially be confused with non-GR signatures. The current discussion uses the slow-rotation approximation as a simplified assumption and aims to providing a methodology reference and an estimation for order of magnitude. 
+    We acknowledge that high-spin breakdown could potentially be confused with
+    non-GR signatures. The current discussion uses the slow-rotation
+    approximation as a simplified assumption and aims to providing a methodology
+    reference and an estimation for order of magnitude. \ZW{Similarly, Plz add
+    these refs and discussions concisely in the manuscript, maybe in both
+    introducing the calculation, and possible extensions in the discussion.}
 \end{authorresponse}
 
 \begin{reviewercomment}{4}
@@ -124,13 +226,15 @@ We would like to thank the reviewers for their thoughtful comments and construct
 \end{reviewercomment}
 
 \begin{authorresponse}
-    $Q$ was calculated from the neutron star mass given the APR4 equation of state. Thanks for the suggestion, and we've revised our manuscript as follows
+    We agree with the reviewer that a clarification is better for readers. In
+    this work, $Q$ was calculated from the neutron star mass given the APR4
+    equation of state. We've revised our manuscript from 
     \begin{originaltext}
         ``The tidal deformability and quadrupole moments of the binary
         are calculated from the stellar mass assuming the APR4 EOS with methods
         described in Refs. [39,78].'' 
     \end{originaltext}
-
+    to 
     \begin{revisedtext}
         ``The tidal deformability and quadrupole moments of the binary
         are calculated from the stellar mass assuming the APR4 EOS with methods
@@ -144,12 +248,16 @@ We would like to thank the reviewers for their thoughtful comments and construct
 \end{reviewercomment}
 
 \begin{authorresponse}
-    Different assumptions of EOS just provide different combinations of $\Lambda$ and $Q$, which still follow the universal relation. As shown in Figure.~\ref{fig:corner}, the uncertainties of fitting coefficients brought by multiple EOSs assumed are much smaller compared to those from the hierarchical inference. Thus the change of EOS would not introduce a significant change to the width of constraints, while the median may probably change with EOS selected. 
+    Different assumptions of EOS just provide different combinations of $\Lambda$ and $Q$, which still follow the universal relation. As shown in Fig.~\ref{fig:corner}, the uncertainties of fitting coefficients brought by multiple EOSs assumed are much smaller compared to those from the hierarchical inference. Thus the change of EOS would not introduce a significant change to the width of constraints, while the median may probably change with EOS selected. 
 
-    As a supplement, we have repeated the inference of linear model for SLy and the results are shown in Figure.~\ref{fig:SLy}. The median and maximum posterior estimations change, but the width of 90\% credible region remains insensitive to the choice of EOS.
+    As a supplement, we have repeated the inference of linear model for SLy and
+    the results are shown in Fig.~\ref{fig:SLy}. The median and maximum
+    posterior estimations change, but the width of 90\% credible region remains
+    insensitive to the choice of EOS. 
 
-    If multiple EOSs are assumed, an intrinsic scatter will be introduced in the injected $\Lambda$ and $Q$. The effect of such scatter to the inference results is of the same order as the uncertainties shown in Figure.~\ref{fig:corner} and is much smaller to the constraints under single EOS assumption. 
-
+    If multiple EOSs are assumed, an intrinsic scatter will be introduced in the injected $\Lambda$ and $Q$. The effect of such scatter to the inference results is of the same order as the uncertainties shown in Fig.~\ref{fig:corner} and is much smaller to the constraints under single EOS assumption. 
+    \ZW{I think it would be better to show the posterior distributions for APR4
+    and SLy in the same figure. We expect the two posteriors to be largely overlapping, which would support our claim that the choice of EOS does not significantly affect the constraints.}
 \end{authorresponse}
 
 \begin{figure}[H]
@@ -164,16 +272,43 @@ We would like to thank the reviewers for their thoughtful comments and construct
 \end{reviewercomment}
 
 \begin{authorresponse}
-    This phenomenon is a parameterization artifact. A key difference between linear model case and others is that the posterior distribution exhibits railing against the prior boundary in other cases. This suggests a parameter degeneracy for models with 3 or more parameters. 
+    We thank the reviewer for this constructive comment. To our knowledge, the
+    polynomial forms are widely used parameterizations in universal relation
+    studies, and there is no specific physical explanation for the model parameters.
+    As shown in Figs.~2,4 and 5, for polynomial models with $j>2$, the
+    posteriors extend to the prior boundary, while in the linear model case, the
+    posteriors are well constrained within the prior range. This is the main reason why we claim that the linear model is sufficient for the inferred relations.
 
-    To understand the correlation between $a_2$ and $b_2$, we perform a principal component analysis on the posterior samples. By reparameterizing the model along the dominant direction, we conduct another inference and conclude the results in Figure.~\ref{fig:1d_inference}. By comparing the results of one- and two-parameter models, we can find that the correlation corresponds to the hourglass-shaped nature of constraints to Love-Q relation.
+    We agree that there exist correlations in the linear model parameters, which
+    means there is still possible parameter redundancy in the model. To further
+    investigate this correlation, we perform a principal component analysis on
+    the posterior samples. By reparameterizing the model along the dominant
+    direction, we construct a one-parameter model \ZW{Plz specify the reparameterization procedure and the new parameter definition} and
+    reconduct the inference. The results are shown in
+    Fig.~\ref{fig:1d_inference}. For the region with $\Lambda \sim 300$, the
+    constraints is significantly tighter compared with the linear model and
+    other polynomial models. However, this only comes from the simplified model
+    with one parameter, raising overfitting concerns. Also, without the linear
+    model as a reference, it is difficult to construct a one-parameter model
+    with appropriate coefficients (the ``0.9848'' and ``-0.1738'' in the
+    definition of $X$). Thus, we believe that the linear model with two
+    parameters is a more reasonable choice, avoiding both overfitting and underfitting.
 
-    Polynomial forms are widely used parameterizations in universal relation studies. Ref.~\cite{Pappas:2013naa} introduced a different parameterization form, but the authors pointed out that their results were equivalent to those using polynomial forms. The correlations in the posterior distributions do suggest different parameterizations, but a priori we assume a polynomial form before the inference.
+    Ref.~\cite{Pappas:2013naa} introduced a different parameterization form, but
+    the authors pointed out that their results were equivalent to those using
+    polynomial forms. In this case, adopting this model is equivalent to a
+    parameter transformation of current parameterization, and has little impact
+    on the fitting itself, especially for the model dimension.
 
     \begin{revisedtext}
         ``To investigate the correlation between $a_2$ and $b_2$, we performed a Principal Component Analysis on the posterior samples of the linear model. By reparameterizing the model along the dominant principal axis, we conducted another hierarchical inference with a single hyperparameter. The corresponding results are presented in Figure 4. Notably, the right panel shows that the constraints almost vanish at $\Lambda \sim 300$. This single-parameter model can be regarded as the limiting case that $a_2$ and $b_2$ are completely correlated. A comparison with the results of linear model reveals that this correlation is linked to the ``hourglass-shaped'' structure of Love-Q relation constraints.''
     \end{revisedtext}
 \end{authorresponse}
+\ZW{I'm not sure to add the 1-d model in the manuscript (and the revision), since it may be too
+technical and not very informative. But it is a good supplement to the
+reviewer's comment, and we can add it only in the reply to the reviewer. For
+other parameterizations, we can just briefly mention them in the manuscript, and
+claim our methodology is applicable to them as well (if so).}
 
 \begin{figure}
     \begin{minipage}[t]{0.46\textwidth}
@@ -198,17 +333,31 @@ We would like to thank the reviewers for their thoughtful comments and construct
     \begin{equation}
         \Delta \theta^{i} = (\Gamma^{-1}(\theta_{\mathrm{bf}}))^{ij} \langle \partial_j h(\theta_{\mathrm{bf}}) | h_0(\theta_{\mathrm{tr}}) - h(\theta_{\mathrm{tr}})\rangle
     \end{equation}
-    where $\Gamma$ is the fisher matrix, $\theta_{\mathrm{bf}}$ is the best-fit parameter, $\theta_{\mathrm{tr}}$ is the true parameter, and $h$ and $h_0$ are GW strains assuming two different waveforms. Our calculation with the parameter combinations of the single events indicate that these errors introduced by waveform inaccuracy can be of the same order of magnitude as the statistical uncertainties for the single event inference. Specifically, the error is $\sim 30$ for $\Lambda$ and $\sim 0.5$ for $Q$.
+    where $\Gamma$ is the fisher matrix, $\theta_{\mathrm{bf}}$ is the best-fit
+    parameter, $\theta_{\mathrm{tr}}$ is the true parameter, and $h$ and $h_0$
+    are GW strains assuming two different waveforms. Our calculation with the
+    parameter combinations of the single events indicate that these errors
+    introduced by waveform inaccuracy can be of the same order of magnitude as
+    the statistical uncertainties for the single event inference. Specifically,
+    the error is $\sim 30$ for $\Lambda$ and $\sim 0.5$ for $Q$.\ZW{Firstly, plz
+    claim the models that you compare. Secondly, since the systematic error is
+    comparable to the statistical uncertainty, it would be better to admit this
+    limitation while still emphasizing the value of our work.} 
+    In this work, we adopt a single waveform model for both the injections and
+    the inference, thus the waveform systematics do not
+    affect the main conclusion, which focuses on a methodology
+    reference and an order-of-magnitude estimation. However, when dealing with
+    real data with high SNRs in the future, it is important to consider the impact of waveform systematics.
 
-    We have added a comment on this effect in section 6.
-
+    Considering the reviewer's comment, we have added a comment in the
+    discussion as
     \begin{revisedtext}
-        ``The inaccuracy of waveform itself can also introduce a theoretical error to the posteriors of single event parameters, especially for events with high SNRs [102]. ''
+        ``The inaccuracy of waveform itself can also introduce biases in the posteriors of single event parameters, especially for events with high SNRs [102].''
     \end{revisedtext}
 \end{authorresponse}
 
 
-\section{Minor commments and questions}
+\section*{Minor commments and questions}
 \begin{reviewercomment}{1}
     On page 2, ``Future next-generation (XG) ground-based GW detectors...events per year''. Can this be clarified as to what would be the specific rate for BNSs?
 \end{reviewercomment}
