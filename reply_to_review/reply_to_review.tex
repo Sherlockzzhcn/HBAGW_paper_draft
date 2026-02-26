@@ -327,7 +327,13 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    The waveform contains amplitude tidal corrections and higher-order spin-squared and spin-cubed terms at 3.5PN along with their corresponding spin-induced quadrupole moments, in addition to the spin-induced quadrupole moment terms at 2PN and 3PN~\cite{Samajdar:2020xrd}. These corrections or terms are important for our results since we're considering the inference of $\Lambda$ and $Q$. IMRPhenomXAS\_NRTidalv3 is an approximate example with a relatively high accuracy among current models.
+    The waveform contains amplitude tidal corrections and higher-order
+    spin-squared and spin-cubed terms at 3.5 post-Newtonian (PN) order along with their corresponding
+    spin-induced quadrupole moments, in addition to the spin-induced quadrupole
+    moment terms at 2PN and 3PN~\cite{Samajdar:2020xrd}. These corrections or
+    terms are important for our results since we're considering the inference of
+    $\Lambda$ and $Q$. IMRPhenomXAS\_NRTidalv3 is an approximate example with a
+    relatively high accuracy among current models.
 
     We completely agree that for GW events with SNR $\sim 10^3$, waveform systematics will likely become an important source of error, leading to bias in the posteriors of parameters like $\Lambda$. Following Ref.~\cite{Cutler:2007mi}, we estimate the error introduced by waveform inaccuracy
     \begin{equation}
@@ -363,15 +369,14 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    We thank the reviewer for pointing this out. The specific detection rate for BNS events is expected to be up to $10^5$--$10^6$ per year~\cite{Samajdar:2021egv}. We have updated the text to provide this specific rate for BNS coalescence.
-
+    We thank the reviewer for pointing this out. The specific detection rate for BNS events is expected to be up to $10^5$--$10^6$ per year~\cite{Samajdar:2021egv}. We have updated the text from
     \begin{originaltext}
         ``Future next-generation (XG) ground-based GW detectors,..., are
         expected to detect many more GW signals, up to about $10^5$--$10^6$ events per
         year [60-63], thanks to their increased sensitivity and lower cutoff
         frequencies.'' 
     \end{originaltext}
-
+    to
     \begin{revisedtext}
         ``Future next-generation (XG) ground-based GW detectors,..., are expected to detect many more GW signals, up to about $10^5$--$10^6$ events per year for BNS coalescence [60-63], thanks to their increased sensitivity and lower cutoff frequencies.''
     \end{revisedtext}
@@ -383,7 +388,8 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    Yes, this is a typo. It should be quartic. Thanks for pointing it out.
+    We thank the reviewer for this keen observation. It should be the quartic
+    model with five parameters. We have modified the main text as
     \begin{revisedtext}
         ``Yagi and Yunes fit the Love-Q relation with a quartic polynomial model...''
     \end{revisedtext}
@@ -404,8 +410,8 @@ claim our methodology is applicable to them as well (if so).}
     \end{originaltext}
     
     \begin{revisedtext}
-        ``Similarly, the EOS parameters determining $\Lambda$-$m$ and $Q$-$m$ relations
-        can be regarded as hyperparameters and analyzed in the hierarchical Bayesian framework.''
+        ``The EOS parameters, which determine the $\Lambda$-$m$ and $Q$-$m$ relations,
+        can also be regarded as hyperparameters and analyzed in the hierarchical Bayesian framework.''
     \end{revisedtext}
 \end{authorresponse}
 
@@ -415,20 +421,35 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    The SNR is high, thus the selection of priors does not matter. Choosing $\Lambda_i$ and $Q_i$ as the independent parameters and adopting a flat prior for them might be a more direct choice. A flat prior of $\Lambda_i$ and $Q_i$ also allows us to simplify Eq.~(2.14) as Eq.~(2.15) in the manuscript.
+    We acknowledge that the effective tidal
+    deformability $\tilde{\Lambda}$ is more commonly used as the parameter to be
+    inferred, since another parameter $\delta \tilde{\Lambda}$
+     is not well constrained with current detectors.
+    However, in the next generation detectors, both $\tilde{\Lambda}$ and
+    $\delta \tilde{\Lambda}$ are expected to be well constrained, thus the
+    tidal deformabilities of the two components can be treated as independent
+    parameters and sampled in the inference. Also, since we only choose the
+    loudest events with high SNRs, the prior impact is relatively small. As a
+    simple and direct choice, in this work we treat $\Lambda_i$ and $Q_i$ as
+    independent parameters and select flat priors for them. This also allows us
+    to simplify Eq.~(2.14) to Eq.~(2.15) in the manuscript. There are also some
+    works that adopt the $\tilde{\Lambda}$-$\delta \tilde{\Lambda}$
+    parameterization in the hierarchical inference\ZW{Plz add some refs such as
+    Lackey2015, Wang2024}, where the implementation and formulas have no essential difference with our case.
 
+    However, we acknowledge that the original phrasing overly emphasized the causal relationship between the inference of Love-Q relation and the treatment of $\Lambda_i$ and $Q_i$. We have revised the text from
     \begin{originaltext}
         ``Since we are inferring the Love-Q relation, the tidal deformabilities, $\bm
         {\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$, and quadrupole moments,
         $\bm{Q}_i=\{Q_ {1i},Q_{2i}\}$, of the two NSs of the $i\text{-th}$ event are
         treated as independent parameters in $\bm{\theta}_i$.'' 
     \end{originaltext}
-
+    to
     \begin{revisedtext}
         ``We treat the tidal deformabilities, $\bm{\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$, 
         and quadrupole moments, $\bm{Q}_i=\{Q_ {1i},Q_{2i}\}$, of the two NSs of the $i\text{-th}$ event 
-        as independent parameters in $\bm{\theta}_i$ and select a flat prior for them. This is a direct choice 
-        since the prior is not important for high-SNR event inference.''
+        as independent parameters in $\bm{\theta}_i$ and select flat priors for
+        them. The impacts of priors are relatively small, since only the loudest events with high SNRs are analyzed.''
     \end{revisedtext}
 
 \end{authorresponse}
@@ -439,7 +460,9 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    We agree that ``coalescence time'' is a better expression considering the context.
+    We agree with the reviewer that ``coalescence time'' is a more consistent
+    expression considering the context. We have revised all the ``merger time'' to
+    ``coalescence time'' in the manuscript.
 \end{authorresponse}
 
 
@@ -448,7 +471,12 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    We acknowledge that the final sites for ET and CE are still under evaluation and will likely differ from the current LIGO and Virgo locations. However, for the purpose of this study, we assumed the current locations as a representative configuration. The exact location choice of the detectors has a marginal impact on the core results and conclusions of our study.
+    We acknowledge that the final sites for ET and CE are still under evaluation
+    and will likely differ from the current LIGO and Virgo locations. However,
+    for the purpose of this study, we assumed the current locations as a
+    representative configuration. The exact location choice of the detectors has
+    a marginal impact on the core results and conclusions of our study.
+    \ZW{Maybe add a sentence in the manuscript to clarify this point, like ``We assume the current locations of LIGO and Virgo as a representative configuration for XG detectors.''}
 \end{authorresponse}
 
 
@@ -457,7 +485,14 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    In our study, the highest SNR values range from about 1500 to 2500. The sources have luminosity distances near the lower bound 15 Mpc. The significantly lower noise level of next generation detectors lead to a high SNR for these nearby simulated sources.
+    In our study, the highest SNR values range from about 1500 to 2500. The
+    sources have luminosity distances near the lower bound 15 Mpc.
+    \ZW{Similarly, it would be better to add a sentence in the manuscript to
+    clarify this point, like ``The SNR values of the selected events range from
+    about 1500 to 2500.'' In addition, I'm not sure stating the luminosity
+    distance is necessary, since a natural question is what about different
+    lower bounds. Maybe we can just say these events roughly correspond to the
+    nearest events.}
 \end{authorresponse}
 
 
@@ -466,7 +501,14 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    The constraints in the middle where most data points gather are insensitive to the parameterization of Love-Q relation. Under this precondition, the polynomial models with more degrees of freedom naturally span a wider region in the two ends compared with linear case. 
+    We thank the reviewer for pointing out this interesting feature.
+    Intuitively, the Love-Q relation is more tightly constrained in the region
+    where most data points gather, which is around $\Lambda \sim 350$ in our
+    case. As $\Lambda$ increases or decreases, the constraints become looser,
+    leading to the curving behavior of the bands. This feature is more
+    significant for models with more parameters (more degrees of freedom). The
+    parameters are loosely constrained, and are more likely to span a wider
+    region when the data points are sparse, leading to curving behaviors.
 \end{authorresponse}
 
 
@@ -477,10 +519,11 @@ claim our methodology is applicable to them as well (if so).}
 \end{reviewercomment}
 
 \begin{authorresponse}
-    We apologize for these mistakes. We thank the reviewer for correcting them.
+    We apologize for these mistakes. We thank the reviewer and have corrected them.
 \end{authorresponse}
 
-
+\ZW{Can you create some hyperlinks that allow the editor and the reviewer to
+easily open the references?}
 \begin{thebibliography}{99}
     \bibitem{LIGOScientific:2016}
     B.~P.~Abbott \textit{et al.} [LIGO Scientific and Virgo],
