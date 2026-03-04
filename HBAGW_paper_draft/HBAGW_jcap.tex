@@ -22,6 +22,7 @@
 \usepackage{tabularx}
 \usepackage{dcolumn}
 \usepackage{bm}
+\usepackage{xcolor}
 
 \newcommand{\ms}{M_\odot}
 \newcommand{\bmt}{{\bm{\theta}}}
@@ -30,7 +31,9 @@
 \newcommand{\rmd}{{\rm{d}}}
 \newcommand{\ZW}[1]{\textcolor{magenta}{$\mathcal{ZW}$:~#1}}
 
- \newcommand{\LS}[1]{\textcolor{magenta}{\bf #1}} 
+\newcommand{\LS}[1]{\textcolor{magenta}{\bf #1}} 
+\definecolor{revcolor}{rgb}{0.0, 0.4, 0.7} 
+\newcommand{\Revise}[1]{\textcolor{revcolor}{~#1}}
 % \newcommand{\ZW}[2]{{\color{blue} \sout{#1} ZW: {#2}}} % For comment
 % \newcommand{\Reply}[1]{{\bf\color{blue} #1}}
 
@@ -146,13 +149,13 @@ Maselli:2013mva, Pani:2015nua, Yagi:2016qmr, Gao:2023mwu, Hu:2025gab}, may also
 imply a ``no-hair-theorem-like'' behavior for NSs, bringing us a new insight
 into fundamental physics. 
 
-Future next-generation (XG) ground-based GW detectors, including the Cosmic
+\Revise{Future next-generation (XG) ground-based GW detectors, including the Cosmic
 Explorer (CE)~\cite{Reitze:2019iox, Reitze:2019dyk} and the Einstein Telescope
 (ET)~\cite{Punturo:2010zz, Hild:2010id, Sathyaprakash:2012jk, ET:2025xjr}, are
 expected to detect many more GW signals, up to about $10^5$--$10^6$ events per
 year for BNS coalescence~\cite{LIGOScientific:2017zlf, Sathyaprakash:2019yqt, Kalogera:2021bya,
 Samajdar:2021egv}, thanks to their increased sensitivity and lower cutoff
-frequencies. These high-precision GW observations allow us to treat $\Lambda$
+frequencies.} These high-precision GW observations allow us to treat $\Lambda$
 and $Q$ as independent parameters in the waveform model, to be measured directly
 from GWs. This enables further constraints on the Love-Q relation from an
 observational perspective.  Samajdar and Dietrich~\cite{Samajdar:2020xrd} have
@@ -212,8 +215,8 @@ section~\ref{sec:conclusion}.
 \label{subsec:framework_parameterization}
 %=============================
 
-Yagi and Yunes~\cite{Yagi:2013bca, Yagi:2013awa, Yagi_2017} fit the Love-Q
-relation with a quartic polynomial model as,
+\Revise{Yagi and Yunes~\cite{Yagi:2013bca, Yagi:2013awa, Yagi_2017} fit the Love-Q
+relation with a quartic polynomial model as,}
 %--
 \begin{equation}
 \label{5-d_Love_Q_eq}
@@ -288,8 +291,8 @@ In the population inference scenario, the population properties are
 characterized by a set of hyperparameters, such as the power index of the mass
 distribution. These hyperparameters do not enter the waveform directly, while
 can be inferred from a collection of measurements of single-event parameters.
-Similarly, the EOS parameters determining $\Lambda$-$m$ and $Q$-$m$ relations
-can be regarded as hyperparameters and analyzed in the hierarchical Bayesian framework~\cite{Mandel:2009nx, Mandel:2009pc,
+\Revise{The EOS parameters, which determine the $\Lambda$-$m$ and $Q$-$m$ relations,
+can also be regarded as hyperparameters and analyzed in the hierarchical Bayesian framework}~\cite{Mandel:2009nx, Mandel:2009pc,
 Adams:2012qw, Lackey:2014fwa, Mandel:2018mve, Golomb:2021tll, KAGRA:2021duu,
 Wang:2024xon}. In this work, we adopt this framework to the inference of the
 Love-Q relation.
@@ -330,10 +333,10 @@ parts of hyperparameters and that of single-event parameters,
 \pi(\bm{\theta}_i|\bm{H})\,.
 \end{equation}
 %--
-We treat the tidal deformabilities, $\bm{\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$, 
+\Revise{We treat the tidal deformabilities, $\bm{\Lambda}_i=\{\Lambda_{1i},\Lambda_{2i}\}$, 
 and quadrupole moments, $\bm{Q}_i=\{Q_ {1i},Q_{2i}\}$, of the two NSs of the $i\text{-th}$ event 
-as independent parameters in $\bm{\theta}_i$ and select a flat prior for them. This is a direct choice 
-since the prior is not important for high-SNR event inference. Note that the Love-Q
+as independent parameters in $\bm{\theta}_i$ and select flat priors for
+them. The impacts of priors are relatively small, since only the loudest events with high SNRs are analyzed.} Note that the Love-Q
 relation is insensitive to EOS, the priors of mass parameters, $m_1$ and $m_2$,
 are chosen to be independent of $\bm{\Lambda}_i, \bm{Q}_i$ and $\bm{H}$. Other
 parameters in $\bm{\theta}_i$ are also assumed to be independent.  In this way,
@@ -475,7 +478,7 @@ spin-induced quadrupole moment terms up to 3.5\,PN with aligned spins.  The
 single-event parameters $\bm{\theta}$ include the binary masses $m_1$ and $m_2$,
 the dimensionless tidal deformabilities $\Lambda_1$ and $\Lambda_2$,
 spin-induced quadrupole moments $Q_1$ and $Q_2$, the dimensionless spins
-$\chi_1$ and $\chi_2$, the luminosity distance $D_L$, the coalescence time $t_{c}$,
+$\chi_1$ and $\chi_2$, the luminosity distance $D_L$, \Revise{the coalescence time $t_{c}$},
 the right ascension $\alpha$ and declination $\delta$, the inclination angle
 $\iota$, the GW polarization angle $\psi$, and the phase of coalescence
 $\phi_{c}$.
@@ -503,9 +506,9 @@ where $\alpha=0.68$, $\mu_1=1.34\, \mathrm{M}_{\odot}$, $\sigma_1=0.02\,
 \mathrm{M}_{\odot}$, and $m_{\mathrm{s}}^l =1.14\, \mathrm{M}_{\odot}$,
 $m_{\mathrm{s}}^u =1.46\, \mathrm{M}_{\odot}$. The NS with a larger mass is
 labeled as the primary star with mass $m_1$ and the other as the secondary star
-with mass $m_2$.  The tidal deformability and quadrupole moments of the binary
+with mass $m_2$.  \Revise{The tidal deformability and quadrupole moments of the binary
 are calculated from the stellar mass assuming the APR4 EOS with methods
-described in Refs.~\cite{Yagi:2013awa, Atta:2024ckt}.  For the spin of recycled
+described in Refs.~\cite{Yagi:2013awa, Atta:2024ckt} under the slow rotation approximation.} For the spin of recycled
 stars $\chi_{\mathrm{r}}$, we adopt a uniform distribution
 $\mathcal{U}(-0.5,0.5)$, while for $\chi_{\mathrm{s}}$ we draw from
 $\mathcal{U}(-0.1,0.1)$.  Using the cosmological parameters provided by the
@@ -524,7 +527,7 @@ Reitze:2019dyk} and ET-D~\cite{Punturo:2010zz, Hild:2010id,
 Sathyaprakash:2012jk}, respectively. The two CE detectors are positioned at the
 current sites of the two LIGO detectors, while the ET detector is set at the
 current location of the Virgo detector with a triangular shape. 
-The current locations of LIGO and Virgo are chosen as a representative configuration for XG detectors.
+\Revise{The current locations of LIGO and Virgo are chosen as a representative configuration for XG detectors.}
 
 %=============================
 \subsection{Implementation}
@@ -572,13 +575,13 @@ signal-to-noise ratios (SNRs) contribute most of the information. Also,
 \citet{Yagi:2013awa} concluded that the spin-induced quadrupole moment cannot be
 well measured for NSs with low spins. Considering these findings, we first draw
 100 sources with the highest SNRs, then further select 20 sources with the
-largest $|\chi_{\mathrm{r}}|$ among them. The SNR values of these selected events range from about 1500 to 2500.
-Here we omit the selection effects 
+largest $|\chi_{\mathrm{r}}|$ among them. \Revise{The SNR values of these selected events range from about 1500 to 2500.}
+\Revise{Here we omit the selection effects 
 since different $\Lambda$ and $Q$ values do not lead to a 
 significant change of SNR and thus the detection probability. And as we will show in
 section~\ref{sec:results}, the primary information for constraining the Love-Q
 relation comes from the loudest GW events. We leave a more comprehensive
-study of the whole population considering selection effects for future work.
+study of the whole population considering selection effects for future work.}
 
 
 %---------------------------------------------------------------------
@@ -646,7 +649,7 @@ of the quartic polynomial model in Eq.~\eqref{5-d_Love_Q_eq}, consisting of five
 parameters. The polynomial models in between, i.e., the quadratic and cubic
 polynomial models, are discussed in
 section~\ref{subsec:results_quadratic_cubic}.
-For other parameterizations beyond polynomial models, our methodology is applicable to them as well.
+\Revise{For other parameterizations beyond polynomial models, our methodology is applicable to them as well.}
 
 %=============================
 \subsection{The Linear Model}
@@ -663,7 +666,7 @@ For other parameterizations beyond polynomial models, our methodology is applica
     diagonal stand for the median and the central 90\% credible interval of the marginalized distribution.
     We use blue and red colors to represent the results based on the loudest 20
     and 10 events from the 1000 simulated events, respectively. 
-    The orange bands represent the reference values with fitting uncertainties accounted for. The grey lines
+    \Revise{The orange bands represent the reference values with fitting uncertainties accounted for.} The grey lines
     on the diagonal represent the priors for comparison.}
     \label{corner2-d}
 \end{figure}
@@ -887,8 +890,8 @@ $^{*}\mathcal{R}^{\mu\nu\rho\sigma}$ denote the Riemann tensor and its dual,
 $\mathcal{L}_{\mathrm{mat}}$ is the matter Lagrangian density, $\alpha$ and
 $\beta$ are the coupling constants in the dCS gravity and the potential for the
 pseudo-scalar field $\mathcal{\vartheta}$ is omitted.  $\mathcal{\vartheta}$ and
-$\beta$ are taken to be dimensionless, so $\alpha$ has the dimension of length
-squared, and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
+$\beta$ \Revise{are} taken to be dimensionless, so $\alpha$ has the dimension of length
+\Revise{squared}, and the quantity $\xi_{\mathrm{CS}}^{1/4} \equiv [\alpha^2/
 (\kappa\beta)]^{1/4}$ can be explained as the characteristic lengthscale of the
 dCS gravity~\cite{Yunes:2009hc, Yagi:2012ya}.  Current Solar System observations
 have constrained it to $\xi_{\mathrm{CS}}^{1/4} <\mathcal{O}(10^8
@@ -971,16 +974,16 @@ gravity theories in the strong-field regime.
 There can be several extensions to this study. Firstly, we assume  BNS systems
 with aligned spins, while realistic BNS systems may have tilted spins and spin
 precession, which leads to additional contribution in the GW
-waveform~\cite{Williamson:2017evr, Purrer:2019jcp, Gamba:2020wgg}. The inaccuracy of 
+waveform~\cite{Williamson:2017evr, Purrer:2019jcp, Gamba:2020wgg}. \Revise{The inaccuracy of 
 waveform itself can also introduce a theoretical error to the posteriors of single event 
-parameters, especially for events with high SNRs~\cite{Cutler:2007mi}. 
+parameters, especially for events with high SNRs~\cite{Cutler:2007mi}.}
 Additionally, in the XG era, the GW signals are possibly overlapping with each
 other, complicating the data analysis~\cite{Pizzati:2021apa, Samajdar:2021egv,
-Wang:2023ldq, Johnson:2024foj, Wang:2025ckw}.  Moreover, the Yagi-Yunes
+Wang:2023ldq, Johnson:2024foj, Wang:2025ckw}.  \Revise{Moreover, the Yagi-Yunes
 universal relations were originally found and discussed for a single NS under slow-rotation assumption. 
 For BNS systems or high spin cases, these universal relations may break down and new relations could emerge. 
 Our methodology works when new universal relations do exist, but still a careful inspection is required~\cite{Shao:2022koz,
-Saffer:2021gak, Doneva:2013rha, Pappas:2013naa, Chakrabarti:2013tca, Yagi:2014bxa, Doneva:2014faa, Williams:2026jqv}. The octupole or higher-order multipole moments of NSs also
+Saffer:2021gak, Doneva:2013rha, Pappas:2013naa, Chakrabarti:2013tca, Yagi:2014bxa, Doneva:2014faa, Williams:2026jqv}.} The octupole or higher-order multipole moments of NSs also
 contribute to the GW waveform and can be universally related to the quadrupole
 moment~\cite{Yagi_2017, Abac:2023ujg}. We leave the exploration of simultaneous
 or independent inference of more universal relations to future studies.
