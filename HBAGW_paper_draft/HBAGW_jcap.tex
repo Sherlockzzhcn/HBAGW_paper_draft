@@ -521,9 +521,10 @@ $t_{c}=0$.
 We select a XG detector network consisting of two CE detectors and one ET 
 detector, whose sensitivities are taken as CE-2~\cite{Reitze:2019iox,
 Reitze:2019dyk} and ET-D~\cite{Punturo:2010zz, Hild:2010id,
-Sathyaprakash:2012jk}, respectively.  The two CE detectors are positioned at the
+Sathyaprakash:2012jk}, respectively. The two CE detectors are positioned at the
 current sites of the two LIGO detectors, while the ET detector is set at the
 current location of the Virgo detector with a triangular shape. 
+The current locations of LIGO and Virgo are chosen as a representative configuration for XG detectors.
 
 %=============================
 \subsection{Implementation}
@@ -571,10 +572,14 @@ signal-to-noise ratios (SNRs) contribute most of the information. Also,
 \citet{Yagi:2013awa} concluded that the spin-induced quadrupole moment cannot be
 well measured for NSs with low spins. Considering these findings, we first draw
 100 sources with the highest SNRs, then further select 20 sources with the
-largest $|\chi_{\mathrm{r}}|$ among them. As we will show in
+largest $|\chi_{\mathrm{r}}|$ among them. The SNR values of these selected events range from about 1500 to 2500.
+Here we omit the selection effects 
+since different $\Lambda$ and $Q$ values do not lead to a 
+significant change of SNR and thus the detection probability. And as we will show in
 section~\ref{sec:results}, the primary information for constraining the Love-Q
-relation comes from the 10 loudest GW events. We leave a more comprehensive
-study of the whole population for future work. 
+relation comes from the loudest GW events. We leave a more comprehensive
+study of the whole population considering selection effects for future work.
+
 
 %---------------------------------------------------------------------
 \begin{table}[t]
@@ -641,6 +646,7 @@ of the quartic polynomial model in Eq.~\eqref{5-d_Love_Q_eq}, consisting of five
 parameters. The polynomial models in between, i.e., the quadratic and cubic
 polynomial models, are discussed in
 section~\ref{subsec:results_quadratic_cubic}.
+For other parameterizations beyond polynomial models, our methodology is applicable to them as well.
 
 %=============================
 \subsection{The Linear Model}
@@ -656,8 +662,8 @@ section~\ref{subsec:results_quadratic_cubic}.
     90\% credible regions, while the numbers above the histograms on the
     diagonal stand for the median and the central 90\% credible interval of the marginalized distribution.
     We use blue and red colors to represent the results based on the loudest 20
-    and 10 events from the 1000 simulated events, respectively.  The black lines
-    represent the reference values in table~\ref{prior_table}.  The grey lines
+    and 10 events from the 1000 simulated events, respectively. 
+    The orange bands represent the reference values with fitting uncertainties accounted for. The grey lines
     on the diagonal represent the priors for comparison.}
     \label{corner2-d}
 \end{figure}
@@ -971,10 +977,10 @@ parameters, especially for events with high SNRs~\cite{Cutler:2007mi}.
 Additionally, in the XG era, the GW signals are possibly overlapping with each
 other, complicating the data analysis~\cite{Pizzati:2021apa, Samajdar:2021egv,
 Wang:2023ldq, Johnson:2024foj, Wang:2025ckw}.  Moreover, the Yagi-Yunes
-universal relations were originally found and discussed for a single NS. For BNS
-systems, these universal relations may hold when the two NSs have similar
-masses, but still require a careful inspection~\cite{Shao:2022koz,
-Saffer:2021gak}. The octupole or higher-order multipole moments of NSs also
+universal relations were originally found and discussed for a single NS under slow-rotation assumption. 
+For BNS systems or high spin cases, these universal relations may break down and new relations could emerge. 
+Our methodology works when new universal relations do exist, but still a careful inspection is required~\cite{Shao:2022koz,
+Saffer:2021gak, Doneva:2013rha, Pappas:2013naa, Chakrabarti:2013tca, Yagi:2014bxa, Doneva:2014faa, Williams:2026jqv}. The octupole or higher-order multipole moments of NSs also
 contribute to the GW waveform and can be universally related to the quadrupole
 moment~\cite{Yagi_2017, Abac:2023ujg}. We leave the exploration of simultaneous
 or independent inference of more universal relations to future studies.
