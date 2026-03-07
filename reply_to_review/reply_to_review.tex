@@ -13,7 +13,8 @@
 \newcommand{\ZZH}[1]{\textcolor{orange}{$\mathcal{ZZH}$:~#1}}
 
 \definecolor{commentgray}{rgb}{0.95,0.95,0.95}
-\definecolor{revcolor}{rgb}{0.0, 0.4, 0.7} 
+%\definecolor{revcolor}{rgb}{0.0, 0.4, 0.7} 
+\definecolor{revcolor}{rgb}{0.0, 0, 255} 
 \definecolor{oldcolor}{rgb}{0.8, 0.0, 0.0}
 
 \newenvironment{reviewercomment}[1]{
@@ -60,14 +61,33 @@
 \noindent\rule{\textwidth}{0.8pt}
 
 \vspace{0.2cm}
-\noindent Dear Editor and Reviewers,
+\noindent Dear Editor and Reviewers,\\
 
 We would like to thank the reviewers for their thoughtful comments and
 constructive suggestions, which have helped us improve our manuscript.
+Modifications are made in the revised manuscript to address these comments.
 For clarity, the {\color{oldcolor} original text} is in {\color{oldcolor} red}
-and the {\color{revcolor} revised content} in {\color{revcolor} blue}.
+and the {\color{revcolor} revised content} in {\color{revcolor} blue}. 
+We hope the revised paper meet the criteria for publication in your esteemed journal.
 
 \noindent\rule{\textwidth}{0.8pt}
+
+In this work, the authors developed a hierarchical Bayesian framework to
+infer the neutron star (NS) Love-Q relations, employing multiple binary neutron star (BNS) events, using an auxiliary single-event inference at the first
+level, then into a hyperparameter-level inference. 1000 sources were simulated, and the 20 events with the highest signal-to-noise-ratios (SNRs) were
+selected. From the selected events different parameterizations between the
+tidal deformability (related to the Love number) and the induced quadrupole
+moment were tested, and the authors argue that the linear model is effectively sufficient for next-generation detectors. They then take the inferred
+model and apply it to modified gravity theories such as the dynamical Chern Simons gravity, obtaining a constraint on the characteristic length with future
+detections. \\
+
+I have a couple of questions that I would like the authors to address or
+clarify before I make the decision on the paper.
+
+\begin{authorresponse}
+We thank the referee for helpful comments, and they are addressed below point by point.
+\end{authorresponse}
+
 
 \section*{Major questions}
 \begin{reviewercomment}{1}
@@ -77,21 +97,23 @@ and the {\color{revcolor} revised content} in {\color{revcolor} blue}.
 
 \begin{authorresponse}
     
-    1. Biases. 
+    We thank the reviewer for pointing out this important issue. We performed various tests to understand the dependence of our results on $N_{\text{events}}$, and to address the comment.
     
-    We thank the reviewer for pointing out this important issue. As shown in
+    {\bf 1. On biases.}
+    
+    As shown in
     figure~\ref{fig:a_b_n}, indeed there are biases for limited number of
-    events. For small $N_{\text{events}}$ (like $N=5$), there is indeed a
+    events. For a small $N_{\text{events}}$ (like $N=5$), there is indeed a
     noticeable offset between the median estimate and the reference value 
     of the hyperparameters.
     However, as $N_{\text{events}}$ increases, the median estimate is
     approaching the reference value. This implies that while biases do exist,
-    the methodology is robust as the sample size grows. The choice of 20 loudest
+    the methodology is robust when the sample size grows. The choice of 20 loudest
     events can be justified with figure~\ref{fig:width_n}. We can observe that
     the constraint to Love-Q relation at $\Lambda \sim 350$ (the ``waist'' part
-    in figure~3 of the manuscript) converge to a stable value. 
+    in figure~3 of the manuscript) converges to a stable value. 
 
-    2. Selection effects.
+    {\bf 2. On selection effects.}
 
     In the gravitational-wave (GW) context, detection is usually well
     approximated as a cut on the signal-to-noise ratio (SNR), and
