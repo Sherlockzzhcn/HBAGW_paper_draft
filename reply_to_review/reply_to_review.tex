@@ -387,20 +387,19 @@ We thank the referee for helpful comments, and they are addressed below point by
 \end{reviewercomment}
 
 \begin{authorresponse}
-    The waveform contains amplitude tidal corrections and higher-order
-    spin-squared and spin-cubed terms at 3.5 post-Newtonian (PN) order along with their corresponding
-    spin-induced quadrupole moments, in addition to the spin-induced quadrupole
-    moment terms at 2PN and 3PN~\cite{Samajdar:2020xrd}. These corrections or
+    Besides other effects, the waveform contains amplitude tidal corrections, the spin-induced quadrupole
+    moment terms at second and third post-Newtonian (PN) orders, higher-order
+    spin-squared and spin-cubed terms at 3.5\,PN along with their corresponding
+    spin-induced quadrupole moments~\cite{Samajdar:2020xrd}. These 
     terms are important for our results since we're considering the inference of
-    $\Lambda$ and $Q$. IMRPhenomXAS\_NRTidalv3 is an approximate example with a
-    relatively high accuracy among current models.
+    $\Lambda$ and $Q$. IMRPhenomXAS\_NRTidalv3 is an approximate example with high accuracy among current models.
 
     We completely agree that for GW events with SNR $\sim 10^3$, waveform systematics will likely become an important source of error, leading to bias in the posteriors of parameters like $\Lambda$. Following Ref.~\cite{Cutler:2007mi}, we estimate the error introduced by waveform inaccuracy
     \begin{equation}
-        \Delta \theta^{i} = (\Gamma^{-1}(\theta_{\mathrm{bf}}))^{ij} \langle \partial_j h(\theta_{\mathrm{bf}}) | h_0(\theta_{\mathrm{tr}}) - h(\theta_{\mathrm{tr}})\rangle
+        \Delta \theta^{i} = \big(\Gamma^{-1}(\theta_{\mathrm{bf}}) \big)^{ij} \Big\langle \partial_j h(\theta_{\mathrm{bf}}) \Big| h_0(\theta_{\mathrm{tr}}) - h(\theta_{\mathrm{tr}}) \Big\rangle
     \end{equation}
-    where $\Gamma$ is the fisher matrix, $\theta_{\mathrm{bf}}$ is the best-fit
-    parameter, $\theta_{\mathrm{tr}}$ is the true parameter, and $h$ and $h_0$
+    where $\Gamma$ is the Fisher matrix, $\theta_{\mathrm{bf}}$ are the best-fit
+    parameters, $\theta_{\mathrm{tr}}$ are the true parameters, and $h$ and $h_0$
     are GW strains assuming two different waveforms. Here we make a comparison between IMRPhenomXAS\_NRTidalv3
     and IMRPhenomXAS\_NRTidalv2. Our calculation with the
     parameter combinations of the single events indicate that these errors
@@ -408,7 +407,7 @@ We thank the referee for helpful comments, and they are addressed below point by
     the statistical uncertainties for the single event inference. Specifically,
     the error is $\sim 30$ for $\Lambda$ and $\sim 0.5$ for $Q$.
     In this work, we adopt a single waveform model for both the injections and
-    the inference, thus the waveform systematics do not
+    the inference, thus the waveform systematics are not likely not
     affect the main conclusion, which focuses on a methodology
     reference and an order-of-magnitude estimation. However, when dealing with
     real data with high SNRs in the future, it is important to consider the impact of waveform systematics.
@@ -438,7 +437,7 @@ We thank the referee for helpful comments, and they are addressed below point by
     \end{originaltext}
     to
     \begin{revisedtext}
-        ``Future next-generation (XG) ground-based GW detectors,..., are expected to detect many more GW signals, up to about $10^5$--$10^6$ events per year for BNS coalescence [60-63], thanks to their increased sensitivity and lower cutoff frequencies.''
+        ``Future next-generation (XG) ground-based GW detectors,..., are expected to detect many more GW signals, up to about $10^5$--$10^6$ events per year for BNS coalescences [60-63], thanks to their increased sensitivity and lower cutoff frequencies.''
     \end{revisedtext}
 \end{authorresponse}
 
@@ -481,6 +480,7 @@ We thank the referee for helpful comments, and they are addressed below point by
 \end{reviewercomment}
 
 \begin{authorresponse}
+	$\tilde{\Lambda}$ and $\delta \tilde{\Lambda}$ are linear rearrangements of $\Lambda_1$ and $\Lambda_2$.
     We acknowledge that the effective tidal
     deformability $\tilde{\Lambda}$ is more commonly used as the parameter to be
     inferred, since another parameter $\delta \tilde{\Lambda}$
@@ -493,8 +493,8 @@ We thank the referee for helpful comments, and they are addressed below point by
     simple and direct choice, in this work we treat $\Lambda_i$ and $Q_i$ as
     independent parameters and select flat priors for them. This also allows us
     to simplify Eq.~(2.14) to Eq.~(2.15) in the manuscript. There are also some
-    works that adopt the $\tilde{\Lambda}$-$\delta \tilde{\Lambda}$
-    parameterization in the hierarchical inference (e.g. Refs.~\cite{Lackey:2014fwa, Wang:2024xon}), where the implementation and formulas have no essential difference with our case.
+    studies that adopt the $\tilde{\Lambda}$-$\delta \tilde{\Lambda}$
+    parameterization in the hierarchical inference (e.g. Refs.~\cite{Lackey:2014fwa, Wang:2024xon}), where the implementation and formulas have no essential difference with ours.
 
     However, we acknowledge that the original phrasing overly emphasized the causal relationship between the inference of Love-Q relation and the treatment of $\Lambda_i$ and $Q_i$. We have revised the text from
     \begin{originaltext}
@@ -532,12 +532,12 @@ We thank the referee for helpful comments, and they are addressed below point by
 \begin{authorresponse}
     We acknowledge that the final sites for ET and CE are still under evaluation
     and will likely differ from the current LIGO and Virgo locations. However,
-    for the purpose of this study, we assumed the current locations as a
-    representative configuration. The exact location choice of the detectors has
-    a marginal impact on the core results and conclusions of our study.
+    for the purpose of this study, we assumed the current locations as an illustrated
+     configuration. The exact location choice of the detectors has
+    a marginal impact on the core results and conclusions of our study, and this information can be easily implemented when the locations are fixed.
     We have added a sentence at the end of section 3.1 as follows
     \begin{revisedtext}
-        ``The current locations of LIGO and Virgo are chosen as a representative configuration for XG detectors.''
+        ``The current locations of LIGO and Virgo are chosen as an illustrated configuration for XG detectors.''
     \end{revisedtext}
 \end{authorresponse}
 
@@ -548,7 +548,7 @@ We thank the referee for helpful comments, and they are addressed below point by
 
 \begin{authorresponse}
     In our study, the highest SNR values range from about 1500 to 2500. These
-    sources roughly correspond to the nearest luminosity distances. We have added a clarification  
+    sources roughly correspond to the nearest sources. We have added a clarification  
     at the end of section 3.2 as follows
     \begin{revisedtext}
         ``The SNR values of these selected events range from about 1500 to 2500.''
@@ -568,11 +568,11 @@ We thank the referee for helpful comments, and they are addressed below point by
     leading to the curving behavior of the bands. This feature is more
     significant for models with more parameters (more degrees of freedom). The
     parameters are loosely constrained, and are more likely to span a wider
-    region when the data points are sparse, leading to curving behaviors.
+    region when the data points are sparse, leading to the curving behavior.
 \end{authorresponse}
 
 
-\begin{reviewercomment}{9,10}
+\begin{reviewercomment}{9, 10}
     On page 11, ``$\theta$ and $\beta$ is taken to be dimensionless...'' Replace ``is'' with ``are''. 
     
     On page 12, ``$\alpha$ has the dimension of length square...'' Replace ``square'' with ``squared''.
