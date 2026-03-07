@@ -306,24 +306,19 @@ We thank the referee for helpful comments, and they are addressed below point by
 \end{reviewercomment}
 
 \begin{authorresponse}
-    Different assumptions of EOS just provide different combinations of $\Lambda$ and $Q$, which still follow the universal relation. As shown in figure~\ref{fig:corner}, the uncertainties of fitting coefficients brought by multiple EOSs assumed are much smaller compared to those from the hierarchical inference. Thus the change of EOS would not introduce a significant change to the width of constraints, while the median may probably change with EOS selected. 
+    Different assumptions of EOS provide different combinations of $\Lambda$ and $Q$, which still follow the universal relation. As shown in figure~\ref{fig:corner}, the uncertainties of fitting coefficients brought by multiple EOSs are much smaller compared to those from the hierarchical inference. Thus the change of EOS would not introduce a significant change to the width of constraints, while the median may probably change with EOSs. 
 
     As a supplement, we have repeated the inference of linear model for SLy and
     the results are shown in figure~\ref{fig:SLy}. The median and maximum
     posterior estimations change, but the width of 90\% credible region remains
     insensitive to the choice of EOS. 
 
-    If multiple EOSs are assumed, an intrinsic scatter will be introduced in the injected $\Lambda$ and $Q$. The effect of such scatter to the inference results is of the same order as the uncertainties shown in figure~\ref{fig:corner} and is much smaller to the constraints under single EOS assumption. 
-    \ZW{I think it would be better to show the posterior distributions for APR4
-    and SLy in the same figure. We expect the two posteriors to be largely overlapping, which would support our claim that the choice of EOS does not significantly affect the constraints.}
-    
-    \ZZH{Actually the posterior distributions for APR4 and SLy are not very largely overlapping in the corner plots. Even in 
-    figure~\ref{fig:SLy}, the difference between the two EOSs is visible. It is the width of constraints that remains unchanged 
-    for various EOSs. In this case, should I show results of the two EOSs in the same figure? Anyway I present the result as below}
+    If multiple EOSs are assumed, an intrinsic scatter will be introduced in the injected $\Lambda$ and $Q$. The effect of such scatter to the inference results is of the same order as the uncertainties shown in figure~\ref{fig:corner} and is much smaller than the constraints under a single EOS assumption. 
+
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\textwidth]{fig_comparison_corner_plot_EOS.pdf}
-        \caption{Corner plots: APR4 vs SLy}
+        \caption{Corner plots for APR4 and SLy EOSs.}
         \label{fig:SLy_vs_APR4}
     \end{figure}
 \end{authorresponse}
@@ -341,38 +336,37 @@ We thank the referee for helpful comments, and they are addressed below point by
 
 \begin{authorresponse}
     We thank the reviewer for this constructive comment. To our knowledge, the
-    polynomial forms are widely used parameterizations in universal relation
-    studies, and there is no specific physical explanation for the model parameters.
-    As shown in Figs.~2,4 and 5, for polynomial models with $j>2$, the
+    polynomial forms are widely used parameterizations in studies of NS universal relations, and there is no specific physical explanation for the model parameters, namely, they are parametrization models instead of physical relations.
+    As shown in Figs.~2, 4 and 5, for polynomial models with $j>2$, the
     posteriors extend to the prior boundary, while in the linear model case, the
     posteriors are well constrained within the prior range. This is the main reason why we claim that the linear model is sufficient for the inferred relations.
 
-    We agree that there exist correlations in the linear model parameters, which
-    means there is still possible parameter redundancy in the model. To further
+    We agree that there exist correlations in the linear model parameters, which probably 
+    means that there is still possible parameter redundancy in the model. To further
     investigate this correlation, we perform a principal component analysis on
     the posterior samples. We define a new parameter $X=0.9848(a-\bar{a}) - 0.1738(b-\bar{b})$ along the dominant direction, 
-    marginalizing out the orthogonal minor component. After such projection, the original two model parameters can be 
-    expressed by $X$ as $a_2 = -0.9296 + 0.9848 X$ and $b_2 = 0.4504 + -0.1738 X$ and the linear model 
-    becomes a dimension-reduced model with one parameter $X$. 
+    marginalizing out the orthogonal minor component. After such a projection, the original two model parameters can be 
+    expressed by $X$ as $a_2 = -0.9296 + 0.9848 X$ and $b_2 = 0.4504 -0.1738 X$ and the linear model 
+    becomes a didicated model with one parameter $X$. 
     We reconduct the inference of this new model and the results are shown in
     figure~\ref{fig:1d_inference}. For the region with $\Lambda \sim 300$, the
-    constraints is significantly tighter compared with the linear model and
+    constraint is significantly tighter compared with the linear model and
     other polynomial models. However, this only comes from the simplified model
     with one parameter, raising overfitting concerns. Also, without the linear
     model as a reference, it is difficult to construct a one-parameter model
-    with appropriate coefficients (the ``0.9848'' and ``-0.1738'' in the
-    definition of $X$). Thus, we believe that the linear model with two
-    parameters is a more reasonable choice, avoiding both overfitting and underfitting.
+    with appropriate coefficients (the ``0.9848'' and ``$-0.1738$'' coefficients in the
+    definition of $X$). In order not to fine-tune, we chose the linear model with two
+    parameters as a simple parameterization.
 
     Ref.~\cite{Pappas:2013naa} introduced a different parameterization form, but
     the authors pointed out that their results were equivalent to those using
     polynomial forms. In this case, adopting this model is equivalent to a
     parameter transformation of current parameterization, and has little impact
     on the fitting itself, especially for the model dimension. We added a clarification at the 
-    beginning of section 4 as follows
+    beginning of section 4 as follows:
 
     \begin{revisedtext}
-        ``For other parameterizations beyond polynomial models, our methodology is applicable to them as well.''
+        ``For other parameterizations beyond polynomial models, our methodology is in principle applicable to them as well.''
     \end{revisedtext}
 \end{authorresponse}
 
