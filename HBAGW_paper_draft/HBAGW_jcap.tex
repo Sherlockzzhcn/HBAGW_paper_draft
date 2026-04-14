@@ -590,8 +590,9 @@ since different $\Lambda$ and $Q$ values do not lead to a
 significant change of SNR and thus the detection probability. As we will show in
 section~\ref{sec:results}, the primary information for constraining the Love-Q
 relation comes from the loudest GW events. 
-\Revise{Despite this, such a selection of events can still introduce biases in the inference of the Love-Q relation, 
-and we make a discussion on this issue in appendix~\ref{sec: appendix biases}.}
+\Revise{In practice, selecting the top 20 events is enough to capture the main
+information for constraining the Love-Q relation. We present the results of
+changing the number of selected events in appendix~\ref{sec: appendix number of events}.}
 We leave a more comprehensive study of the whole population considering selection effects for future work.
 
 
@@ -693,8 +694,7 @@ them as ``true'' values of the linear model for reference. These values fall
 within the 90\% credible region of the posterior. 
 \Revise{Given that the Love-Q relation is quasi-universal with relative differences of $\sim 1\%$ for various EOSs, 
 the fitting uncertainties of the hyperparameters are also considered in the reference values. 
-To check the robustness of our conclusions, we repeat the inference assuming the SLy EOS; 
-these results are summarized in appendix~\ref{sec: appendix results for SLy}.}
+To check the robustness of our conclusions, we also repeat the inference assuming the SLy EOS; which are summarized in appendix~\ref{sec: appendix results for SLy}.}
 The hierarchical Bayesian
 inference successfully recovers the Love-Q relation under the linear
 parameterization. We also investigate how the results depend on the number of
@@ -1016,26 +1016,30 @@ Platform of Peking University.
 
 %=============================
 \appendix
-
-\section{Biases from Limited Number of Events}
+{\color{magenta}
+\section{Dependence on the Number of Events}
 \label{sec: appendix biases}
 %=============================
 
-In section~\ref{subsec:simulation_implementation}, we have mentioned selecting the loudest 20 events from the 1000 simulated events to perform the inference.
-Here we give a more detailed discussion on the biases brought by such selection. 
-We performed various tests to understand the dependence of our results on $N_{\text{events}}$.
-
-As shown in
-figure~\ref{fig:a_b_n}, indeed there are biases for limited number of
-events. For a small $N_{\text{events}}$ (like $N=5$), there is indeed a
+In the main text, we have selected the loudest 20 events from the 1000 simulated
+events in the inference.
+Here we vary the number of events $N_{\text{events}}$ to see how the results
+change. As shown in
+figure~\ref{fig:a_b_n}, for a small $N_{\text{events}}$ (like $N=5$), there is a
 noticeable offset between the median estimate and the reference value 
 of the hyperparameters.
-However, as $N_{\text{events}}$ increases, the median estimate is
-approaching the reference value. This implies that while biases do exist,
-the methodology is robust when the sample size grows. The choice of 20 loudest
-events can be justified with figure~\ref{fig:width_n}. We can observe that
+However, as $N_{\text{events}}$ increases, both the median and the credible
+intervals shrink towards the reference values. 
+to the reference values. Due to the decreasing SNRs of the
+latter added samples, their contribution to the inference becomes less and less
+significant, and the results keep almost unchanged.
+The choice of 20 loudest
+events can be justified with figure~\ref{fig:width_n}, where we observe that
 the constraint to Love-Q relation at $\Lambda \sim 350$ (the ``waist'' part
-in figure~3 of the manuscript) converges to a stable value. 
+in figure~3 of the manuscript) becomes stable when $N_{\text{events}}$ is larger
+than 20. Similar results are also found in previous studies of constraining the
+EOSs with GWs, where the several
+ loudest events dominate the information~\cite{Lackey:2014fwa}.
 
 
 
@@ -1093,7 +1097,7 @@ insensitive to the choice of EOS.
     \label{fig:SLy}
 \end{figure}
 %---------------------------------------------------------------------
-
+}
 
 
 \bibliographystyle{apsrev4-1}
