@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{amsmath, amsthm, amssymb, appendix, bm, graphicx, hyperref, mathrsfs, tabularx}
+\usepackage{mdframed}
+\usepackage{subcaption, float}
+\usepackage{caption}
+\newcommand{\ZW}[1]{\textcolor{magenta}{$\mathcal{ZW}$:~#1}}
+\newcommand{\ZZH}[1]{\textcolor{orange}{$\mathcal{ZZH}$:~#1}}
+
+\definecolor{commentgray}{rgb}{0.95,0.95,0.95}
+\definecolor{revcolor}{rgb}{0.0, 0, 255} 
+\definecolor{oldcolor}{rgb}{0.8, 0.0, 0.0}
+
+\newenvironment{reviewercomment}[1]{
+    \vspace{1em}
+    \noindent \textbf{#1:} \itshape
+}{
+    \par\vspace{0.5em}
+}
+
+\newenvironment{authorresponse}{
+    \noindent \textbf{Reply:} \normalfont
+}{
+    \par\vspace{1.5em}
+}
+
+\newenvironment{originaltext}{
+    \begin{quote}
+    \color{oldcolor} \small \textbf{Original text:} \\
+}{
+    \end{quote}
+}
+
+\newenvironment{revisedtext}{
+    \begin{quote}
+    \color{revcolor} \small \textbf{Revised text:} \\
+}{
+    \end{quote}
+}
+
+\title{Replies to Editor Report}
+\author{Manuscript ID: JCAP\_160P\_1025}
+\date{}
+
+\begin{document}
+
+\noindent\rule{\textwidth}{0.8pt}
+
+\begin{center}
+{\LARGE\bfseries Replies to Editor Report\par}
+\vspace{0.2cm}
+{Manuscript ID: JCAP\_160P\_1025\par}
+\end{center}
+\vspace{-0.2cm}
+\noindent\rule{\textwidth}{0.8pt}
+
+\vspace{0.2cm}
+\noindent Dear Editor and Reviewers,\\
+
+We are grateful for the positive feedback and helpful suggestions from the reviewers.
+We have revised our manuscript accordingly to ensure that the additional discussions are clear to the readers.
+For clarity, the {\color{revcolor} revised content} in {\color{revcolor} blue}. 
+
+\noindent\rule{\textwidth}{0.8pt}
+
+I thank the authors for going carefully through the comments, and providing
+point-by-point responses to them. \\
+
+Regarding their responses to points 1 and 5, can the authors add these
+plots as part of an appendix to the paper? This should clarify some points
+that could also be raised by the readers. Otherwise, I would recommend
+acceptance of this paper for publication.
+
+\begin{authorresponse}
+We thank the referee for helpful suggestions. We have added the relevant discussions and plots in the appendices of the revised manuscript.
+Responses to point 1 are summarized in appendix~A while responses to point 5 are summarized in appendix~B.
+Accordingly, we have also updated the main text to refer to these appendices for more details.
+
+At page 7, we have added the following sentences to refer to the discussion in appendix~A:
+\end{authorresponse}
+
+\begin{revisedtext}
+    Despite this, such a selection of events can still introduce biases in the inference of the Love-Q relation, 
+    and we make a discussion on this issue in appendix~A.
+\end{revisedtext}
+
+    At page 8, we have added the following sentences to refer to the discussion in appendix~B:
+
+\begin{revisedtext}
+    Given that the Love-Q relation is quasi-universal with relative differences of $\sim 1\%$ for various EOSs, 
+    the fitting uncertainties of the hyperparameters are also considered in the reference values. 
+    To check the robustness of our conclusions, we repeat the inference assuming the SLy EOS; 
+    these results are summarized in appendix~B.
+\end{revisedtext}
+
+\end{document}
